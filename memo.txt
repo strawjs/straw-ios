@@ -1,0 +1,36 @@
+
+
+
+plugin -> service
+
+Straw call object
+- request_id
+- service_name
+- method_name
+
+
+straw-ios-http-service
+straw-ios-http-service.jp
+
+
+
+Next naming candidate
+nawa.js - NAWA: NAtive Webview Arch
+It also means the 縄 (rope, pronounced na-wa) between native and webview.
+
+
+
+
+
+- (void)action:(JSONObject *)arg withRequest:(StrawRequest *)req {
+    if ([self blah]) {
+        [req succeedWith:json];
+    } else {
+        [req failWith:json];
+    }
+}
+
+
+
+
+[END]
