@@ -3,11 +3,6 @@
 
 plugin -> service
 
-Straw call object
-- request_id
-- service_name
-- method_name
-
 
 straw-ios-http-service
 straw-ios-http-service.jp
@@ -16,19 +11,53 @@ straw-ios-http-service.jp
 
 Next naming candidate
 nawa.js - NAWA: NAtive Webview Arch
-It also means the 縄 (rope, pronounced na-wa) between native and webview.
+It also means the 縄 (rope, pronounced na-wa in Japanese language) between native and webview.
+
+/**
+ * StrawCall class is the representation of the request call from js to native.
+ *
+ */
+@interface StrawCall : NSObject
+
+@property (nonatomic, retain) NSNumber *callId;
+@property (nonatomic, retain) NSString *service;
+@property (nonatomic, retain) NSString *method;
+@property (nonatomic, retain) BOOL *success;
+@property (nonatomic, assign) Straw *straw;
+
+- (void)succeed;
+- (void)succeedWithString:(NSString *)value;
+- (void)succeedWithNumber:(NSNumber *)value;
+- (void)succeedWithJSON:(JSONObject *)value;
+
+- (void)failWithCode:(NSNumber *)code withMessage:(NSString *)message;
 
 
+@end
 
+/**
+ * StrawCallFactory is the factory class of StrawCall objects.
+ */
+@interface StrawCallFactory : NSObject
++ (StrawCall *)createFromJSON:(JSONObject *)json withStraw:(Straw *)straw;
+@end
 
+/**
+ *
+ */
+@interface ExampleService : StrawService
+- (void)action:(JSONObject *)arg;
+@end
 
-- (void)action:(JSONObject *)arg withRequest:(StrawRequest *)req {
+@implementation ExampleService
+- (void)action:(JSONObject *)arg {
     if ([self blah]) {
-        [req succeedWith:json];
+        [self.call succeedWith:obj];
     } else {
-        [req failWith:json];
+        [self.call failWithCode:123 withMessage:@"example failed!"];
     }
 }
+@end
 
 
 
