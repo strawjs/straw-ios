@@ -43,6 +43,17 @@ It also means the 縄 (rope, pronounced na-wa in Japanese language) between nati
 @end
 
 /**
+ * StrawService is
+ */
+@interface StrawService: NSObject
+
+@property (nonatomic, assign, readonly) UIViewController *viewController
+@property (nonatomic, assign, readonly) UIWebView *webView;
+
+@end
+
+
+/**
  *
  */
 @interface ExampleService : StrawService
@@ -50,11 +61,11 @@ It also means the 縄 (rope, pronounced na-wa in Japanese language) between nati
 @end
 
 @implementation ExampleService
-- (void)action:(JSONObject *)arg {
+- (void)action:(JSONObject *)arg withCall:(StrawCall *)call {
     if ([self blah]) {
-        [self.call succeedWith:obj];
+        [call succeedWith:obj];
     } else {
-        [self.call failWithCode:123 withMessage:@"example failed!"];
+        [call failWithCode:123 withMessage:@"example failed!"];
     }
 }
 @end
