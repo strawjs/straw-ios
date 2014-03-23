@@ -1,0 +1,11 @@
+language: objective-c
+
+# specify ruby version for cocoapods
+rvm: 1.9.3
+
+script:
+- make cov
+
+after_success:
+- sudo easy_install cpp-coveralls
+- make coveralls

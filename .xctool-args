@@ -1,0 +1,6 @@
+[
+    "-project", "Straw.xcodeproj",
+    "-scheme", "Straw",
+    "-configuration", "Debug",
+    "-sdk", "iphonesimulator7.0"
+]
