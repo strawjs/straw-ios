@@ -19,7 +19,7 @@ coveralls:
 	rm -rf gcov
 
 echo-obj-dir:
-	@echo ` xctool -showBuildSettings | awk '/OBJECT_FILE_DIR_normal/{x=$$3}/CURRENT_ARCH/{y=$$3}END{print x"/"y}' `
+	@echo ` xctool -showBuildSettings | awk '/OBJECT_FILE_DIR_normal =/{x=$$3}/NATIVE_ARCH =/{y=$$3}END{print x"/"y}' `
 
 doc:
 	appledoc --project-name 'Straw' --project-company 'kt3k.org' --company-id 'org.kt3k' --output doc --index-desc README.md --create-html --no-create-docset Straw
