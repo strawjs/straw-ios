@@ -16,6 +16,7 @@
 		19F6C50E18DDD61A006C2FD1 /* libStraw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F618DDD61A006C2FD1 /* libStraw.a */; };
 		19F6C51418DDD61A006C2FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19F6C51218DDD61A006C2FD1 /* InfoPlist.strings */; };
 		19F6C51618DDD61A006C2FD1 /* StrawTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C51518DDD61A006C2FD1 /* StrawTests.m */; };
+		19F6C52118E1B04B006C2FD1 /* StrawTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		19F6C51118DDD61A006C2FD1 /* StrawTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StrawTests-Info.plist"; sourceTree = "<group>"; };
 		19F6C51318DDD61A006C2FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		19F6C51518DDD61A006C2FD1 /* StrawTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrawTests.m; sourceTree = "<group>"; };
+		19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrawTestObserver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				19F6C51518DDD61A006C2FD1 /* StrawTests.m */,
 				19F6C51018DDD61A006C2FD1 /* Supporting Files */,
+				19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */,
 			);
 			path = StrawTests;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F6C51618DDD61A006C2FD1 /* StrawTests.m in Sources */,
+				19F6C52118E1B04B006C2FD1 /* StrawTestObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,7 @@
 				19F6C51B18DDD61A006C2FD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		19F6C51C18DDD61A006C2FD1 /* Build configuration list for PBXNativeTarget "StrawTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				19F6C51E18DDD61A006C2FD1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

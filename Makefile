@@ -13,7 +13,7 @@ kill:
 	osascript -e 'tell app "iPhone Simulator" to quit'
 
 coveralls:
-	mkdir gcov
+	touch gcov ; rm -rf gcov ; mkdir gcov
 	cp `$(MAKE) echo-obj-dir`/* gcov/
 	coveralls -e Pods -e StrawTests -x '.m' -E '.*\.h'
 	rm -rf gcov
