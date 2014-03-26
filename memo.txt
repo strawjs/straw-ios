@@ -14,16 +14,16 @@ nawa.js - NAWA: NAtive Webview Arch
 It also means the 縄 (rope, pronounced na-wa in Japanese language) between native and webview.
 
 /**
- * StrawCall class is the representation of the request call from js to native.
+ * STWCall class is the representation of the request call from js to native.
  *
  */
-@interface StrawCall : NSObject
+@interface STWCall : NSObject
 
 @property (nonatomic, retain) NSNumber *callId;
 @property (nonatomic, retain) NSString *service;
 @property (nonatomic, retain) NSString *method;
 @property (nonatomic, retain) BOOL *success;
-@property (nonatomic, assign) Straw *straw;
+@property (nonatomic, assign) STW *straw;
 
 - (void)succeed;
 - (void)succeedWithString:(NSString *)value;
@@ -36,20 +36,28 @@ It also means the 縄 (rope, pronounced na-wa in Japanese language) between nati
 @end
 
 /**
- * StrawCallFactory is the factory class of StrawCall objects.
+ * STWCallFactory is the factory class of STWCall objects.
  */
 @interface StrawCallFactory : NSObject
-+ (StrawCall *)createFromJSON:(JSONObject *)json withStraw:(Straw *)straw;
++ (STWCall *)createFromJSON:(JSONObject *)json;
 @end
 
 /**
- * StrawService is
+ * STWService is
  */
-@interface StrawService: NSObject
+@protocol STWService: NSObject
 
 @property (nonatomic, assign, readonly) UIViewController *viewController
 @property (nonatomic, assign, readonly) UIWebView *webView;
 
+- actionCall:(STWCall *)call;
+
+@end
+
+/**
+ STWServiceRepository is the repository class of STWServices.
+ */
+@interface STWServiceRepository : NSObject
 @end
 
 
