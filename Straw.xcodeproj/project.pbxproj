@@ -21,6 +21,8 @@
 		19F6C53318E291DE006C2FD1 /* STWCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53218E291DE006C2FD1 /* STWCall.m */; };
 		19F6C53618E29255006C2FD1 /* STWCallFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53518E29255006C2FD1 /* STWCallFactory.m */; };
 		19F6C53A18E292A9006C2FD1 /* STWWebViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53918E292A9006C2FD1 /* STWWebViewDelegate.m */; };
+		19F6C53E18E425A9006C2FD1 /* STWServiceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53D18E425A9006C2FD1 /* STWServiceRepository.m */; };
+		19F6C54118E426AC006C2FD1 /* STWService.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C54018E426AC006C2FD1 /* STWService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,10 @@
 		19F6C53518E29255006C2FD1 /* STWCallFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWCallFactory.m; sourceTree = "<group>"; };
 		19F6C53818E292A9006C2FD1 /* STWWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWWebViewDelegate.h; sourceTree = "<group>"; };
 		19F6C53918E292A9006C2FD1 /* STWWebViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWWebViewDelegate.m; sourceTree = "<group>"; };
+		19F6C53C18E425A9006C2FD1 /* STWServiceRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWServiceRepository.h; sourceTree = "<group>"; };
+		19F6C53D18E425A9006C2FD1 /* STWServiceRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceRepository.m; sourceTree = "<group>"; };
+		19F6C53F18E426AC006C2FD1 /* STWService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWService.h; sourceTree = "<group>"; };
+		19F6C54018E426AC006C2FD1 /* STWService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,10 @@
 				19F6C53518E29255006C2FD1 /* STWCallFactory.m */,
 				19F6C53118E291DE006C2FD1 /* STWCall.h */,
 				19F6C53218E291DE006C2FD1 /* STWCall.m */,
+				19F6C53C18E425A9006C2FD1 /* STWServiceRepository.h */,
+				19F6C53D18E425A9006C2FD1 /* STWServiceRepository.m */,
+				19F6C53F18E426AC006C2FD1 /* STWService.h */,
+				19F6C54018E426AC006C2FD1 /* STWService.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -255,11 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19F6C53E18E425A9006C2FD1 /* STWServiceRepository.m in Sources */,
 				19F6C53318E291DE006C2FD1 /* STWCall.m in Sources */,
 				19F6C53618E29255006C2FD1 /* STWCallFactory.m in Sources */,
 				19F6C53018E28F8E006C2FD1 /* STW.m in Sources */,
 				19F6C50118DDD61A006C2FD1 /* Straw.m in Sources */,
 				19F6C53A18E292A9006C2FD1 /* STWWebViewDelegate.m in Sources */,
+				19F6C54118E426AC006C2FD1 /* STWService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
