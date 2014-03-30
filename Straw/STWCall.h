@@ -6,9 +6,16 @@
  */
 @interface STWCall : NSObject
 
+/// service name to call
 @property (nonatomic, retain) NSString *service;
+
+/// service method name to call
 @property (nonatomic, retain) NSString *method;
+
+/// service method paramter to call
 @property (nonatomic, retain) NSDictionary *params;
-@property (nonatomic, retain) NSNumber *callbackId;
+
+/// id of the service method call
+@property (nonatomic, retain) NSNumber *callId;
 
 @end
