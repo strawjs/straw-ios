@@ -12,7 +12,6 @@
 		19F6C50918DDD61A006C2FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F918DDD61A006C2FD1 /* Foundation.framework */; };
 		19F6C50B18DDD61A006C2FD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C50A18DDD61A006C2FD1 /* UIKit.framework */; };
 		19F6C50E18DDD61A006C2FD1 /* libStraw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F618DDD61A006C2FD1 /* libStraw.a */; };
-		19F6C51418DDD61A006C2FD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19F6C51218DDD61A006C2FD1 /* InfoPlist.strings */; };
 		19F6C51618DDD61A006C2FD1 /* StrawTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C51518DDD61A006C2FD1 /* StrawTests.m */; };
 		19F6C52118E1B04B006C2FD1 /* StrawTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */; };
 		19F6C53018E28F8E006C2FD1 /* STW.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C52F18E28F8E006C2FD1 /* STW.m */; };
@@ -53,7 +52,6 @@
 		19F6C50718DDD61A006C2FD1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		19F6C50A18DDD61A006C2FD1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		19F6C51118DDD61A006C2FD1 /* StrawTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StrawTests-Info.plist"; sourceTree = "<group>"; };
-		19F6C51318DDD61A006C2FD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		19F6C51518DDD61A006C2FD1 /* StrawTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrawTests.m; sourceTree = "<group>"; };
 		19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrawTestObserver.m; sourceTree = "<group>"; };
 		19F6C52E18E28F8E006C2FD1 /* STW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STW.h; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				19F6C51118DDD61A006C2FD1 /* StrawTests-Info.plist */,
-				19F6C51218DDD61A006C2FD1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -247,7 +244,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19F6C51418DDD61A006C2FD1 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,17 +281,6 @@
 			targetProxy = 19F6C50C18DDD61A006C2FD1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		19F6C51218DDD61A006C2FD1 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				19F6C51318DDD61A006C2FD1 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		19F6C51718DDD61A006C2FD1 /* Debug */ = {
