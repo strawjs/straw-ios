@@ -58,6 +58,8 @@ It also means the 縄 (rope, pronounced na-wa in Japanese language) between nati
  STWServiceRepository is the repository class of STWServices.
  */
 @interface STWServiceRepository : NSObject
+
+@property (nonatomic, retain, readonly)
 @end
 
 
@@ -78,6 +80,12 @@ It also means the 縄 (rope, pronounced na-wa in Japanese language) between nati
 }
 @end
 
+
+
+A service can be either stateful or stateless.
+That's why the naming of `Straw Service Method`.
+But our recommendation is stateless service because the statefulness with Straw
+Service layer is too complicated and unusable.
 
 
 
