@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		19F6C4FA18DDD61A006C2FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F918DDD61A006C2FD1 /* Foundation.framework */; };
-		19F6C4FF18DDD61A006C2FD1 /* Straw.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 19F6C4FE18DDD61A006C2FD1 /* Straw.h */; };
-		19F6C50118DDD61A006C2FD1 /* Straw.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C50018DDD61A006C2FD1 /* Straw.m */; };
 		19F6C50818DDD61A006C2FD1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C50718DDD61A006C2FD1 /* XCTest.framework */; };
 		19F6C50918DDD61A006C2FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F918DDD61A006C2FD1 /* Foundation.framework */; };
 		19F6C50B18DDD61A006C2FD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C50A18DDD61A006C2FD1 /* UIKit.framework */; };
@@ -42,7 +40,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				19F6C4FF18DDD61A006C2FD1 /* Straw.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,8 +49,6 @@
 		19F6C4F618DDD61A006C2FD1 /* libStraw.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStraw.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F6C4F918DDD61A006C2FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		19F6C4FD18DDD61A006C2FD1 /* Straw-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Straw-Prefix.pch"; sourceTree = "<group>"; };
-		19F6C4FE18DDD61A006C2FD1 /* Straw.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Straw.h; sourceTree = "<group>"; };
-		19F6C50018DDD61A006C2FD1 /* Straw.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Straw.m; sourceTree = "<group>"; };
 		19F6C50618DDD61A006C2FD1 /* StrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F6C50718DDD61A006C2FD1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		19F6C50A18DDD61A006C2FD1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -135,8 +130,6 @@
 				19F6C52F18E28F8E006C2FD1 /* STW.m */,
 				19F6C53818E292A9006C2FD1 /* STWWebViewDelegate.h */,
 				19F6C53918E292A9006C2FD1 /* STWWebViewDelegate.m */,
-				19F6C4FE18DDD61A006C2FD1 /* Straw.h */,
-				19F6C50018DDD61A006C2FD1 /* Straw.m */,
 				19F6C4FC18DDD61A006C2FD1 /* Supporting Files */,
 			);
 			path = Straw;
@@ -269,7 +262,6 @@
 				19F6C53318E291DE006C2FD1 /* STWCall.m in Sources */,
 				19F6C53618E29255006C2FD1 /* STWCallFactory.m in Sources */,
 				19F6C53018E28F8E006C2FD1 /* STW.m in Sources */,
-				19F6C50118DDD61A006C2FD1 /* Straw.m in Sources */,
 				19F6C53A18E292A9006C2FD1 /* STWWebViewDelegate.m in Sources */,
 				19F6C54118E426AC006C2FD1 /* STWService.m in Sources */,
 			);
