@@ -14,4 +14,9 @@
     return call;
 }
 
++ (STWCall *)createFromCallRequestJSON:(NSString *)json
+{
+    return [self createFromCallRequestObject:[NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil]];
+}
+
 @end
