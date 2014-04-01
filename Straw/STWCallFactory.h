@@ -32,6 +32,6 @@
 
  @param object Call Request JSON from Browser.
  */
-+ (STWCall *)createFromCallRequestJSON:(NSString *)json;
++ (STWCall *)createFromCallRequestJSON:(NSData *)json;
 
 @end
