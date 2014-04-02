@@ -7,6 +7,7 @@
     self = [super init];
 
     if (self) {
+        // initialize call and service repository
         self.call = call;
         self.repository = repository;
     }
