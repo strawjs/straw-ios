@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		192FC54D18E9C899009F326C /* STWCallOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FC54C18E9C899009F326C /* STWCallOperation.m */; };
+		192FC55018ED8CB6009F326C /* STWServiceRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */; };
 		19F6C4FA18DDD61A006C2FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F918DDD61A006C2FD1 /* Foundation.framework */; };
 		19F6C50818DDD61A006C2FD1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C50718DDD61A006C2FD1 /* XCTest.framework */; };
 		19F6C50918DDD61A006C2FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F918DDD61A006C2FD1 /* Foundation.framework */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		192FC54B18E9C899009F326C /* STWCallOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWCallOperation.h; sourceTree = "<group>"; };
 		192FC54C18E9C899009F326C /* STWCallOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWCallOperation.m; sourceTree = "<group>"; };
+		192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceRepositoryTests.m; sourceTree = "<group>"; };
 		19F6C4F618DDD61A006C2FD1 /* libStraw.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStraw.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F6C4F918DDD61A006C2FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		19F6C4FD18DDD61A006C2FD1 /* Straw-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Straw-Prefix.pch"; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		192FC54E18ED8C67009F326C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
 		19F6C4ED18DDD61A006C2FD1 = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +159,7 @@
 		19F6C50F18DDD61A006C2FD1 /* StrawTests */ = {
 			isa = PBXGroup;
 			children = (
+				192FC54E18ED8C67009F326C /* Domain */,
 				19F6C51518DDD61A006C2FD1 /* StrawTests.m */,
 				19F6C51018DDD61A006C2FD1 /* Supporting Files */,
 				19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */,
@@ -273,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				192FC55018ED8CB6009F326C /* STWServiceRepositoryTests.m in Sources */,
 				19F6C51618DDD61A006C2FD1 /* StrawTests.m in Sources */,
 				19F6C52118E1B04B006C2FD1 /* StrawTestObserver.m in Sources */,
 			);
