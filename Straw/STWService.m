@@ -13,8 +13,12 @@
 
     if ([self respondsToSelector:selector]) {
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
         // perform Service Method
         [self performSelector:selector withObject:call.params withObject:call];
+#pragma clang diagnostic pop
+
 
     } else {
         // TODO: log error
