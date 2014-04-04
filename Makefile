@@ -12,6 +12,11 @@ clean:
 kill:
 	osascript -e 'tell app "iPhone Simulator" to quit'
 
+covr:
+	touch gcov ; rm -rf gcov ; mkdir gcov
+	cp `$(MAKE) echo-obj-dir`/* gcov/
+	gcovr -r .
+
 coveralls:
 	touch gcov ; rm -rf gcov ; mkdir gcov
 	cp `$(MAKE) echo-obj-dir`/* gcov/
