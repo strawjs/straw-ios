@@ -14,7 +14,6 @@
 		19F6C50918DDD61A006C2FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F918DDD61A006C2FD1 /* Foundation.framework */; };
 		19F6C50B18DDD61A006C2FD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C50A18DDD61A006C2FD1 /* UIKit.framework */; };
 		19F6C50E18DDD61A006C2FD1 /* libStraw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F618DDD61A006C2FD1 /* libStraw.a */; };
-		19F6C51618DDD61A006C2FD1 /* StrawTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C51518DDD61A006C2FD1 /* StrawTests.m */; };
 		19F6C52118E1B04B006C2FD1 /* StrawTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */; };
 		19F6C53018E28F8E006C2FD1 /* STW.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C52F18E28F8E006C2FD1 /* STW.m */; };
 		19F6C53318E291DE006C2FD1 /* STWCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53218E291DE006C2FD1 /* STWCall.m */; };
@@ -56,7 +55,6 @@
 		19F6C50718DDD61A006C2FD1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		19F6C50A18DDD61A006C2FD1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		19F6C51118DDD61A006C2FD1 /* StrawTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StrawTests-Info.plist"; sourceTree = "<group>"; };
-		19F6C51518DDD61A006C2FD1 /* StrawTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StrawTests.m; sourceTree = "<group>"; };
 		19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrawTestObserver.m; sourceTree = "<group>"; };
 		19F6C52E18E28F8E006C2FD1 /* STW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STW.h; sourceTree = "<group>"; };
 		19F6C52F18E28F8E006C2FD1 /* STW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STW.m; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				192FC54E18ED8C67009F326C /* Domain */,
-				19F6C51518DDD61A006C2FD1 /* StrawTests.m */,
 				19F6C51018DDD61A006C2FD1 /* Supporting Files */,
 				19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */,
 			);
@@ -275,7 +272,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				192FC55018ED8CB6009F326C /* STWServiceRepositoryTests.m in Sources */,
-				19F6C51618DDD61A006C2FD1 /* StrawTests.m in Sources */,
 				19F6C52118E1B04B006C2FD1 /* StrawTestObserver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
