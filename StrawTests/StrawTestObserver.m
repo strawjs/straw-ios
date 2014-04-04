@@ -1,6 +1,8 @@
 #import <XCTest/XCTest.h>
 
-// workaround for generating coverage data in iphonesimulator7.0
+// the workaround for generating coverage data in xcode5.0 + iphonesimulator7.0.
+// this workaround will be unnecessary in xcode5.1.
+
 @interface StrawTestObserver : XCTestObserver
 
 @end
