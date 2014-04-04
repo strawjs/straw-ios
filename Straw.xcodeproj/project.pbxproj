@@ -15,7 +15,6 @@
 		19F6C50B18DDD61A006C2FD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C50A18DDD61A006C2FD1 /* UIKit.framework */; };
 		19F6C50E18DDD61A006C2FD1 /* libStraw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F618DDD61A006C2FD1 /* libStraw.a */; };
 		19F6C52118E1B04B006C2FD1 /* StrawTestObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */; };
-		19F6C53018E28F8E006C2FD1 /* STW.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C52F18E28F8E006C2FD1 /* STW.m */; };
 		19F6C53318E291DE006C2FD1 /* STWCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53218E291DE006C2FD1 /* STWCall.m */; };
 		19F6C53618E29255006C2FD1 /* STWCallFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53518E29255006C2FD1 /* STWCallFactory.m */; };
 		19F6C53A18E292A9006C2FD1 /* STWWebViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53918E292A9006C2FD1 /* STWWebViewDelegate.m */; };
@@ -56,8 +55,6 @@
 		19F6C50A18DDD61A006C2FD1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		19F6C51118DDD61A006C2FD1 /* StrawTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StrawTests-Info.plist"; sourceTree = "<group>"; };
 		19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrawTestObserver.m; sourceTree = "<group>"; };
-		19F6C52E18E28F8E006C2FD1 /* STW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STW.h; sourceTree = "<group>"; };
-		19F6C52F18E28F8E006C2FD1 /* STW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STW.m; sourceTree = "<group>"; };
 		19F6C53118E291DE006C2FD1 /* STWCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWCall.h; sourceTree = "<group>"; };
 		19F6C53218E291DE006C2FD1 /* STWCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWCall.m; sourceTree = "<group>"; };
 		19F6C53418E29255006C2FD1 /* STWCallFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWCallFactory.h; sourceTree = "<group>"; };
@@ -134,8 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				19F6C53718E29263006C2FD1 /* Domain */,
-				19F6C52E18E28F8E006C2FD1 /* STW.h */,
-				19F6C52F18E28F8E006C2FD1 /* STW.m */,
 				19F6C53818E292A9006C2FD1 /* STWWebViewDelegate.h */,
 				19F6C53918E292A9006C2FD1 /* STWWebViewDelegate.m */,
 				192FC54B18E9C899009F326C /* STWCallOperation.h */,
@@ -261,7 +256,6 @@
 				19F6C53318E291DE006C2FD1 /* STWCall.m in Sources */,
 				192FC54D18E9C899009F326C /* STWCallOperation.m in Sources */,
 				19F6C53618E29255006C2FD1 /* STWCallFactory.m in Sources */,
-				19F6C53018E28F8E006C2FD1 /* STW.m in Sources */,
 				19F6C53A18E292A9006C2FD1 /* STWWebViewDelegate.m in Sources */,
 				19F6C54118E426AC006C2FD1 /* STWService.m in Sources */,
 			);
