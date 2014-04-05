@@ -8,7 +8,7 @@ straw-ios-http-service
 straw-ios-http-service.js
 
 /**
- * STWServiceCall is the model class of the Service call from Browser.
+ * STWServiceCall is the model class of the Service Method call from Browser.
  *
  * @layer Domain
  */
@@ -19,6 +19,42 @@ straw-ios-http-service.js
 @property (nonatomic, retain) NSString *method;
 @property (nonatomic, retain) BOOL *success;
 
+@end
+
+
+
+/**
+ * STWServiceCallFactory is the factory class of STWServiceCall objects.
+ *
+ * @layer Domain
+ */
+@interface STWServiceCallFactory : NSObject
++ (STWServiceCall *)createFromJSON:(JSONObject *)json;
+@end
+
+/**
+ * STWService is the protocol conformed by Straw Service implementations.
+ *
+ * @layer Domain
+ */
+@protocol STWService <NSObject>
+
+- actionCall:(STWCall *)call;
+
+@end
+
+/**
+ * STWServiceCallContext is a context of a single Service Method call.
+ * Service authers can succeed or fail Service Method Call using this class.
+ *
+ * @layer Application
+ */
+@interface STWServiceCallContext : NSObject
+
+@property (nonatomic, assign, readonly) UIViewController *viewController
+@property (nonatomic, assign, readonly) UIWebView *webView;
+@property (nonatomic, retain, readonly) STWServiceCall *call;
+
 - (void)succeed;
 - (void)succeedWithString:(NSString *)value;
 - (void)succeedWithNumber:(NSNumber *)value;
@@ -26,37 +62,12 @@ straw-ios-http-service.js
 
 - (void)failWithCode:(NSNumber *)code withMessage:(NSString *)message;
 
-
 @end
 
-
 /**
+ * STWServiceRepository is the repository class of id <STWService>.
  *
- */
-@interface STWServiceCallContext : NSObject
-@end
-
-/**
- * STWCallFactory is the factory class of STWCall objects.
- */
-@interface STWServiceCallFactory : NSObject
-+ (STWServiceCall *)createFromJSON:(JSONObject *)json;
-@end
-
-/**
- * STWService is
- */
-@protocol STWService: NSObject
-
-@property (nonatomic, assign, readonly) UIViewController *viewController
-@property (nonatomic, assign, readonly) UIWebView *webView;
-
-- actionCall:(STWCall *)call;
-
-@end
-
-/**
- STWServiceRepository is the repository class of STWServices.
+ * @layer Domain
  */
 @interface STWServiceRepository : NSObject
 
@@ -65,18 +76,24 @@ straw-ios-http-service.js
 
 
 /**
+ * ExampleService is a example of Service implementation
  *
+ * @layer Service
  */
-@interface ExampleService : StrawService
-- (void)action:(JSONObject *)arg;
+@interface ExampleService <StrawService> : NSObject
+- (void)action:(JSONObject *)params withContext:(STWServiceContext *)context;
 @end
 
 @implementation ExampleService
-- (void)action:(JSONObject *)arg withCall:(StrawCall *)call {
+- (void)action:(JSONObject *)arg withContext:(STWServiceCallContext *)context {
     if ([self blah]) {
-        [call succeedWith:obj];
+        [context succeed];
+
+    } else if ([self blahblah]) {
+        [context succeedWithObject:@{@"a": @123}];
+
     } else {
-        [call failWithCode:123 withMessage:@"example failed!"];
+        [call failWithCode:@123 withMessage:@"example failed!"];
     }
 }
 @end
@@ -89,8 +106,12 @@ Reusable services should be most likely stateless.
 Application specific services can be stateful.
 
 
-Service -
-Service Method - single functionality of service
-Service Method Call
+Service - a bundle of series of functions.
+Service Method - a functionality of a service.
+Service Call - a call of Service Method.
+Service Call Context - a context of a call of Service Method
+
+Service Repository - repository of services
+Service Call Factory - factory of service call object
 
 [END]
