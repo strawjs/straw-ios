@@ -5,25 +5,19 @@ plugin -> service
 
 
 straw-ios-http-service
-straw-ios-http-service.jp
-
-
-
-Next naming candidate
-nawa.js - NAWA: NAtive Webview Arch
-It also means the 縄 (rope, pronounced na-wa in Japanese language) between native and webview.
+straw-ios-http-service.js
 
 /**
- * STWCall class is the representation of the request call from js to native.
+ * STWServiceCall is the model class of the Service call from Browser.
  *
+ * @layer Domain
  */
-@interface STWCall : NSObject
+@interface STWServiceCall : NSObject
 
 @property (nonatomic, retain) NSNumber *callId;
 @property (nonatomic, retain) NSString *service;
 @property (nonatomic, retain) NSString *method;
 @property (nonatomic, retain) BOOL *success;
-@property (nonatomic, assign) STW *straw;
 
 - (void)succeed;
 - (void)succeedWithString:(NSString *)value;
@@ -35,11 +29,18 @@ It also means the 縄 (rope, pronounced na-wa in Japanese language) between nati
 
 @end
 
+
+/**
+ *
+ */
+@interface STWServiceCallContext : NSObject
+@end
+
 /**
  * STWCallFactory is the factory class of STWCall objects.
  */
-@interface StrawCallFactory : NSObject
-+ (STWCall *)createFromJSON:(JSONObject *)json;
+@interface STWServiceCallFactory : NSObject
++ (STWServiceCall *)createFromJSON:(JSONObject *)json;
 @end
 
 /**
@@ -84,9 +85,12 @@ It also means the 縄 (rope, pronounced na-wa in Japanese language) between nati
 
 A service can be either stateful or stateless.
 That's why the naming of `Straw Service Method`.
-But our recommendation is stateless service because the statefulness with Straw
-Service layer is too complicated and unusable.
+Reusable services should be most likely stateless.
+Application specific services can be stateful.
 
 
+Service -
+Service Method - single functionality of service
+Service Method Call
 
 [END]
