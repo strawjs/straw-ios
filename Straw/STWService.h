@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "STWCall.h"
+#import "STWServiceCall.h"
 
 @interface STWService : NSObject
 
-- (void)exec:(STWCall *)call;
+- (void)exec:(STWServiceCall *)call;
 
 @end

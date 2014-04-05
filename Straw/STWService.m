@@ -2,7 +2,7 @@
 
 @implementation STWService
 
-- (void)exec:(STWCall *)call
+- (void)exec:(STWServiceCall *)call
 {
     // Service Method must have the form of
     // `- (void)methodName:(NSDcitionary *)params withCall:(STWCall *)`

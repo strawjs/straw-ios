@@ -2,7 +2,7 @@
 
 @implementation STWCallOperation
 
-- (id)initWithCall:(STWCall *)call withServiceRepository:(STWServiceRepository *)repository
+- (id)initWithCall:(STWServiceCall *)call withServiceRepository:(STWServiceRepository *)repository
 {
     self = [super init];
 

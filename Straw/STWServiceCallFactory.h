@@ -1,13 +1,13 @@
 #import <Foundation/Foundation.h>
-#import "STWCall.h"
+#import "STWServiceCall.h"
 
 /**
- STWCallFactory is the factory class of STWCall.
+ STWServiceCallFactory is the factory class of STWServiceCall.
  */
-@interface STWCallFactory : NSObject
+@interface STWServiceCallFactory : NSObject
 
 /**
- Creates STWCall object from Straw Call Request Object from Browser.
+ Creates STWServiceCall object from Straw Call Request Object from Browser.
  
  Call Request Object should have following fields
 
@@ -18,7 +18,7 @@
 
  @param object Call Request Object from Browser.
  */
-+ (STWCall *)createFromCallRequestObject:(NSDictionary *)object;
++ (STWServiceCall *)createFromCallRequestObject:(NSDictionary *)object;
 
 /**
  Creates STWCall object from Straw Call Request JSON from Browser.
@@ -32,6 +32,6 @@
 
  @param object Call Request JSON from Browser.
  */
-+ (STWCall *)createFromCallRequestJSON:(NSData *)json;
++ (STWServiceCall *)createFromCallRequestJSON:(NSData *)json;
 
 @end

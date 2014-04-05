@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "STWCall.h"
+#import "STWServiceCall.h"
 #import "STWService.h"
 #import "STWServiceRepository.h"
 
@@ -10,7 +10,7 @@
  */
 @interface STWCallOperation : NSOperation
 
-@property (nonatomic, retain) STWCall *call;
+@property (nonatomic, retain) STWServiceCall *call;
 @property (nonatomic, assign) STWServiceRepository *repository;
 
 @end

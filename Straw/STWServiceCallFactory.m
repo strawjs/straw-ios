@@ -1,10 +1,10 @@
-#import "STWCallFactory.h"
+#import "STWServiceCallFactory.h"
 
-@implementation STWCallFactory
+@implementation STWServiceCallFactory
 
-+ (STWCall *)createFromCallRequestObject:(NSDictionary *)object
++ (STWServiceCall *)createFromCallRequestObject:(NSDictionary *)object
 {
-    STWCall *call = [[STWCall alloc] init];
+    STWServiceCall *call = [[STWServiceCall alloc] init];
 
     call.service = object[@"service"];
     call.method = object[@"method"];
@@ -14,7 +14,7 @@
     return call;
 }
 
-+ (STWCall *)createFromCallRequestJSON:(NSData *)json
++ (STWServiceCall *)createFromCallRequestJSON:(NSData *)json
 {
     return [self createFromCallRequestObject:[NSJSONSerialization JSONObjectWithData:json options:0 error:nil]];
 }
