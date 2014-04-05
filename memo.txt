@@ -49,7 +49,7 @@ straw-ios-http-service.js
  *
  * @layer Application
  */
-@interface STWServiceCallContext : NSObject
+@protocol STWServiceCallContext <NSObject>
 
 @property (nonatomic, assign, readonly) UIViewController *viewController
 @property (nonatomic, assign, readonly) UIWebView *webView;
@@ -113,5 +113,14 @@ Service Call Context - a context of a call of Service Method
 
 Service Repository - repository of services
 Service Call Factory - factory of service call object
+
+----
+
+The Domain Services should never touch the Application layer.
+
+Do people really want stateful services?
+
+How about to use Domain Events?
+
 
 [END]
