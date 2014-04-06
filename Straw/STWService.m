@@ -2,11 +2,13 @@
 
 @implementation STWService
 
-- (void)exec:(STWServiceCall *)call
+- (void)exec:(id <STWServiceCallContext>)context
 {
+    STWServiceCall *call = context.serviceCall;
+
     // Service Method must have the form of
-    // `- (void)methodName:(NSDcitionary *)params withCall:(STWCall *)`
-    NSString *methodName = [NSString stringWithFormat:@"%@:withCall:", call.method];
+    // `- (void)methodName:(NSDcitionary *)params withCall:(id <STWServiceCallContext>)`
+    NSString *methodName = [NSString stringWithFormat:@"%@:withContext:", call.method];
 
     // create the selector for Service Method
     SEL selector = NSSelectorFromString(methodName);
@@ -17,7 +19,7 @@
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
         // perform Service Method
-        [self performSelector:selector withObject:call.params withObject:call];
+        [self performSelector:selector withObject:call.params withObject:context];
 
 #pragma clang diagnostic pop
 

@@ -50,6 +50,7 @@
 		192FC54C18E9C899009F326C /* STWCallOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWCallOperation.m; sourceTree = "<group>"; };
 		192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceRepositoryTests.m; sourceTree = "<group>"; };
 		1992E49118EE712E00440DF9 /* STWServiceCallTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallTests.m; sourceTree = "<group>"; };
+		1992E49418F0598F00440DF9 /* STWServiceCallContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWServiceCallContext.h; sourceTree = "<group>"; };
 		19F6C4F618DDD61A006C2FD1 /* libStraw.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStraw.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F6C4F918DDD61A006C2FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		19F6C50618DDD61A006C2FD1 /* StrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +172,7 @@
 				19F6C53D18E425A9006C2FD1 /* STWServiceRepository.m */,
 				19F6C53F18E426AC006C2FD1 /* STWService.h */,
 				19F6C54018E426AC006C2FD1 /* STWService.m */,
+				1992E49418F0598F00440DF9 /* STWServiceCallContext.h */,
 			);
 			name = Domain;
 			sourceTree = "<group>";

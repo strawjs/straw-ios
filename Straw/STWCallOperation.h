@@ -8,9 +8,9 @@
 
  The operation is performed in main thread or in background according to Service Method configuration.
  */
-@interface STWCallOperation : NSOperation
+@interface STWCallOperation : NSOperation <STWServiceCallContext>
 
-@property (nonatomic, retain) STWServiceCall *call;
+@property (nonatomic, retain) STWServiceCall *serviceCall;
 @property (nonatomic, assign) STWServiceRepository *repository;
 
 @end

@@ -8,7 +8,7 @@
 
     if (self) {
         // initialize call and service repository
-        self.call = call;
+        self.serviceCall = call;
         self.repository = repository;
     }
 
@@ -17,13 +17,33 @@
 
 - (void)main
 {
-    STWService *service = [self.repository getService:self.call.service];
+    STWService *service = [self.repository getService:self.serviceCall.service];
 
     if (service) {
-        [service exec:self.call];
+        [service exec:self];
     } else {
         // TODO: log error
     }
+}
+
+- (void)succeed
+{
+}
+
+- (void)succeedWithString:(NSString *)string
+{
+}
+
+- (void)succeedWithNumber:(NSNumber *)number
+{
+}
+
+- (void)succeedWithObject:(NSDictionary *)object
+{
+}
+
+- (void)failWithCode:(NSNumber *)code withMessage:(NSString *)message
+{
 }
 
 @end
