@@ -1,5 +1,5 @@
 [
-    "-project", "Straw.xcodeproj",
+    "-workspace", "Straw.xcworkspace",
     "-scheme", "Straw",
     "-configuration", "Debug",
     "-sdk", "iphonesimulator7.0"
