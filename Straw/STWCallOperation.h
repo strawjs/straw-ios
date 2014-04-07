@@ -13,4 +13,6 @@
 @property (nonatomic, retain) STWServiceCall *serviceCall;
 @property (nonatomic, assign) STWServiceRepository *repository;
 
+- (id)initWithCall:(STWServiceCall *)call withServiceRepository:(STWServiceRepository *)repository;
+
 @end
