@@ -26,20 +26,28 @@
     }
 }
 
+- (void)sendBackToBrowser:(NSDictionary *)object
+{
+}
+
 - (void)succeed
 {
+    [self sendBackToBrowser:@{}];
 }
 
 - (void)succeedWithString:(NSString *)string
 {
+    [self sendBackToBrowser:@{@"value": string}];
 }
 
 - (void)succeedWithNumber:(NSNumber *)number
 {
+    [self sendBackToBrowser:@{@"": number}];
 }
 
 - (void)succeedWithObject:(NSDictionary *)object
 {
+    [self sendBackToBrowser:object];
 }
 
 - (void)failWithCode:(NSNumber *)code withMessage:(NSString *)message
