@@ -52,6 +52,7 @@
 
 - (void)failWithCode:(NSNumber *)code withMessage:(NSString *)message
 {
+    [self sendBackToBrowser:@{@"code": code, @"message": message}];
 }
 
 @end
