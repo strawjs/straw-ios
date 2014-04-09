@@ -4,6 +4,4 @@
 
 @interface STWService : NSObject
 
-- (void)exec:(id <STWServiceCallContext>)context;
-
 @end
