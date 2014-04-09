@@ -1,7 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "STWServiceCall.h"
-#import "STWServiceCallContext.h"
 
-@interface STWService : NSObject
+@protocol STWService <NSObject>
 
 @end

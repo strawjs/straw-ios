@@ -184,8 +184,6 @@ fi
 			<string>19F6C4F718DDD61A006C2FD1</string>
 			<key>projectDirPath</key>
 			<string></string>
-			<key>projectReferences</key>
-			<array/>
 			<key>projectRoot</key>
 			<string></string>
 			<key>targets</key>
@@ -219,7 +217,6 @@ fi
 				<string>192FC54D18E9C899009F326C</string>
 				<string>19F6C53618E29255006C2FD1</string>
 				<string>19F6C53A18E292A9006C2FD1</string>
-				<string>19F6C54118E426AC006C2FD1</string>
 			</array>
 			<key>isa</key>
 			<string>PBXSourcesBuildPhase</string>
@@ -786,6 +783,8 @@ fi
 		</dict>
 		<key>19F6C51D18DDD61A006C2FD1</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E549ADFCA10C431885E2B4E6</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ARCHS</key>
@@ -819,6 +818,8 @@ fi
 		</dict>
 		<key>19F6C51E18DDD61A006C2FD1</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E549ADFCA10C431885E2B4E6</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ARCHS</key>
@@ -942,7 +943,6 @@ fi
 				<string>19F6C53C18E425A9006C2FD1</string>
 				<string>19F6C53D18E425A9006C2FD1</string>
 				<string>19F6C53F18E426AC006C2FD1</string>
-				<string>19F6C54018E426AC006C2FD1</string>
 				<string>1992E49418F0598F00440DF9</string>
 			</array>
 			<key>isa</key>
@@ -1030,26 +1030,6 @@ fi
 			<string>STWService.h</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>19F6C54018E426AC006C2FD1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>STWService.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>19F6C54118E426AC006C2FD1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>19F6C54018E426AC006C2FD1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>1BC21D048C8445BCBEEA9339</key>
 		<dict>

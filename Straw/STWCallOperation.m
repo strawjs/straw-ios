@@ -18,7 +18,7 @@
 
 - (void)main
 {
-    STWService *service = [self.repository getService:self.serviceCall.service];
+    id <STWService> service = [self.repository getService:self.serviceCall.service];
 
     if (service) {
         [self callService:service];
@@ -27,7 +27,7 @@
     }
 }
 
-- (void)callService:(STWService *)service
+- (void)callService:(id <STWService>)service
 {
     STWServiceCall *call = self.serviceCall;
 

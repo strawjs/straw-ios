@@ -5,7 +5,7 @@
 
 @property (nonatomic, retain) NSMutableDictionary *services;
 
-- (void)registerService:(STWService *)service forKey:(NSString *)serviceName;
-- (STWService *)getService:(NSString *)serviceName;
+- (void)registerService:(id <STWService>)service forKey:(NSString *)serviceName;
+- (id <STWService>)getService:(NSString *)serviceName;
 
 @end

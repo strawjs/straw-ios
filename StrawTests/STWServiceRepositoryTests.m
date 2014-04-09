@@ -1,4 +1,8 @@
 #import <XCTest/XCTest.h>
+#define HC_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
+#define MOCKITO_SHORTHAND
+#import <OCMockito/OCMockito.h>
 #import "STWServiceRepository.h"
 
 @interface STWServiceRepositoryTests : XCTestCase
@@ -20,7 +24,7 @@
 {
     STWServiceRepository *repository = [[STWServiceRepository alloc] init];
 
-    STWService *service = [[STWService alloc] init];
+    id <STWService> service = mockProtocol(@protocol(STWService));
 
     [repository registerService:service forKey:@"abc"];
 
