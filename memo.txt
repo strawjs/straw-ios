@@ -1,4 +1,9 @@
 
+あなたといたら いつまでも
+心の波が 揺れ動く
+歴史に残る 歌詠みに
+なれる気にすら なれるほど
+#shichigo
 
 
 plugin -> service
@@ -99,6 +104,31 @@ straw-ios-http-service.js
 @end
 
 
+- (void)callService:(id <STWService>)service withContext(id <STWServiceCallContext>)context
+{
+    STWServiceCall *call = context.serviceCall;
+
+    // Service Method must have the form of
+    // `- (void)methodName:(NSDcitionary *)params withCall:(id <STWServiceCallContext>)`
+    NSString *methodName = [NSString stringWithFormat:@"%@:withContext:", call.method];
+
+    // create the selector for Service Method
+    SEL selector = NSSelectorFromString(methodName);
+
+    if ([service respondsToSelector:selector]) {
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+
+        // invoke Service Method
+        [service performSelector:selector withObject:call.params withObject:context];
+
+#pragma clang diagnostic pop
+
+    } else {
+        // TODO: log error
+    }
+}
 
 A service can be either stateful or stateless.
 That's why the naming of `Straw Service Method`.
@@ -120,7 +150,23 @@ The Domain Services should never touch the Application layer.
 
 Do people really want stateful services?
 
-How about to use Domain Events?
+How about to use Domain Events? - Bad idea
+
+----
+
+TODO:
+- define interfaces
+- tests
+  - mock and stub
+- log
+  - log class
+  - support log levels
+    - verbose
+    - debug
+    - info
+    - warn
+    - error
+- .podspec
 
 
 [END]
