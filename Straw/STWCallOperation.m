@@ -2,14 +2,15 @@
 
 @implementation STWCallOperation
 
-- (id)initWithCall:(STWServiceCall *)call withServiceRepository:(STWServiceRepository *)repository
+- (id)initWithCall:(STWServiceCall *)call withServiceRepository:(STWServiceRepository *)repository withWebView:(UIWebView *)webView
 {
     self = [super init];
 
     if (self) {
-        // initialize call and service repository
+        // initialize properties
         self.serviceCall = call;
         self.repository = repository;
+        self.webView = webView;
     }
 
     return self;
