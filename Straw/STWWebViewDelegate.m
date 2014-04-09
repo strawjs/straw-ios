@@ -2,6 +2,16 @@
 
 @implementation STWWebViewDelegate
 
+- (id)init
+{
+    self = [super init];
+
+    if (self) {
+        self.repository = [[STWServiceRepository alloc] init];
+    }
+
+    return self;
+}
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
@@ -17,7 +27,7 @@
 
         STWServiceCall *serviceCall = [STWServiceCallFactory createFromCallRequestJSON:[requestJSON dataUsingEncoding:NSUTF8StringEncoding]];
 
-        STWServiceRepository *repository = [[STWServiceRepository alloc] init];
+        STWServiceRepository *repository = self.repository;
 
         STWCallOperation *operation = [[STWCallOperation alloc] initWithCall:serviceCall withServiceRepository:repository];
 

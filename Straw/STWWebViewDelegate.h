@@ -10,4 +10,9 @@
  */
 @interface STWWebViewDelegate : NSObject <UIWebViewDelegate>
 
+/**
+ The repository of Straw Services which are active on the webView.
+ */
+@property (nonatomic, retain) STWServiceRepository *repository;
+
 @end
