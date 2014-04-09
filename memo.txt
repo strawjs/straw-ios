@@ -130,6 +130,13 @@ straw-ios-http-service.js
     }
 }
 
+@interface STWNativeWebViewBridge : NSObject
+
++ (NSString *)createNativeToBrowserMessage:(NSDictionary *)params;
++ (NSString *)retrieveRequestObjectForCallId:(NSString *)callId;
+
+@end
+
 A service can be either stateful or stateless.
 That's why the naming of `Straw Service Method`.
 Reusable services should be most likely stateless.
