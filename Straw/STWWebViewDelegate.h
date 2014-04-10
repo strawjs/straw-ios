@@ -16,4 +16,9 @@
  */
 @property (nonatomic, retain) STWServiceRepository *repository;
 
+/**
+ The operation queue to manage Straw Service Method call executions.
+ */
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+
 @end

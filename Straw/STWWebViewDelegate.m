@@ -8,6 +8,7 @@
 
     if (self) {
         self.repository = [[STWServiceRepository alloc] init];
+        self.operationQueue = [[NSOperationQueue alloc] init];
     }
 
     return self;
@@ -21,9 +22,19 @@
 
         STWServiceCall *serviceCall = [STWNativeBridge createServiceCallFromUrl:url withWebView:webView];
 
-        STWCallOperation *operation = [[STWCallOperation alloc] initWithCall:serviceCall withServiceRepository:self.repository withWebView:webView];
+        if (serviceCall) {
 
-        [operation main];
+            // create operation object
+            STWCallOperation *operation = [[STWCallOperation alloc] initWithCall:serviceCall withServiceRepository:self.repository withWebView:webView];
+
+            // post to background queue
+            [self.operationQueue addOperation:operation];
+
+        } else {
+
+            // log - warn - broken straw url - Anything not performed
+
+        }
 
         return NO;
 
