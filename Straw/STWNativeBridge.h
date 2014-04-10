@@ -3,6 +3,9 @@
 #import "STWServiceCall.h"
 #import "STWServiceCallFactory.h"
 
+/**
+ STWNativeBridge is the collection of methods which interacts with the webView with Framework's specific manner.
+ */
 @interface STWNativeBridge : NSObject
 
 /**
@@ -21,5 +24,13 @@
  @return if url is of straw custom scheme or not
  */
 + (BOOL)isStrawURL:(NSURL *)url;
+
+/**
+ Send Data back to Browser
+ 
+ @param data data to send
+ @param webView the webView to send to
+ */
++ (void)sendData:(NSDictionary *)data toWebView:(UIWebView *)webView;
 
 @end

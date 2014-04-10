@@ -4,6 +4,7 @@
 #import "STWService.h"
 #import "STWServiceRepository.h"
 #import "STWServiceCallContext.h"
+#import "STWNativeBridge.h"
 
 /**
  STWCallOperation class performs Straw Service Method Call procedure.

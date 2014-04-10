@@ -29,11 +29,9 @@
 
 - (void)callService:(id <STWService>)service
 {
-    STWServiceCall *call = self.serviceCall;
-
     // Service Method must have the form of
     // `- (void)methodName:(NSDcitionary *)params withCall:(id <STWServiceCallContext>)`
-    NSString *methodName = [NSString stringWithFormat:@"%@:withContext:", call.method];
+    NSString *methodName = [NSString stringWithFormat:@"%@:withContext:", self.serviceCall.method];
 
     // create the selector for Service Method
     SEL selector = NSSelectorFromString(methodName);
@@ -44,7 +42,7 @@
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
         // invoke Service Method
-        [service performSelector:selector withObject:call.params withObject:self];
+        [service performSelector:selector withObject:self.serviceCall.params withObject:self];
 
 #pragma clang diagnostic pop
 
@@ -55,6 +53,13 @@
 
 - (void)sendBackToBrowser:(NSDictionary *)object
 {
+    NSDictionary *data = @{
+        @"callId": self.serviceCall.callId,
+        @"params": object,
+        @"keepAlive": @NO,
+    };
+
+    [STWNativeBridge sendData:data toWebView:self.webView];
 }
 
 - (void)succeed
