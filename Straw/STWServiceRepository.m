@@ -13,9 +13,9 @@
     return self;
 }
 
-- (void)registerService:(id <STWService>)service forKey:(NSString *)serviceName
+- (void)registerService:(id <STWService>)service
 {
-    self.services[serviceName] = service;
+    self.services[[service getName]] = service;
 }
 
 - (id <STWService>)getService:(NSString *)serviceName

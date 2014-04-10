@@ -24,9 +24,15 @@
 {
     STWServiceRepository *repository = [[STWServiceRepository alloc] init];
 
+    // create service mock
     id <STWService> service = mockProtocol(@protocol(STWService));
 
-    [repository registerService:service forKey:@"abc"];
+    // stub -getName:
+    [given([service getName]) willReturn:@"abc"];
+
+    // register to repository
+    [repository registerService:service];
+
 
     XCTAssertEqualObjects(service, [repository getService:@"abc"]);
 

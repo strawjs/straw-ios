@@ -2,4 +2,6 @@
 
 @protocol STWService <NSObject>
 
+- (NSString *)getName;
+
 @end
