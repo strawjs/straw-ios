@@ -4,6 +4,7 @@
 #import "STWServiceCallFactory.h"
 #import "STWServiceRepository.h"
 #import "STWCallOperation.h"
+#import "STWNativeBridge.h"
 
 /**
  STWWebViewDelegate is the delegate class for a webView which you want to use the Straw Framework with.

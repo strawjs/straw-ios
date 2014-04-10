@@ -17,19 +17,11 @@
 {
     NSURL *url = [request URL];
 
-    if ([@"straw" isEqual:[url scheme]]) {
+    if ([STWNativeBridge isStrawURL:url]) {
 
-        NSString *callId = [url host];
+        STWServiceCall *serviceCall = [STWNativeBridge createServiceCallFromUrl:url withWebView:webView];
 
-        NSString *getRequest = [NSString stringWithFormat:@"window.straw.getRequest(%@)", callId];
-
-        NSString *requestJSON = [webView stringByEvaluatingJavaScriptFromString:getRequest];
-
-        STWServiceCall *serviceCall = [STWServiceCallFactory createFromCallRequestJSON:[requestJSON dataUsingEncoding:NSUTF8StringEncoding]];
-
-        STWServiceRepository *repository = self.repository;
-
-        STWCallOperation *operation = [[STWCallOperation alloc] initWithCall:serviceCall withServiceRepository:repository withWebView:webView];
+        STWCallOperation *operation = [[STWCallOperation alloc] initWithCall:serviceCall withServiceRepository:self.repository withWebView:webView];
 
         [operation main];
 
