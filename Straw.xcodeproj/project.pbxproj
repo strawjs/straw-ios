@@ -11,6 +11,7 @@
 		192FC55018ED8CB6009F326C /* STWServiceRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */; };
 		1992E49218EE712E00440DF9 /* STWServiceCallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49118EE712E00440DF9 /* STWServiceCallTests.m */; };
 		1992E49818F64F0C00440DF9 /* STWNativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49718F64F0C00440DF9 /* STWNativeBridge.m */; };
+		1992E49B18F7775A00440DF9 /* STWLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49A18F7775900440DF9 /* STWLogger.m */; };
 		19F6C4FA18DDD61A006C2FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F918DDD61A006C2FD1 /* Foundation.framework */; };
 		19F6C50818DDD61A006C2FD1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C50718DDD61A006C2FD1 /* XCTest.framework */; };
 		19F6C50918DDD61A006C2FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F918DDD61A006C2FD1 /* Foundation.framework */; };
@@ -55,6 +56,8 @@
 		1992E49518F64E0500440DF9 /* STW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STW.h; sourceTree = "<group>"; };
 		1992E49618F64F0C00440DF9 /* STWNativeBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWNativeBridge.h; sourceTree = "<group>"; };
 		1992E49718F64F0C00440DF9 /* STWNativeBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWNativeBridge.m; sourceTree = "<group>"; };
+		1992E49918F7775900440DF9 /* STWLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWLogger.h; sourceTree = "<group>"; };
+		1992E49A18F7775900440DF9 /* STWLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWLogger.m; sourceTree = "<group>"; };
 		19F6C4F618DDD61A006C2FD1 /* libStraw.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStraw.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F6C4F918DDD61A006C2FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		19F6C50618DDD61A006C2FD1 /* StrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +153,8 @@
 				1992E49518F64E0500440DF9 /* STW.h */,
 				1992E49618F64F0C00440DF9 /* STWNativeBridge.h */,
 				1992E49718F64F0C00440DF9 /* STWNativeBridge.m */,
+				1992E49918F7775900440DF9 /* STWLogger.h */,
+				1992E49A18F7775900440DF9 /* STWLogger.m */,
 			);
 			path = Straw;
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				19F6C53E18E425A9006C2FD1 /* STWServiceRepository.m in Sources */,
 				19F6C53318E291DE006C2FD1 /* STWServiceCall.m in Sources */,
 				192FC54D18E9C899009F326C /* STWCallOperation.m in Sources */,
+				1992E49B18F7775A00440DF9 /* STWLogger.m in Sources */,
 				19F6C53618E29255006C2FD1 /* STWServiceCallFactory.m in Sources */,
 				1992E49818F64F0C00440DF9 /* STWNativeBridge.m in Sources */,
 				19F6C53A18E292A9006C2FD1 /* STWWebViewDelegate.m in Sources */,
