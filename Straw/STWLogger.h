@@ -1,12 +1,24 @@
 #import <Foundation/Foundation.h>
 
-#define STWLogVerbose(msg, ...) [[STWLogger getInstance] verbose:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
-#define STWLogDebug(msg, ...) [[STWLogger getInstance] debug:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
-#define STWLogInfo(msg, ...) [[STWLogger getInstance] info:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
-#define STWLogWarn(msg, ...) [[STWLogger getInstance] warn:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
-#define STWLogError(msg, ...) [[STWLogger getInstance] error:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
-#define STWLogFatal(msg, ...) [[STWLogger getInstance] fatal:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+#ifdef DEBUG
 
+    #define STWLogVerbose(msg, ...) [[STWLogger getInstance] verbose:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+    #define STWLogDebug(msg, ...) [[STWLogger getInstance] debug:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+    #define STWLogInfo(msg, ...) [[STWLogger getInstance] info:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+    #define STWLogWarn(msg, ...) [[STWLogger getInstance] warn:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+    #define STWLogError(msg, ...) [[STWLogger getInstance] error:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+    #define STWLogFatal(msg, ...) [[STWLogger getInstance] fatal:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+
+#else
+
+    #define STWLogVerbose(msg, ...) do {} while(0)
+    #define STWLogDebug(msg, ...) do {} while(0)
+    #define STWLogInfo(msg, ...) do {} while(0)
+    #define STWLogWarn(msg, ...) do {} while(0)
+    #define STWLogError(msg, ...) do {} while(0)
+    #define STWLogFatal(msg, ...) do {} while(0)
+
+#endif
 /**
  STWLogger is logger classs for Straw Framework.
  */
