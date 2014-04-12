@@ -30,7 +30,7 @@
  - params (object(dictionary))
  - callId (number)
 
- @param object Call Request JSON from Browser.
+ @param json Call Request JSON from Browser.
  */
 + (STWServiceCall *)createFromCallRequestJSON:(NSData *)json;
 
