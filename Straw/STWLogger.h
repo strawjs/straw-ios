@@ -19,6 +19,8 @@
     #define STWLogFatal(msg, ...) do {} while(0)
 
 #endif
+
+
 /**
  STWLogger is logger classs for Straw Framework.
  */
