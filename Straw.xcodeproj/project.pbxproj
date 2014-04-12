@@ -12,6 +12,8 @@
 		1992E49218EE712E00440DF9 /* STWServiceCallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49118EE712E00440DF9 /* STWServiceCallTests.m */; };
 		1992E49818F64F0C00440DF9 /* STWNativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49718F64F0C00440DF9 /* STWNativeBridge.m */; };
 		1992E49B18F7775A00440DF9 /* STWLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49A18F7775900440DF9 /* STWLogger.m */; };
+		1992E49F18F9845600440DF9 /* STWLoggerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49E18F9845600440DF9 /* STWLoggerTests.m */; };
+		1992E4A418F985D500440DF9 /* STWTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E4A318F985D500440DF9 /* STWTestCase.m */; };
 		19F6C4FA18DDD61A006C2FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F918DDD61A006C2FD1 /* Foundation.framework */; };
 		19F6C50818DDD61A006C2FD1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C50718DDD61A006C2FD1 /* XCTest.framework */; };
 		19F6C50918DDD61A006C2FD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6C4F918DDD61A006C2FD1 /* Foundation.framework */; };
@@ -58,6 +60,9 @@
 		1992E49718F64F0C00440DF9 /* STWNativeBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWNativeBridge.m; sourceTree = "<group>"; };
 		1992E49918F7775900440DF9 /* STWLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWLogger.h; sourceTree = "<group>"; };
 		1992E49A18F7775900440DF9 /* STWLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWLogger.m; sourceTree = "<group>"; };
+		1992E49E18F9845600440DF9 /* STWLoggerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWLoggerTests.m; sourceTree = "<group>"; };
+		1992E4A218F985D500440DF9 /* STWTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWTestCase.h; sourceTree = "<group>"; };
+		1992E4A318F985D500440DF9 /* STWTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWTestCase.m; sourceTree = "<group>"; };
 		19F6C4F618DDD61A006C2FD1 /* libStraw.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libStraw.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F6C4F918DDD61A006C2FD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		19F6C50618DDD61A006C2FD1 /* StrawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StrawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +125,14 @@
 			name = Infrastructure;
 			sourceTree = "<group>";
 		};
+		1992E49D18F9843200440DF9 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				1992E49E18F9845600440DF9 /* STWLoggerTests.m */,
+			);
+			name = Infrastructure;
+			sourceTree = "<group>";
+		};
 		19F6C4ED18DDD61A006C2FD1 = {
 			isa = PBXGroup;
 			children = (
@@ -170,9 +183,12 @@
 		19F6C50F18DDD61A006C2FD1 /* StrawTests */ = {
 			isa = PBXGroup;
 			children = (
+				1992E49D18F9843200440DF9 /* Infrastructure */,
 				192FC54E18ED8C67009F326C /* Domain */,
 				19F6C51018DDD61A006C2FD1 /* Supporting Files */,
 				19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */,
+				1992E4A218F985D500440DF9 /* STWTestCase.h */,
+				1992E4A318F985D500440DF9 /* STWTestCase.m */,
 			);
 			path = StrawTests;
 			sourceTree = "<group>";
@@ -329,7 +345,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1992E49F18F9845600440DF9 /* STWLoggerTests.m in Sources */,
 				192FC55018ED8CB6009F326C /* STWServiceRepositoryTests.m in Sources */,
+				1992E4A418F985D500440DF9 /* STWTestCase.m in Sources */,
 				19F6C52118E1B04B006C2FD1 /* StrawTestObserver.m in Sources */,
 				1992E49218EE712E00440DF9 /* STWServiceCallTests.m in Sources */,
 			);
