@@ -8,6 +8,8 @@
 #define kSTWLoggerLevelError @5
 #define kSTWLoggerLevelFatal @6
 
+#define kSTWLoggerLevelDefault kSTWLoggerLevelWarn
+
 
 static STWLogger *instance = nil;
 
@@ -18,6 +20,8 @@ static STWLogger *instance = nil;
 {
     if (!instance) {
         instance = [[self alloc] init];
+
+        instance.level = kSTWLoggerLevelDefault;
     }
 
     return instance;
