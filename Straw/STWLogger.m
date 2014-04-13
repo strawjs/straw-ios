@@ -12,6 +12,8 @@ static STWLogger *instance = nil;
         instance = [[self alloc] init];
 
         instance.level = kSTWLoggerLevelDefault;
+        instance.delegate = instance;
+
     }
 
     return instance;
@@ -30,10 +32,16 @@ static STWLogger *instance = nil;
 }
 
 
+- (void)log:(NSString *)message
+{
+    NSLog(@"%@", message);
+}
+
+
 - (void)log:(NSString *)message withLevel:(NSNumber *)level
 {
     if (level >= self.level) {
-        NSLog(@"%@", message);
+        [self.delegate log:message];
     }
 }
 

@@ -33,10 +33,28 @@
 
 
 /**
+ STWLoggerDelegate is the low level logging interface.
+
+ This protocol exists for testability increasement.
+ */
+@protocol STWLoggerDelegate <NSObject>
+
+/**
+ Just log a message.
+
+ @param message the message to log
+ */
+- (void)log:(NSString *)message;
+
+@end
+
+
+/**
  STWLogger is logger classs for Straw Framework.
  */
-@interface STWLogger : NSObject
+@interface STWLogger : NSObject <STWLoggerDelegate>
 
+@property (nonatomic, retain) id <STWLoggerDelegate> delegate;
 @property (nonatomic, retain) NSNumber *level;
 
 /**
