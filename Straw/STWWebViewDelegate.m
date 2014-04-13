@@ -14,33 +14,56 @@
     return self;
 }
 
+
+/** THE BRIDGE */
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSURL *url = [request URL];
 
-    if ([STWNativeBridge isStrawURL:url]) {
 
-        STWServiceCall *serviceCall = [STWNativeBridge createServiceCallFromUrl:url withWebView:webView];
-
-        if (serviceCall) {
-
-            // create operation object
-            STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:serviceCall withServiceRepository:self.repository withWebView:webView];
-
-            // post to background queue
-            [self.operationQueue addOperation:operation];
-
-        } else {
-
-            // log - warn - broken straw url - Anything not performed
-
-        }
-
-        return NO;
-
+    // If the url doesn't have straw:// scheme, then it is not relevant to Straw
+    // and normal url request.
+    if (![STWNativeBridge isStrawURL:url]) {
+        return YES;
     }
 
-    return YES;
+
+    STWServiceCall *serviceCall = [STWNativeBridge createServiceCallFromUrl:url
+                                                                withWebView:webView];
+
+    // If the service call object is nil, then the url is broken.
+    if (!serviceCall) {
+        STWLogWarn(@"Straw url is broken: '%@'", [url absoluteString]);
+
+        return NO;
+    }
+
+
+    // retrieve service instance from repository
+    id<STWService> service = [self.repository getService:serviceCall.service];
+
+
+    // If the service is nil, then the service of the name doesn't exists
+    // and cannot perform anything.
+    if (!service) {
+        STWLogWarn(@"Straw service not found: service='%@'", serviceCall.service);
+
+        return NO;
+    }
+
+
+    // create operation object
+    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:serviceCall
+                                                                           withService:service
+                                                                           withWebView:webView];
+
+    // post to background queue
+    [self.operationQueue addOperation:operation];
+
+
+
+    return NO;
+
 }
 
 
@@ -48,9 +71,11 @@
 {
 }
 
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
 }
+
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {

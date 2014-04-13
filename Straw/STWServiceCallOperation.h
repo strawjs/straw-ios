@@ -13,15 +13,19 @@
  */
 @interface STWServiceCallOperation : NSOperation <STWServiceCallContext>
 
-/** Service Call which the class performs with */
+
+/** Service Call which the instance performs with */
 @property (nonatomic, retain) STWServiceCall *serviceCall;
 
-/** Service Respository */
-@property (nonatomic, assign) STWServiceRepository *repository;
 
-/** the webView which the class performs with */
+/** Service which the instance performs with */
+@property (nonatomic, assign) id<STWService> service;
+
+
+/** the webView which the instance performs with */
 @property (nonatomic, assign) UIWebView *webView;
 
-- (id)initWithCall:(STWServiceCall *)call withServiceRepository:(STWServiceRepository *)repository withWebView:(UIWebView *)webView;
+
+- (id)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withWebView:(UIWebView *)webView;
 
 @end

@@ -2,7 +2,7 @@
 
 @implementation STWServiceCallOperation
 
-- (id)initWithCall:(STWServiceCall *)call withServiceRepository:(STWServiceRepository *)repository withWebView:(UIWebView *)webView
+- (id)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withWebView:(UIWebView *)webView
 {
     self = [super init];
 
@@ -10,7 +10,7 @@
 
         // initialize properties
         self.serviceCall = call;
-        self.repository = repository;
+        self.service = service;
         self.webView = webView;
 
     }
@@ -20,16 +20,14 @@
 
 - (void)main
 {
-    id <STWService> service = [self.repository getService:self.serviceCall.service];
-
-    if (service) {
-        [self callService:service];
+    if (self.service) {
+        [self callService];
     } else {
         // TODO: log error
     }
 }
 
-- (void)callService:(id <STWService>)service
+- (void)callService
 {
     // Service Method must have the form of
     // `- (void)methodName:(NSDcitionary *)params withCall:(id <STWServiceCallContext>)`
@@ -38,13 +36,13 @@
     // create the selector for Service Method
     SEL selector = NSSelectorFromString(methodName);
 
-    if ([service respondsToSelector:selector]) {
+    if ([self.service respondsToSelector:selector]) {
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
         // invoke Service Method
-        [service performSelector:selector withObject:self.serviceCall.params withObject:self];
+        [self.service performSelector:selector withObject:self.serviceCall.params withObject:self];
 
 #pragma clang diagnostic pop
 
