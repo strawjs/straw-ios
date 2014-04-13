@@ -246,4 +246,10 @@
 }
 
 
+- (void)testDefaultLog
+{
+    [[STWLogger getInstance].delegate log:@"test"];
+}
+
+
 @end
