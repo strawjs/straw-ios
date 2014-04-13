@@ -110,9 +110,16 @@ static STWLogger *instance = nil;
     [self getInstance].level = kSTWLoggerLevelError;
 }
 
+
 + (void)setLevelFatal
 {
     [self getInstance].level = kSTWLoggerLevelFatal;
+}
+
+
++ (void)setLevelNone
+{
+    [self getInstance].level = kSTWLoggerLevelNone;
 }
 
 

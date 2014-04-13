@@ -7,6 +7,7 @@
 #define kSTWLoggerLevelWarn 4
 #define kSTWLoggerLevelError 5
 #define kSTWLoggerLevelFatal 6
+#define kSTWLoggerLevelNone 7
 
 #define kSTWLoggerLevelDefault kSTWLoggerLevelWarn
 
@@ -163,6 +164,12 @@
  Set log level Fatal.
  */
 + (void)setLevelFatal;
+
+
+/**
+ Set log level None.
+ */
++ (void)setLevelNone;
 
 
 @end
