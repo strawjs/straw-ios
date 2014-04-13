@@ -24,6 +24,7 @@
 		19F6C53618E29255006C2FD1 /* STWServiceCallFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53518E29255006C2FD1 /* STWServiceCallFactory.m */; };
 		19F6C53A18E292A9006C2FD1 /* STWWebViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53918E292A9006C2FD1 /* STWWebViewDelegate.m */; };
 		19F6C53E18E425A9006C2FD1 /* STWServiceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53D18E425A9006C2FD1 /* STWServiceRepository.m */; };
+		19F6D07218FAC8C9008C81B6 /* STWServiceCallFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6D07118FAC8C9008C81B6 /* STWServiceCallFactoryTests.m */; };
 		4BAB32CCAC024C21A4CACDB4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC21D048C8445BCBEEA9339 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		19F6C53C18E425A9006C2FD1 /* STWServiceRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWServiceRepository.h; sourceTree = "<group>"; };
 		19F6C53D18E425A9006C2FD1 /* STWServiceRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceRepository.m; sourceTree = "<group>"; };
 		19F6C53F18E426AC006C2FD1 /* STWService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWService.h; sourceTree = "<group>"; };
+		19F6D07118FAC8C9008C81B6 /* STWServiceCallFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallFactoryTests.m; sourceTree = "<group>"; };
 		1BC21D048C8445BCBEEA9339 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E549ADFCA10C431885E2B4E6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +185,7 @@
 		19F6C50F18DDD61A006C2FD1 /* StrawTests */ = {
 			isa = PBXGroup;
 			children = (
+				19F6D07018FAC89B008C81B6 /* Domain */,
 				1992E49D18F9843200440DF9 /* Infrastructure */,
 				192FC54E18ED8C67009F326C /* Domain */,
 				19F6C51018DDD61A006C2FD1 /* Supporting Files */,
@@ -212,6 +215,14 @@
 				19F6C53D18E425A9006C2FD1 /* STWServiceRepository.m */,
 				19F6C53F18E426AC006C2FD1 /* STWService.h */,
 				1992E49418F0598F00440DF9 /* STWServiceCallContext.h */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		19F6D07018FAC89B008C81B6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				19F6D07118FAC8C9008C81B6 /* STWServiceCallFactoryTests.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -348,6 +359,7 @@
 				1992E49F18F9845600440DF9 /* STWLoggerTests.m in Sources */,
 				192FC55018ED8CB6009F326C /* STWServiceRepositoryTests.m in Sources */,
 				1992E4A418F985D500440DF9 /* STWTestCase.m in Sources */,
+				19F6D07218FAC8C9008C81B6 /* STWServiceCallFactoryTests.m in Sources */,
 				19F6C52118E1B04B006C2FD1 /* StrawTestObserver.m in Sources */,
 				1992E49218EE712E00440DF9 /* STWServiceCallTests.m in Sources */,
 			);

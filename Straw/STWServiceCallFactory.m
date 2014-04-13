@@ -14,6 +14,7 @@
     return call;
 }
 
+
 + (STWServiceCall *)createFromCallRequestJSON:(NSData *)json
 {
     return [self createFromCallRequestObject:[NSJSONSerialization JSONObjectWithData:json options:0 error:nil]];

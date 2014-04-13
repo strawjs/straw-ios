@@ -20,8 +20,9 @@
  */
 + (STWServiceCall *)createFromCallRequestObject:(NSDictionary *)object;
 
+
 /**
- Creates STWCall object from Straw Call Request JSON from Browser.
+ Creates STWServiceCall object from Straw Call Request JSON from Browser.
 
  Call Request JSON should have following fields
 
