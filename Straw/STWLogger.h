@@ -1,5 +1,16 @@
 #import <Foundation/Foundation.h>
 
+
+#define kSTWLoggerLevelVerbose @1
+#define kSTWLoggerLevelDebug @2
+#define kSTWLoggerLevelInfo @3
+#define kSTWLoggerLevelWarn @4
+#define kSTWLoggerLevelError @5
+#define kSTWLoggerLevelFatal @6
+
+#define kSTWLoggerLevelDefault kSTWLoggerLevelWarn
+
+
 #ifdef DEBUG
 
     #define STWLogVerbose(msg, ...) [[STWLogger getInstance] verbose:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
@@ -34,6 +45,12 @@
  @return the instance of the class
  */
 + (STWLogger *)getInstance;
+
+
+/**
+ Reset the instance of the class.
+ */
++ (void)resetInstance;
 
 
 /**
@@ -97,37 +114,37 @@
 /**
  Set log level verbose.
  */
-- (void)setLevelVerbose;
++ (void)setLevelVerbose;
 
 
 /**
  Set log level Debug.
  */
-- (void)setLevelDebug;
++ (void)setLevelDebug;
 
 
 /**
  Set log level Info.
  */
-- (void)setLevelInfo;
++ (void)setLevelInfo;
 
 
 /**
  Set log level Warn.
  */
-- (void)setLevelWarn;
++ (void)setLevelWarn;
 
 
 /**
  Set log level Error.
  */
-- (void)setLevelError;
++ (void)setLevelError;
 
 
 /**
  Set log level Fatal.
  */
-- (void)setLevelFatal;
++ (void)setLevelFatal;
 
 
 @end

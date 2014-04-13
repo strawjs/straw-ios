@@ -1,16 +1,6 @@
 #import "STWLogger.h"
 
 
-#define kSTWLoggerLevelVerbose @1
-#define kSTWLoggerLevelDebug @2
-#define kSTWLoggerLevelInfo @3
-#define kSTWLoggerLevelWarn @4
-#define kSTWLoggerLevelError @5
-#define kSTWLoggerLevelFatal @6
-
-#define kSTWLoggerLevelDefault kSTWLoggerLevelWarn
-
-
 static STWLogger *instance = nil;
 
 
@@ -31,6 +21,12 @@ static STWLogger *instance = nil;
 + (void)setInstance:(STWLogger *)logger
 {
     instance = logger;
+}
+
+
++ (void)resetInstance
+{
+    instance = nil;
 }
 
 
@@ -78,37 +74,37 @@ static STWLogger *instance = nil;
 }
 
 
-- (void)setLevelVerbose
++ (void)setLevelVerbose
 {
-    self.level = kSTWLoggerLevelVerbose;
+    [self getInstance].level = kSTWLoggerLevelVerbose;
 }
 
 
-- (void)setLevelDebug
++ (void)setLevelDebug
 {
-    self.level = kSTWLoggerLevelDebug;
+    [self getInstance].level = kSTWLoggerLevelDebug;
 }
 
-- (void)setLevelInfo
++ (void)setLevelInfo
 {
-    self.level = kSTWLoggerLevelInfo;
-}
-
-
-- (void)setLevelWarn
-{
-    self.level = kSTWLoggerLevelWarn;
+    [self getInstance].level = kSTWLoggerLevelInfo;
 }
 
 
-- (void)setLevelError
++ (void)setLevelWarn
 {
-    self.level = kSTWLoggerLevelError;
+    [self getInstance].level = kSTWLoggerLevelWarn;
 }
 
-- (void)setLevelFatal
+
++ (void)setLevelError
 {
-    self.level = kSTWLoggerLevelFatal;
+    [self getInstance].level = kSTWLoggerLevelError;
+}
+
++ (void)setLevelFatal
+{
+    [self getInstance].level = kSTWLoggerLevelFatal;
 }
 
 
