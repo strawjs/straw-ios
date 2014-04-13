@@ -19,10 +19,12 @@
     return nil;
 }
 
+
 + (BOOL)isStrawURL:(NSURL *)url
 {
     return [@"straw" isEqual:[url scheme]];
 }
+
 
 + (void)sendData:(NSDictionary *)object toWebView:(UIWebView *)webView
 {

@@ -7,10 +7,12 @@
     self = [super init];
 
     if (self) {
+
         // initialize properties
         self.serviceCall = call;
         self.repository = repository;
         self.webView = webView;
+
     }
 
     return self;

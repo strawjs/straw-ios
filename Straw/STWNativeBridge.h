@@ -17,6 +17,7 @@
  */
 + (STWServiceCall *)createServiceCallFromUrl:(NSURL *)url withWebView:(UIWebView *)webView;
 
+
 /**
  Check if the URL is straw custom scheme or not.
  
@@ -24,6 +25,7 @@
  @return if url is of straw custom scheme or not
  */
 + (BOOL)isStrawURL:(NSURL *)url;
+
 
 /**
  Send Data back to Browser
