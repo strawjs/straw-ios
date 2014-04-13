@@ -9,13 +9,13 @@
 
 - (void)setUp
 {
-    [STWLogger resetInstance];
+    [STWLogger resetSharedLogger];
 }
 
 
 - (void)testGetInstance
 {
-    XCTAssertNotNil([STWLogger getInstance], @"getInstance returns not nil");
+    XCTAssertNotNil([STWLogger sharedLogger], @"getInstance returns not nil");
 }
 
 
@@ -23,7 +23,7 @@
 {
     STWLogger *logger = mock([STWLogger class]);
 
-    [STWLogger setInstance:logger];
+    [STWLogger setSharedLogger:logger];
 
     STWLogVerbose(@"abc");
     STWLogDebug(@"def");
@@ -46,7 +46,7 @@
 {
     STWLogger *logger = mock([STWLogger class]);
 
-    [STWLogger setInstance:logger];
+    [STWLogger setSharedLogger:logger];
 
     STWLogVerbose(@"%@,,", @"abc");
     STWLogDebug(@"%@,,", @"def");
@@ -67,31 +67,31 @@
 
 - (void)testSetLevel
 {
-    XCTAssertEqual(kSTWLoggerLevelWarn, [STWLogger getInstance].level, @"Default log level is warn.");
+    XCTAssertEqual(kSTWLoggerLevelWarn, [STWLogger sharedLogger].level, @"Default log level is warn.");
 
     [STWLogger setLevelVerbose];
 
-    XCTAssertEqual(kSTWLoggerLevelVerbose, [STWLogger getInstance].level, @"Log level set to verbose.");
+    XCTAssertEqual(kSTWLoggerLevelVerbose, [STWLogger sharedLogger].level, @"Log level set to verbose.");
 
     [STWLogger setLevelDebug];
 
-    XCTAssertEqual(kSTWLoggerLevelDebug, [STWLogger getInstance].level, @"Log level set to debug.");
+    XCTAssertEqual(kSTWLoggerLevelDebug, [STWLogger sharedLogger].level, @"Log level set to debug.");
 
     [STWLogger setLevelInfo];
 
-    XCTAssertEqual(kSTWLoggerLevelInfo, [STWLogger getInstance].level, @"Log level set to info.");
+    XCTAssertEqual(kSTWLoggerLevelInfo, [STWLogger sharedLogger].level, @"Log level set to info.");
 
     [STWLogger setLevelWarn];
 
-    XCTAssertEqual(kSTWLoggerLevelWarn, [STWLogger getInstance].level, @"Log level set to warn.");
+    XCTAssertEqual(kSTWLoggerLevelWarn, [STWLogger sharedLogger].level, @"Log level set to warn.");
 
     [STWLogger setLevelError];
 
-    XCTAssertEqual(kSTWLoggerLevelError, [STWLogger getInstance].level, @"Log level set to error.");
+    XCTAssertEqual(kSTWLoggerLevelError, [STWLogger sharedLogger].level, @"Log level set to error.");
 
     [STWLogger setLevelFatal];
 
-    XCTAssertEqual(kSTWLoggerLevelFatal, [STWLogger getInstance].level, @"Log level set to fatal.");
+    XCTAssertEqual(kSTWLoggerLevelFatal, [STWLogger sharedLogger].level, @"Log level set to fatal.");
 
 }
 
@@ -100,16 +100,16 @@
 {
     id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
 
-    [STWLogger getInstance].delegate = delegate;
+    [STWLogger sharedLogger].delegate = delegate;
 
     [STWLogger setLevelVerbose];
 
-    [[STWLogger getInstance] verbose:@"verbose"];
-    [[STWLogger getInstance] debug:@"debug"];
-    [[STWLogger getInstance] info:@"info"];
-    [[STWLogger getInstance] warn:@"warn"];
-    [[STWLogger getInstance] error:@"error"];
-    [[STWLogger getInstance] fatal:@"fatal"];
+    [[STWLogger sharedLogger] verbose:@"verbose"];
+    [[STWLogger sharedLogger] debug:@"debug"];
+    [[STWLogger sharedLogger] info:@"info"];
+    [[STWLogger sharedLogger] warn:@"warn"];
+    [[STWLogger sharedLogger] error:@"error"];
+    [[STWLogger sharedLogger] fatal:@"fatal"];
 
     [verifyCount(delegate, times(1)) log:@"verbose"];
     [verifyCount(delegate, times(1)) log:@"debug"];
@@ -125,16 +125,16 @@
 {
     id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
 
-    [STWLogger getInstance].delegate = delegate;
+    [STWLogger sharedLogger].delegate = delegate;
 
     [STWLogger setLevelDebug];
 
-    [[STWLogger getInstance] verbose:@"verbose"];
-    [[STWLogger getInstance] debug:@"debug"];
-    [[STWLogger getInstance] info:@"info"];
-    [[STWLogger getInstance] warn:@"warn"];
-    [[STWLogger getInstance] error:@"error"];
-    [[STWLogger getInstance] fatal:@"fatal"];
+    [[STWLogger sharedLogger] verbose:@"verbose"];
+    [[STWLogger sharedLogger] debug:@"debug"];
+    [[STWLogger sharedLogger] info:@"info"];
+    [[STWLogger sharedLogger] warn:@"warn"];
+    [[STWLogger sharedLogger] error:@"error"];
+    [[STWLogger sharedLogger] fatal:@"fatal"];
 
     [verifyCount(delegate, never()) log:@"verbose"];
     [verifyCount(delegate, times(1)) log:@"debug"];
@@ -150,16 +150,16 @@
 {
     id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
 
-    [STWLogger getInstance].delegate = delegate;
+    [STWLogger sharedLogger].delegate = delegate;
 
     [STWLogger setLevelInfo];
 
-    [[STWLogger getInstance] verbose:@"verbose"];
-    [[STWLogger getInstance] debug:@"debug"];
-    [[STWLogger getInstance] info:@"info"];
-    [[STWLogger getInstance] warn:@"warn"];
-    [[STWLogger getInstance] error:@"error"];
-    [[STWLogger getInstance] fatal:@"fatal"];
+    [[STWLogger sharedLogger] verbose:@"verbose"];
+    [[STWLogger sharedLogger] debug:@"debug"];
+    [[STWLogger sharedLogger] info:@"info"];
+    [[STWLogger sharedLogger] warn:@"warn"];
+    [[STWLogger sharedLogger] error:@"error"];
+    [[STWLogger sharedLogger] fatal:@"fatal"];
 
     [verifyCount(delegate, never()) log:@"verbose"];
     [verifyCount(delegate, never()) log:@"debug"];
@@ -175,16 +175,16 @@
 {
     id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
 
-    [STWLogger getInstance].delegate = delegate;
+    [STWLogger sharedLogger].delegate = delegate;
 
     [STWLogger setLevelWarn];
 
-    [[STWLogger getInstance] verbose:@"verbose"];
-    [[STWLogger getInstance] debug:@"debug"];
-    [[STWLogger getInstance] info:@"info"];
-    [[STWLogger getInstance] warn:@"warn"];
-    [[STWLogger getInstance] error:@"error"];
-    [[STWLogger getInstance] fatal:@"fatal"];
+    [[STWLogger sharedLogger] verbose:@"verbose"];
+    [[STWLogger sharedLogger] debug:@"debug"];
+    [[STWLogger sharedLogger] info:@"info"];
+    [[STWLogger sharedLogger] warn:@"warn"];
+    [[STWLogger sharedLogger] error:@"error"];
+    [[STWLogger sharedLogger] fatal:@"fatal"];
 
     [verifyCount(delegate, never()) log:@"verbose"];
     [verifyCount(delegate, never()) log:@"debug"];
@@ -200,16 +200,16 @@
 {
     id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
 
-    [STWLogger getInstance].delegate = delegate;
+    [STWLogger sharedLogger].delegate = delegate;
 
     [STWLogger setLevelError];
 
-    [[STWLogger getInstance] verbose:@"verbose"];
-    [[STWLogger getInstance] debug:@"debug"];
-    [[STWLogger getInstance] info:@"info"];
-    [[STWLogger getInstance] warn:@"warn"];
-    [[STWLogger getInstance] error:@"error"];
-    [[STWLogger getInstance] fatal:@"fatal"];
+    [[STWLogger sharedLogger] verbose:@"verbose"];
+    [[STWLogger sharedLogger] debug:@"debug"];
+    [[STWLogger sharedLogger] info:@"info"];
+    [[STWLogger sharedLogger] warn:@"warn"];
+    [[STWLogger sharedLogger] error:@"error"];
+    [[STWLogger sharedLogger] fatal:@"fatal"];
 
     [verifyCount(delegate, never()) log:@"verbose"];
     [verifyCount(delegate, never()) log:@"debug"];
@@ -225,16 +225,16 @@
 {
     id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
 
-    [STWLogger getInstance].delegate = delegate;
+    [STWLogger sharedLogger].delegate = delegate;
 
     [STWLogger setLevelFatal];
 
-    [[STWLogger getInstance] verbose:@"verbose"];
-    [[STWLogger getInstance] debug:@"debug"];
-    [[STWLogger getInstance] info:@"info"];
-    [[STWLogger getInstance] warn:@"warn"];
-    [[STWLogger getInstance] error:@"error"];
-    [[STWLogger getInstance] fatal:@"fatal"];
+    [[STWLogger sharedLogger] verbose:@"verbose"];
+    [[STWLogger sharedLogger] debug:@"debug"];
+    [[STWLogger sharedLogger] info:@"info"];
+    [[STWLogger sharedLogger] warn:@"warn"];
+    [[STWLogger sharedLogger] error:@"error"];
+    [[STWLogger sharedLogger] fatal:@"fatal"];
 
     [verifyCount(delegate, never()) log:@"verbose"];
     [verifyCount(delegate, never()) log:@"debug"];
@@ -250,16 +250,16 @@
 {
     id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
 
-    [STWLogger getInstance].delegate = delegate;
+    [STWLogger sharedLogger].delegate = delegate;
 
     [STWLogger setLevelNone];
 
-    [[STWLogger getInstance] verbose:@"verbose"];
-    [[STWLogger getInstance] debug:@"debug"];
-    [[STWLogger getInstance] info:@"info"];
-    [[STWLogger getInstance] warn:@"warn"];
-    [[STWLogger getInstance] error:@"error"];
-    [[STWLogger getInstance] fatal:@"fatal"];
+    [[STWLogger sharedLogger] verbose:@"verbose"];
+    [[STWLogger sharedLogger] debug:@"debug"];
+    [[STWLogger sharedLogger] info:@"info"];
+    [[STWLogger sharedLogger] warn:@"warn"];
+    [[STWLogger sharedLogger] error:@"error"];
+    [[STWLogger sharedLogger] fatal:@"fatal"];
 
     [verifyCount(delegate, never()) log:@"verbose"];
     [verifyCount(delegate, never()) log:@"debug"];
@@ -273,7 +273,7 @@
 
 - (void)testDefaultLog
 {
-    [[STWLogger getInstance].delegate log:@"test"];
+    [[STWLogger sharedLogger].delegate log:@"test"];
 }
 
 

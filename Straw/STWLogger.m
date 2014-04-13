@@ -6,7 +6,7 @@ static STWLogger *instance = nil;
 
 @implementation STWLogger
 
-+ (STWLogger *)getInstance
++ (STWLogger *)sharedLogger
 {
     if (!instance) {
         instance = [[self alloc] init];
@@ -20,13 +20,13 @@ static STWLogger *instance = nil;
 }
 
 
-+ (void)setInstance:(STWLogger *)logger
++ (void)setSharedLogger:(STWLogger *)logger
 {
     instance = logger;
 }
 
 
-+ (void)resetInstance
++ (void)resetSharedLogger
 {
     instance = nil;
 }
@@ -84,42 +84,42 @@ static STWLogger *instance = nil;
 
 + (void)setLevelVerbose
 {
-    [self getInstance].level = kSTWLoggerLevelVerbose;
+    [self sharedLogger].level = kSTWLoggerLevelVerbose;
 }
 
 
 + (void)setLevelDebug
 {
-    [self getInstance].level = kSTWLoggerLevelDebug;
+    [self sharedLogger].level = kSTWLoggerLevelDebug;
 }
 
 + (void)setLevelInfo
 {
-    [self getInstance].level = kSTWLoggerLevelInfo;
+    [self sharedLogger].level = kSTWLoggerLevelInfo;
 }
 
 
 + (void)setLevelWarn
 {
-    [self getInstance].level = kSTWLoggerLevelWarn;
+    [self sharedLogger].level = kSTWLoggerLevelWarn;
 }
 
 
 + (void)setLevelError
 {
-    [self getInstance].level = kSTWLoggerLevelError;
+    [self sharedLogger].level = kSTWLoggerLevelError;
 }
 
 
 + (void)setLevelFatal
 {
-    [self getInstance].level = kSTWLoggerLevelFatal;
+    [self sharedLogger].level = kSTWLoggerLevelFatal;
 }
 
 
 + (void)setLevelNone
 {
-    [self getInstance].level = kSTWLoggerLevelNone;
+    [self sharedLogger].level = kSTWLoggerLevelNone;
 }
 
 

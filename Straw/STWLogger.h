@@ -14,21 +14,21 @@
 
 #ifdef DEBUG
 
-    #define STWLogVerbose(msg, ...) [[STWLogger getInstance] verbose:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
-    #define STWLogDebug(msg, ...) [[STWLogger getInstance] debug:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
-    #define STWLogInfo(msg, ...) [[STWLogger getInstance] info:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
-    #define STWLogWarn(msg, ...) [[STWLogger getInstance] warn:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
-    #define STWLogError(msg, ...) [[STWLogger getInstance] error:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
-    #define STWLogFatal(msg, ...) [[STWLogger getInstance] fatal:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+    #define STWLogVerbose(msg, ...) [[STWLogger sharedLogger] verbose:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+    #define STWLogDebug(msg, ...) [[STWLogger sharedLogger] debug:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+    #define STWLogInfo(msg, ...) [[STWLogger sharedLogger] info:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+    #define STWLogWarn(msg, ...) [[STWLogger sharedLogger] warn:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+    #define STWLogError(msg, ...) [[STWLogger sharedLogger] error:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
+    #define STWLogFatal(msg, ...) [[STWLogger sharedLogger] fatal:[NSString stringWithFormat:msg, ##__VA_ARGS__]]
 
 #else
 
-    #define STWLogVerbose(msg, ...) do {} while(0)
-    #define STWLogDebug(msg, ...) do {} while(0)
-    #define STWLogInfo(msg, ...) do {} while(0)
-    #define STWLogWarn(msg, ...) do {} while(0)
-    #define STWLogError(msg, ...) do {} while(0)
-    #define STWLogFatal(msg, ...) do {} while(0)
+    #define STWLogVerbose(msg, ...)
+    #define STWLogDebug(msg, ...)
+    #define STWLogInfo(msg, ...)
+    #define STWLogWarn(msg, ...)
+    #define STWLogError(msg, ...)
+    #define STWLogFatal(msg, ...)
 
 #endif
 
@@ -59,27 +59,27 @@
 @property (nonatomic, assign) int level;
 
 /**
- Get the instance of the class.
+ Get the shared instance of the class.
 
  @return the instance of the class
  */
-+ (STWLogger *)getInstance;
++ (STWLogger *)sharedLogger;
 
 
 /**
- Reset the instance of the class.
+ Reset the shared instance of the class.
  */
-+ (void)resetInstance;
++ (void)resetSharedLogger;
 
 
 /**
- Set the instance of the class.
+ Set the shared instance of the class.
 
- This method is for tests.
+ This method is for test.
 
  @param logger the instance of the class
  */
-+ (void)setInstance:(STWLogger *)logger;
++ (void)setSharedLogger:(STWLogger *)logger;
 
 
 /**
