@@ -95,4 +95,155 @@
 
 }
 
+
+- (void)testVerboseLevel
+{
+    id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
+
+    [STWLogger getInstance].delegate = delegate;
+
+    [STWLogger setLevelVerbose];
+
+    [[STWLogger getInstance] verbose:@"verbose"];
+    [[STWLogger getInstance] debug:@"debug"];
+    [[STWLogger getInstance] info:@"info"];
+    [[STWLogger getInstance] warn:@"warn"];
+    [[STWLogger getInstance] error:@"error"];
+    [[STWLogger getInstance] fatal:@"fatal"];
+
+    [verifyCount(delegate, times(1)) log:@"verbose"];
+    [verifyCount(delegate, times(1)) log:@"debug"];
+    [verifyCount(delegate, times(1)) log:@"info"];
+    [verifyCount(delegate, times(1)) log:@"warn"];
+    [verifyCount(delegate, times(1)) log:@"error"];
+    [verifyCount(delegate, times(1)) log:@"fatal"];
+
+}
+
+
+- (void)testDebugLevel
+{
+    id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
+
+    [STWLogger getInstance].delegate = delegate;
+
+    [STWLogger setLevelDebug];
+
+    [[STWLogger getInstance] verbose:@"verbose"];
+    [[STWLogger getInstance] debug:@"debug"];
+    [[STWLogger getInstance] info:@"info"];
+    [[STWLogger getInstance] warn:@"warn"];
+    [[STWLogger getInstance] error:@"error"];
+    [[STWLogger getInstance] fatal:@"fatal"];
+
+    [verifyCount(delegate, never()) log:@"verbose"];
+    [verifyCount(delegate, times(1)) log:@"debug"];
+    [verifyCount(delegate, times(1)) log:@"info"];
+    [verifyCount(delegate, times(1)) log:@"warn"];
+    [verifyCount(delegate, times(1)) log:@"error"];
+    [verifyCount(delegate, times(1)) log:@"fatal"];
+
+}
+
+
+- (void)testInfoLevel
+{
+    id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
+
+    [STWLogger getInstance].delegate = delegate;
+
+    [STWLogger setLevelInfo];
+
+    [[STWLogger getInstance] verbose:@"verbose"];
+    [[STWLogger getInstance] debug:@"debug"];
+    [[STWLogger getInstance] info:@"info"];
+    [[STWLogger getInstance] warn:@"warn"];
+    [[STWLogger getInstance] error:@"error"];
+    [[STWLogger getInstance] fatal:@"fatal"];
+
+    [verifyCount(delegate, never()) log:@"verbose"];
+    [verifyCount(delegate, never()) log:@"debug"];
+    [verifyCount(delegate, times(1)) log:@"info"];
+    [verifyCount(delegate, times(1)) log:@"warn"];
+    [verifyCount(delegate, times(1)) log:@"error"];
+    [verifyCount(delegate, times(1)) log:@"fatal"];
+
+}
+
+
+- (void)testWarnLevel
+{
+    id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
+
+    [STWLogger getInstance].delegate = delegate;
+
+    [STWLogger setLevelWarn];
+
+    [[STWLogger getInstance] verbose:@"verbose"];
+    [[STWLogger getInstance] debug:@"debug"];
+    [[STWLogger getInstance] info:@"info"];
+    [[STWLogger getInstance] warn:@"warn"];
+    [[STWLogger getInstance] error:@"error"];
+    [[STWLogger getInstance] fatal:@"fatal"];
+
+    [verifyCount(delegate, never()) log:@"verbose"];
+    [verifyCount(delegate, never()) log:@"debug"];
+    [verifyCount(delegate, never()) log:@"info"];
+    [verifyCount(delegate, times(1)) log:@"warn"];
+    [verifyCount(delegate, times(1)) log:@"error"];
+    [verifyCount(delegate, times(1)) log:@"fatal"];
+
+}
+
+
+- (void)testErrorLevel
+{
+    id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
+
+    [STWLogger getInstance].delegate = delegate;
+
+    [STWLogger setLevelError];
+
+    [[STWLogger getInstance] verbose:@"verbose"];
+    [[STWLogger getInstance] debug:@"debug"];
+    [[STWLogger getInstance] info:@"info"];
+    [[STWLogger getInstance] warn:@"warn"];
+    [[STWLogger getInstance] error:@"error"];
+    [[STWLogger getInstance] fatal:@"fatal"];
+
+    [verifyCount(delegate, never()) log:@"verbose"];
+    [verifyCount(delegate, never()) log:@"debug"];
+    [verifyCount(delegate, never()) log:@"info"];
+    [verifyCount(delegate, never()) log:@"warn"];
+    [verifyCount(delegate, times(1)) log:@"error"];
+    [verifyCount(delegate, times(1)) log:@"fatal"];
+
+}
+
+
+- (void)testFatalLevel
+{
+    id<STWLoggerDelegate> delegate = mockProtocol(@protocol(STWLoggerDelegate));
+
+    [STWLogger getInstance].delegate = delegate;
+
+    [STWLogger setLevelFatal];
+
+    [[STWLogger getInstance] verbose:@"verbose"];
+    [[STWLogger getInstance] debug:@"debug"];
+    [[STWLogger getInstance] info:@"info"];
+    [[STWLogger getInstance] warn:@"warn"];
+    [[STWLogger getInstance] error:@"error"];
+    [[STWLogger getInstance] fatal:@"fatal"];
+
+    [verifyCount(delegate, never()) log:@"verbose"];
+    [verifyCount(delegate, never()) log:@"debug"];
+    [verifyCount(delegate, never()) log:@"info"];
+    [verifyCount(delegate, never()) log:@"warn"];
+    [verifyCount(delegate, never()) log:@"error"];
+    [verifyCount(delegate, times(1)) log:@"fatal"];
+
+}
+
+
 @end

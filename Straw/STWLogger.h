@@ -1,12 +1,12 @@
 #import <Foundation/Foundation.h>
 
 
-#define kSTWLoggerLevelVerbose @1
-#define kSTWLoggerLevelDebug @2
-#define kSTWLoggerLevelInfo @3
-#define kSTWLoggerLevelWarn @4
-#define kSTWLoggerLevelError @5
-#define kSTWLoggerLevelFatal @6
+#define kSTWLoggerLevelVerbose 1
+#define kSTWLoggerLevelDebug 2
+#define kSTWLoggerLevelInfo 3
+#define kSTWLoggerLevelWarn 4
+#define kSTWLoggerLevelError 5
+#define kSTWLoggerLevelFatal 6
 
 #define kSTWLoggerLevelDefault kSTWLoggerLevelWarn
 
@@ -55,7 +55,7 @@
 @interface STWLogger : NSObject <STWLoggerDelegate>
 
 @property (nonatomic, retain) id <STWLoggerDelegate> delegate;
-@property (nonatomic, retain) NSNumber *level;
+@property (nonatomic, assign) int level;
 
 /**
  Get the instance of the class.

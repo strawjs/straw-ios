@@ -38,7 +38,7 @@ static STWLogger *instance = nil;
 }
 
 
-- (void)log:(NSString *)message withLevel:(NSNumber *)level
+- (void)log:(NSString *)message withLevel:(int)level
 {
     if (level >= self.level) {
         [self.delegate log:message];
