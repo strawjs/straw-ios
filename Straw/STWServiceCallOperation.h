@@ -7,14 +7,19 @@
 #import "STWNativeBridge.h"
 
 /**
- STWCallOperation class performs Straw Service Method Call procedure.
+ STWServiceCallOperation class performs Straw Service Method Call procedure.
 
  The operation is performed in main thread or in background according to Service Method configuration.
  */
-@interface STWCallOperation : NSOperation <STWServiceCallContext>
+@interface STWServiceCallOperation : NSOperation <STWServiceCallContext>
 
+/** Service Call which the class performs with */
 @property (nonatomic, retain) STWServiceCall *serviceCall;
+
+/** Service Respository */
 @property (nonatomic, assign) STWServiceRepository *repository;
+
+/** the webView which the class performs with */
 @property (nonatomic, assign) UIWebView *webView;
 
 - (id)initWithCall:(STWServiceCall *)call withServiceRepository:(STWServiceRepository *)repository withWebView:(UIWebView *)webView;

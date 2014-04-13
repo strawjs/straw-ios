@@ -1,6 +1,6 @@
-#import "STWCallOperation.h"
+#import "STWServiceCallOperation.h"
 
-@implementation STWCallOperation
+@implementation STWServiceCallOperation
 
 - (id)initWithCall:(STWServiceCall *)call withServiceRepository:(STWServiceRepository *)repository withWebView:(UIWebView *)webView
 {

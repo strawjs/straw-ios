@@ -3,7 +3,7 @@
 #import "STWServiceCall.h"
 #import "STWServiceCallFactory.h"
 #import "STWServiceRepository.h"
-#import "STWCallOperation.h"
+#import "STWServiceCallOperation.h"
 #import "STWNativeBridge.h"
 
 /**

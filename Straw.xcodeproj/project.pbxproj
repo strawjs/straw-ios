@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		192FC54D18E9C899009F326C /* STWCallOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FC54C18E9C899009F326C /* STWCallOperation.m */; };
+		192FC54D18E9C899009F326C /* STWServiceCallOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FC54C18E9C899009F326C /* STWServiceCallOperation.m */; };
 		192FC55018ED8CB6009F326C /* STWServiceRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */; };
 		1992E49218EE712E00440DF9 /* STWServiceCallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49118EE712E00440DF9 /* STWServiceCallTests.m */; };
 		1992E49818F64F0C00440DF9 /* STWNativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49718F64F0C00440DF9 /* STWNativeBridge.m */; };
@@ -50,8 +50,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		192FC54B18E9C899009F326C /* STWCallOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWCallOperation.h; sourceTree = "<group>"; };
-		192FC54C18E9C899009F326C /* STWCallOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWCallOperation.m; sourceTree = "<group>"; };
+		192FC54B18E9C899009F326C /* STWServiceCallOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWServiceCallOperation.h; sourceTree = "<group>"; };
+		192FC54C18E9C899009F326C /* STWServiceCallOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallOperation.m; sourceTree = "<group>"; };
 		192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceRepositoryTests.m; sourceTree = "<group>"; };
 		1992E49118EE712E00440DF9 /* STWServiceCallTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallTests.m; sourceTree = "<group>"; };
 		1992E49418F0598F00440DF9 /* STWServiceCallContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWServiceCallContext.h; sourceTree = "<group>"; };
@@ -171,8 +171,8 @@
 				19F6C53718E29263006C2FD1 /* Domain */,
 				19F6C53818E292A9006C2FD1 /* STWWebViewDelegate.h */,
 				19F6C53918E292A9006C2FD1 /* STWWebViewDelegate.m */,
-				192FC54B18E9C899009F326C /* STWCallOperation.h */,
-				192FC54C18E9C899009F326C /* STWCallOperation.m */,
+				192FC54B18E9C899009F326C /* STWServiceCallOperation.h */,
+				192FC54C18E9C899009F326C /* STWServiceCallOperation.m */,
 				1992E49518F64E0500440DF9 /* STW.h */,
 				1992E49618F64F0C00440DF9 /* STWNativeBridge.h */,
 				1992E49718F64F0C00440DF9 /* STWNativeBridge.m */,
@@ -333,7 +333,7 @@
 			files = (
 				19F6C53E18E425A9006C2FD1 /* STWServiceRepository.m in Sources */,
 				19F6C53318E291DE006C2FD1 /* STWServiceCall.m in Sources */,
-				192FC54D18E9C899009F326C /* STWCallOperation.m in Sources */,
+				192FC54D18E9C899009F326C /* STWServiceCallOperation.m in Sources */,
 				1992E49B18F7775A00440DF9 /* STWLogger.m in Sources */,
 				19F6C53618E29255006C2FD1 /* STWServiceCallFactory.m in Sources */,
 				1992E49818F64F0C00440DF9 /* STWNativeBridge.m in Sources */,

@@ -25,7 +25,7 @@
         if (serviceCall) {
 
             // create operation object
-            STWCallOperation *operation = [[STWCallOperation alloc] initWithCall:serviceCall withServiceRepository:self.repository withWebView:webView];
+            STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:serviceCall withServiceRepository:self.repository withWebView:webView];
 
             // post to background queue
             [self.operationQueue addOperation:operation];
