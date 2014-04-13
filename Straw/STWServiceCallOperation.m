@@ -29,26 +29,32 @@
 
 - (void)callService
 {
+
     // Service Method must have the form of
-    // `- (void)methodName:(NSDcitionary *)params withCall:(id <STWServiceCallContext>)`
+    // `- (void)methodName:(NSDcitionary *)params withContext:(id<STWServiceCallContext>)`
     NSString *methodName = [NSString stringWithFormat:@"%@:withContext:", self.serviceCall.method];
 
     // create the selector for Service Method
     SEL selector = NSSelectorFromString(methodName);
 
-    if ([self.service respondsToSelector:selector]) {
+
+    // If the Service Method is not found, then log error and do nothing.
+    if (![self.service respondsToSelector:selector]) {
+        STWLogError(@"Selector for the service not found: service='%@' selector='%@'", self.serviceCall.service, methodName);
+
+        return;
+    }
+
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
 
-        // invoke Service Method
-        [self.service performSelector:selector withObject:self.serviceCall.params withObject:self];
+    // perform Service Method
+    [self.service performSelector:selector withObject:self.serviceCall.params withObject:self];
 
 #pragma clang diagnostic pop
 
-    } else {
-        // TODO: log error
-    }
+
 }
 
 - (void)sendBackToBrowser:(NSDictionary *)object
