@@ -37,8 +37,7 @@
     NSString *message = [NSString stringWithFormat:@"window.straw.receiveData(%@)", dataJSON];
 
     // post to the main thread
-    [[NSOperationQueue mainQueue] addOperation:[[STWServiceCallbackOperation alloc] initWithMessage:message
-                                                                                        withWebView:webView]];
+    [[NSOperationQueue mainQueue] addOperation:[[STWServiceCallbackOperation alloc] initWithMessage:message withWebView:webView]];
 }
 
 @end
