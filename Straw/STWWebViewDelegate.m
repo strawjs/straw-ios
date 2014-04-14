@@ -15,7 +15,11 @@
 }
 
 
-/** THE BRIDGE */
+/**
+ *
+ * THE BRIDGE FROM BROWSER TO NATIVE
+ *
+ */
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSURL *url = [request URL];
@@ -33,7 +37,7 @@
 
     // If the service call object is nil, then the url is broken.
     if (!serviceCall) {
-        STWLogWarn(@"Straw url is broken: '%@'", [url absoluteString]);
+        STWLogError(@"Straw url is broken: '%@'", [url absoluteString]);
 
         return NO;
     }
@@ -46,16 +50,15 @@
     // If the service is nil, then the service of the name doesn't exists
     // and cannot perform anything.
     if (!service) {
-        STWLogWarn(@"Straw service not found: service='%@'", serviceCall.service);
+        STWLogError(@"Straw service not found: service='%@'", serviceCall.service);
 
         return NO;
     }
 
 
     // create operation object
-    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:serviceCall
-                                                                           withService:service
-                                                                           withWebView:webView];
+    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:serviceCall withService:service withWebView:webView];
+
 
     // post to background queue
     [self.operationQueue addOperation:operation];
