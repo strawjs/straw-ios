@@ -20,27 +20,14 @@
 
 - (void)main
 {
-    if (self.service) {
-        [self callService];
-    } else {
-        // TODO: log error
-    }
-}
-
-- (void)callService
-{
-
-    // Service Method must have the form of
-    // `- (void)methodName:(NSDcitionary *)params withContext:(id<STWServiceCallContext>)`
-    NSString *methodName = [NSString stringWithFormat:@"%@:withContext:", self.serviceCall.method];
 
     // create the selector for Service Method
-    SEL selector = NSSelectorFromString(methodName);
+    SEL selector = [self.serviceCall selector];
 
 
     // If the Service Method is not found, then log error and do nothing.
     if (![self.service respondsToSelector:selector]) {
-        STWLogError(@"Selector for the service not found: service='%@' selector='%@'", self.serviceCall.service, methodName);
+        STWLogError(@"Selector for the service not found: service='%@' selector='%@'", self.serviceCall.service, [self.serviceCall selectorName]);
 
         return;
     }

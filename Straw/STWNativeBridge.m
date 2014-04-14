@@ -4,19 +4,18 @@
 
 + (STWServiceCall *)createServiceCallFromUrl:(NSURL *)url withWebView:(UIWebView *)webView
 {
-    if ([@"straw" isEqual:[url scheme]]) {
-
-        NSString *callId = [url host];
-
-        NSString *getRequest = [NSString stringWithFormat:@"window.straw.getRequest(%@)", callId];
-
-        NSString *requestJSON = [webView stringByEvaluatingJavaScriptFromString:getRequest];
-
-        return [STWServiceCallFactory createFromCallRequestJSON:[requestJSON dataUsingEncoding:NSUTF8StringEncoding]];
-
+    if (![@"straw" isEqual:[url scheme]]) {
+        return nil;
     }
 
-    return nil;
+    NSString *callId = [url host];
+
+    NSString *getRequest = [NSString stringWithFormat:@"window.straw.getRequest(%@)", callId];
+
+    NSString *requestJSON = [webView stringByEvaluatingJavaScriptFromString:getRequest];
+
+    return [STWServiceCallFactory createFromCallRequestJSON:[requestJSON dataUsingEncoding:NSUTF8StringEncoding]];
+
 }
 
 
