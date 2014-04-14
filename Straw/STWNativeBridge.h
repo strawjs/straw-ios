@@ -2,6 +2,7 @@
 #import <UIKit/UIKit.h>
 #import "STWServiceCall.h"
 #import "STWServiceCallFactory.h"
+#import "STWServiceCallbackOperation.h"
 
 /**
  STWNativeBridge is the collection of methods which interacts with the webView with Framework's specific manner.

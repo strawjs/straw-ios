@@ -25,6 +25,7 @@
 		19F6C53A18E292A9006C2FD1 /* STWWebViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53918E292A9006C2FD1 /* STWWebViewDelegate.m */; };
 		19F6C53E18E425A9006C2FD1 /* STWServiceRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6C53D18E425A9006C2FD1 /* STWServiceRepository.m */; };
 		19F6D07218FAC8C9008C81B6 /* STWServiceCallFactoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6D07118FAC8C9008C81B6 /* STWServiceCallFactoryTests.m */; };
+		19F6D07518FC1AA3008C81B6 /* STWServiceCallbackOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F6D07418FC1AA3008C81B6 /* STWServiceCallbackOperation.m */; };
 		4BAB32CCAC024C21A4CACDB4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BC21D048C8445BCBEEA9339 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,8 @@
 		19F6C53D18E425A9006C2FD1 /* STWServiceRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceRepository.m; sourceTree = "<group>"; };
 		19F6C53F18E426AC006C2FD1 /* STWService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWService.h; sourceTree = "<group>"; };
 		19F6D07118FAC8C9008C81B6 /* STWServiceCallFactoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallFactoryTests.m; sourceTree = "<group>"; };
+		19F6D07318FC1AA3008C81B6 /* STWServiceCallbackOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWServiceCallbackOperation.h; sourceTree = "<group>"; };
+		19F6D07418FC1AA3008C81B6 /* STWServiceCallbackOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallbackOperation.m; sourceTree = "<group>"; };
 		1BC21D048C8445BCBEEA9339 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E549ADFCA10C431885E2B4E6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,6 +181,8 @@
 				1992E49518F64E0500440DF9 /* STW.h */,
 				1992E49618F64F0C00440DF9 /* STWNativeBridge.h */,
 				1992E49718F64F0C00440DF9 /* STWNativeBridge.m */,
+				19F6D07318FC1AA3008C81B6 /* STWServiceCallbackOperation.h */,
+				19F6D07418FC1AA3008C81B6 /* STWServiceCallbackOperation.m */,
 			);
 			path = Straw;
 			sourceTree = "<group>";
@@ -347,6 +352,7 @@
 				192FC54D18E9C899009F326C /* STWServiceCallOperation.m in Sources */,
 				1992E49B18F7775A00440DF9 /* STWLogger.m in Sources */,
 				19F6C53618E29255006C2FD1 /* STWServiceCallFactory.m in Sources */,
+				19F6D07518FC1AA3008C81B6 /* STWServiceCallbackOperation.m in Sources */,
 				1992E49818F64F0C00440DF9 /* STWNativeBridge.m in Sources */,
 				19F6C53A18E292A9006C2FD1 /* STWWebViewDelegate.m in Sources */,
 			);

@@ -37,16 +37,8 @@
     NSString *message = [NSString stringWithFormat:@"window.straw.receiveData(%@)", dataJSON];
 
     // post to the main thread
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-
-        if (webView) {
-            // send message to Browser
-            [webView stringByEvaluatingJavaScriptFromString:message];
-        } else {
-            // log - web view deleted, cannot send back message
-        }
-
-    }];
+    [[NSOperationQueue mainQueue] addOperation:[[STWServiceCallbackOperation alloc] initWithMessage:message
+                                                                                        withWebView:webView]];
 }
 
 @end
