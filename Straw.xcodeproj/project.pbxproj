@@ -112,15 +112,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		192FC54E18ED8C67009F326C /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */,
-				1992E49118EE712E00440DF9 /* STWServiceCallTests.m */,
-			);
-			name = Domain;
-			sourceTree = "<group>";
-		};
 		1992E49C18F8D52000440DF9 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +183,6 @@
 			children = (
 				19F6D07018FAC89B008C81B6 /* Domain */,
 				1992E49D18F9843200440DF9 /* Infrastructure */,
-				192FC54E18ED8C67009F326C /* Domain */,
 				19F6C51018DDD61A006C2FD1 /* Supporting Files */,
 				19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */,
 				1992E4A218F985D500440DF9 /* STWTestCase.h */,
@@ -228,6 +218,8 @@
 			isa = PBXGroup;
 			children = (
 				19F6D07118FAC8C9008C81B6 /* STWServiceCallFactoryTests.m */,
+				192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */,
+				1992E49118EE712E00440DF9 /* STWServiceCallTests.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
