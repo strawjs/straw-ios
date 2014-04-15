@@ -13,12 +13,14 @@
     return self;
 }
 
-- (void)registerService:(id <STWService>)service
+
+- (void)registerService:(id<STWService>)service
 {
     self.services[[service getName]] = service;
 }
 
-- (id <STWService>)getService:(NSString *)serviceName
+
+- (id<STWService>)getService:(NSString *)serviceName
 {
     return self.services[serviceName];
 }
