@@ -5,6 +5,18 @@
 なれる気にすら なれるほど
 #shichigo
 
+フェードアウトは もう無理と
+思えるくらい 前に出て
+会えなくなる日 近づいて
+どうしていいか 分からない
+#shichigo
+
+届かぬ思い そのままに
+歌でも詠んで 忘れよう
+春の陽の下 麗しい
+花を眺めた 昼下がり
+#shichigo
+
 
 plugin -> service
 
@@ -154,26 +166,21 @@ Service Call Factory - factory of service call object
 ----
 
 The Domain Services should never touch the Application layer.
+(But specific service implementations can touch the application layey,
+because they are half-application.)
 
 Do people really want stateful services?
-
-How about to use Domain Events? - Bad idea
 
 ----
 
 TODO:
 - define interfaces
-- tests
-  - mock and stub
-- log
-  - log class
-  - support log levels
-    - verbose
-    - debug
-    - info
-    - warn
-    - error
+- tests - doing
+- STWServiceFactory
 - .podspec
+
+DONE:
+- log - done
 
 
 [END]
