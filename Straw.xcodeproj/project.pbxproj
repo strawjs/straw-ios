@@ -163,17 +163,11 @@
 		19F6C4FB18DDD61A006C2FD1 /* Straw */ = {
 			isa = PBXGroup;
 			children = (
+				1992E49518F64E0500440DF9 /* STW.h */,
+				19F6D07718FCB02B008C81B6 /* Util */,
+				19F6D07618FCB005008C81B6 /* Application */,
 				1992E49C18F8D52000440DF9 /* Infrastructure */,
 				19F6C53718E29263006C2FD1 /* Domain */,
-				19F6C53818E292A9006C2FD1 /* STWWebViewDelegate.h */,
-				19F6C53918E292A9006C2FD1 /* STWWebViewDelegate.m */,
-				192FC54B18E9C899009F326C /* STWServiceCallOperation.h */,
-				192FC54C18E9C899009F326C /* STWServiceCallOperation.m */,
-				1992E49518F64E0500440DF9 /* STW.h */,
-				1992E49618F64F0C00440DF9 /* STWNativeBridge.h */,
-				1992E49718F64F0C00440DF9 /* STWNativeBridge.m */,
-				19F6D07318FC1AA3008C81B6 /* STWServiceCallbackOperation.h */,
-				19F6D07418FC1AA3008C81B6 /* STWServiceCallbackOperation.m */,
 			);
 			path = Straw;
 			sourceTree = "<group>";
@@ -181,12 +175,11 @@
 		19F6C50F18DDD61A006C2FD1 /* StrawTests */ = {
 			isa = PBXGroup;
 			children = (
+				19F6D07918FCB04F008C81B6 /* Util */,
+				19F6D07818FCB03F008C81B6 /* Application */,
 				19F6D07018FAC89B008C81B6 /* Domain */,
 				1992E49D18F9843200440DF9 /* Infrastructure */,
 				19F6C51018DDD61A006C2FD1 /* Supporting Files */,
-				19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */,
-				1992E4A218F985D500440DF9 /* STWTestCase.h */,
-				1992E4A318F985D500440DF9 /* STWTestCase.m */,
 			);
 			path = StrawTests;
 			sourceTree = "<group>";
@@ -222,6 +215,45 @@
 				1992E49118EE712E00440DF9 /* STWServiceCallTests.m */,
 			);
 			name = Domain;
+			sourceTree = "<group>";
+		};
+		19F6D07618FCB005008C81B6 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				19F6C53818E292A9006C2FD1 /* STWWebViewDelegate.h */,
+				19F6C53918E292A9006C2FD1 /* STWWebViewDelegate.m */,
+				192FC54B18E9C899009F326C /* STWServiceCallOperation.h */,
+				192FC54C18E9C899009F326C /* STWServiceCallOperation.m */,
+				1992E49618F64F0C00440DF9 /* STWNativeBridge.h */,
+				1992E49718F64F0C00440DF9 /* STWNativeBridge.m */,
+				19F6D07318FC1AA3008C81B6 /* STWServiceCallbackOperation.h */,
+				19F6D07418FC1AA3008C81B6 /* STWServiceCallbackOperation.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		19F6D07718FCB02B008C81B6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		19F6D07818FCB03F008C81B6 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		19F6D07918FCB04F008C81B6 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				19F6C52018E1B04B006C2FD1 /* StrawTestObserver.m */,
+				1992E4A218F985D500440DF9 /* STWTestCase.h */,
+				1992E4A318F985D500440DF9 /* STWTestCase.m */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
