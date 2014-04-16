@@ -12,4 +12,12 @@
  */
 - (NSString *)getName;
 
+
+/**
+ Allocate class.
+
+ @return instance of the class
+ */
++ (id)alloc;
+
 @end

@@ -7,8 +7,31 @@
     self = [super init];
 
     if (self) {
+
+        // initialize
         self.repository = [[STWServiceRepository alloc] init];
         self.operationQueue = [[NSOperationQueue alloc] init];
+        self.webView = nil;
+        self.viewController = nil;
+    }
+
+    return self;
+}
+
+
+- (id)initWithWebView:(UIWebView *)webView withViewController:(UIViewController *)viewController
+{
+    self = [self init];
+
+    if (self) {
+
+        // initialize properties
+        self.webView = webView;
+        self.viewController = viewController;
+
+        // set delegate to self
+        webView.delegate = self;
+
     }
 
     return self;
@@ -69,6 +92,34 @@
 
 }
 
+
+- (void)loadService:(Class<STWService>)serviceClass
+{
+    id<STWService> service = [[serviceClass alloc] init];
+
+    if ([service conformsToProtocol:@protocol(STWServiceWithWebView)]) {
+
+        id<STWServiceWithWebView> serviceWithWebView = (id<STWServiceWithWebView>)service;
+
+        serviceWithWebView.webView = self.webView;
+
+    }
+
+    if ([service conformsToProtocol:@protocol(STWServiceWithViewController)]) {
+
+        id<STWServiceWithViewController> serviceWithViewController = (id<STWServiceWithViewController>)service;
+
+        serviceWithViewController.viewController = self.viewController;
+
+    }
+
+    [self.repository registerService:service];
+
+}
+
+
+
+// empty delegate method implementations
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
