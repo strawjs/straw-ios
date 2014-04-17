@@ -20,4 +20,13 @@
  */
 + (id)alloc;
 
+
+/**
+ Check if the given selector is a main thread job or not.
+
+ @param selector the selector to check
+ @return true if the given selector is a main thread job.
+ */
+- (BOOL)isBackgroundJob:(NSString *)method;
+
 @end
