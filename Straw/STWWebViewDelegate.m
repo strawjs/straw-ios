@@ -83,8 +83,17 @@
     STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:serviceCall withService:service withWebView:webView];
 
 
-    // post to background queue
-    [self.operationQueue addOperation:operation];
+    if ([service isBackgroundJob:serviceCall.method]) {
+
+        // post to background queue
+        [self.operationQueue addOperation:operation];
+
+    } else {
+
+        // post to the main thread
+        [[NSOperationQueue mainQueue] addOperation:operation];
+
+    }
 
 
 
