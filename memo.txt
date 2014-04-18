@@ -175,11 +175,12 @@ Do people really want stateful services?
 
 TODO:
 - define interfaces
+- build on xcode 5.1
 - tests - doing
-- STWServiceFactory
 - .podspec
 
 DONE:
+- STWServiceFactory
 - log - done
 
 
