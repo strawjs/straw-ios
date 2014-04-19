@@ -7,15 +7,16 @@
 {
     self = [super init];
 
-    if (self) {
-
-        // initialize properties
-        self.mainQueue = [NSOperationQueue mainQueue];
-        self.operationQueue = [[NSOperationQueue alloc] init];
-        self.repository = [[STWServiceRepository alloc] init];
-        self.webView = nil;
-        self.viewController = nil;
+    if (!self) {
+        return self;
     }
+
+    // initialize properties
+    self.mainQueue = [NSOperationQueue mainQueue];
+    self.operationQueue = [[NSOperationQueue alloc] init];
+    self.repository = [[STWServiceRepository alloc] init];
+    self.webView = nil;
+    self.viewController = nil;
 
     return self;
 }
@@ -25,13 +26,13 @@
 {
     self = [self init];
 
-    if (self) {
-
-        // initialize
-        self.webView = webView;
-        self.viewController = viewController;
-
+    if (!self) {
+        return self;
     }
+
+    // initialize
+    self.webView = webView;
+    self.viewController = viewController;
 
     return self;
 }

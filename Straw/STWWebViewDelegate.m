@@ -2,34 +2,19 @@
 
 @implementation STWWebViewDelegate
 
-- (id)init
+- (id)initWithWebView:(UIWebView *)webView withViewController:(UIViewController *)viewController
 {
     self = [super init];
 
-    if (self) {
-
-        // initialize the bridge
-        self.bridge = [[STWNativeBridge alloc] init];
+    if (!self) {
+        return self;
     }
 
-    return self;
-}
+    // initialize bridge
+    self.bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:viewController];
 
-
-- (id)initWithWebView:(UIWebView *)webView withViewController:(UIViewController *)viewController
-{
-    self = [self init];
-
-    if (self) {
-
-        // initialize properties
-        self.bridge.webView = webView;
-        self.bridge.viewController = viewController;
-
-        // set delegate to self
-        webView.delegate = self;
-
-    }
+    // set delegate to self
+    webView.delegate = self;
 
     return self;
 }
