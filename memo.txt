@@ -174,12 +174,13 @@ Do people really want stateful services?
 ----
 
 TODO:
-- define interfaces
-- build on xcode 5.1
+- STWWebView, STWViewController (in Util group)
 - tests - doing
 - .podspec
 
 DONE:
+- define interfaces - almost done
+- build on xcode 5.1
 - STWServiceFactory
 - log - done
 
