@@ -7,6 +7,9 @@
 #import "STWNativeBridge.h"
 #import "STWLogger.h"
 
+
+@class STWNativeBridge;
+
 /**
  STWServiceCallOperation class performs Straw Service Method Call procedure.
 
