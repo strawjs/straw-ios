@@ -11,6 +11,7 @@
         // initialize
         self.repository = [[STWServiceRepository alloc] init];
         self.operationQueue = [[NSOperationQueue alloc] init];
+        self.bridge = [[STWNativeBridge alloc] init];
         self.webView = nil;
         self.viewController = nil;
     }
@@ -80,7 +81,7 @@
 
 
     // create operation object
-    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:serviceCall withService:service withWebView:webView];
+    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:serviceCall withService:service withWebView:webView withBridge:self.bridge];
 
 
     if ([service isBackgroundJob:serviceCall.method]) {

@@ -2,6 +2,20 @@
 
 @implementation STWNativeBridge
 
+
+- (id)init
+{
+    self = [super init];
+
+    if (self) {
+
+        // initialize
+        self.mainQueue = [NSOperationQueue mainQueue];
+    }
+
+    return self;
+}
+
 + (STWServiceCall *)createServiceCallFromUrl:(NSURL *)url withWebView:(UIWebView *)webView
 {
     if (![@"straw" isEqual:[url scheme]]) {
@@ -25,7 +39,7 @@
 }
 
 
-+ (void)sendData:(NSDictionary *)object toWebView:(UIWebView *)webView
+- (void)sendData:(NSDictionary *)object toWebView:(UIWebView *)webView
 {
     // create JSON bytes
     NSData *data = [NSJSONSerialization dataWithJSONObject:object options:0 error:nil];
@@ -37,7 +51,7 @@
     NSString *message = [NSString stringWithFormat:@"window.straw.receiveData(%@)", dataJSON];
 
     // post to the main thread
-    [[NSOperationQueue mainQueue] addOperation:[[STWServiceCallbackOperation alloc] initWithMessage:message withWebView:webView]];
+    [self.mainQueue addOperation:[[STWServiceCallbackOperation alloc] initWithMessage:message withWebView:webView]];
 }
 
 @end

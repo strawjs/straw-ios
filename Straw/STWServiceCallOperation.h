@@ -27,6 +27,10 @@
 @property (nonatomic, assign) UIWebView *webView;
 
 
-- (id)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withWebView:(UIWebView *)webView;
+/** the NativeBridge object */
+@property (nonatomic, assign) STWNativeBridge *bridge;
+
+
+- (id)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withWebView:(UIWebView *)webView withBridge:(STWNativeBridge *)bridge;
 
 @end

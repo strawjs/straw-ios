@@ -9,6 +9,19 @@
  */
 @interface STWNativeBridge : NSObject
 
+
+/**
+ The main thread queue.
+ */
+@property (nonatomic, retain) NSOperationQueue *mainQueue;
+
+
+/**
+ The background thread queue.
+ */
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
+
+
 /**
  Creates Service Call object from url and webView.
  
@@ -34,6 +47,6 @@
  @param data data to send
  @param webView the webView to send to
  */
-+ (void)sendData:(NSDictionary *)data toWebView:(UIWebView *)webView;
+- (void)sendData:(NSDictionary *)data toWebView:(UIWebView *)webView;
 
 @end

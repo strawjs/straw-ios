@@ -40,6 +40,12 @@
 
 
 /**
+ The NativeBridge object.
+ */
+@property (nonatomic, retain) STWNativeBridge *bridge;
+
+
+/**
  Init with webView and viewController.
 
  @param webView the webView
