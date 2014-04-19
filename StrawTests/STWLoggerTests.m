@@ -1,6 +1,6 @@
 #import "STWTestCase.h"
 
-@interface STWLoggerTests : XCTestCase
+@interface STWLoggerTests : STWTestCase
 
 @end
 

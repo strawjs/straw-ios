@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		192FC54D18E9C899009F326C /* STWServiceCallOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FC54C18E9C899009F326C /* STWServiceCallOperation.m */; };
 		192FC55018ED8CB6009F326C /* STWServiceRepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */; };
+		197108941902CADE00C31715 /* STWServiceCallbackOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 197108931902CADE00C31715 /* STWServiceCallbackOperationTests.m */; };
+		197108981902CB9800C31715 /* STWServiceCallOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 197108971902CB9800C31715 /* STWServiceCallOperationTests.m */; };
+		1971089A1902CC1F00C31715 /* STWNativeBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 197108991902CC1F00C31715 /* STWNativeBridgeTests.m */; };
+		1971089C1902CC6E00C31715 /* STWWebViewDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971089B1902CC6E00C31715 /* STWWebViewDelegateTests.m */; };
 		1992E49218EE712E00440DF9 /* STWServiceCallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49118EE712E00440DF9 /* STWServiceCallTests.m */; };
 		1992E49818F64F0C00440DF9 /* STWNativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49718F64F0C00440DF9 /* STWNativeBridge.m */; };
 		1992E49B18F7775A00440DF9 /* STWLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49A18F7775900440DF9 /* STWLogger.m */; };
@@ -54,6 +58,10 @@
 		192FC54B18E9C899009F326C /* STWServiceCallOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWServiceCallOperation.h; sourceTree = "<group>"; };
 		192FC54C18E9C899009F326C /* STWServiceCallOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallOperation.m; sourceTree = "<group>"; };
 		192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceRepositoryTests.m; sourceTree = "<group>"; };
+		197108931902CADE00C31715 /* STWServiceCallbackOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallbackOperationTests.m; sourceTree = "<group>"; };
+		197108971902CB9800C31715 /* STWServiceCallOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallOperationTests.m; sourceTree = "<group>"; };
+		197108991902CC1F00C31715 /* STWNativeBridgeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWNativeBridgeTests.m; sourceTree = "<group>"; };
+		1971089B1902CC6E00C31715 /* STWWebViewDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWWebViewDelegateTests.m; sourceTree = "<group>"; };
 		1992E49118EE712E00440DF9 /* STWServiceCallTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallTests.m; sourceTree = "<group>"; };
 		1992E49418F0598F00440DF9 /* STWServiceCallContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWServiceCallContext.h; sourceTree = "<group>"; };
 		1992E49518F64E0500440DF9 /* STW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STW.h; sourceTree = "<group>"; };
@@ -244,6 +252,10 @@
 		19F6D07818FCB03F008C81B6 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				197108931902CADE00C31715 /* STWServiceCallbackOperationTests.m */,
+				197108971902CB9800C31715 /* STWServiceCallOperationTests.m */,
+				197108991902CC1F00C31715 /* STWNativeBridgeTests.m */,
+				1971089B1902CC6E00C31715 /* STWWebViewDelegateTests.m */,
 			);
 			name = Application;
 			sourceTree = "<group>";
@@ -388,9 +400,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1992E49F18F9845600440DF9 /* STWLoggerTests.m in Sources */,
+				197108981902CB9800C31715 /* STWServiceCallOperationTests.m in Sources */,
+				197108941902CADE00C31715 /* STWServiceCallbackOperationTests.m in Sources */,
 				192FC55018ED8CB6009F326C /* STWServiceRepositoryTests.m in Sources */,
 				1992E4A418F985D500440DF9 /* STWTestCase.m in Sources */,
 				19F6D07218FAC8C9008C81B6 /* STWServiceCallFactoryTests.m in Sources */,
+				1971089C1902CC6E00C31715 /* STWWebViewDelegateTests.m in Sources */,
+				1971089A1902CC1F00C31715 /* STWNativeBridgeTests.m in Sources */,
 				1992E49218EE712E00440DF9 /* STWServiceCallTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,11 +1,11 @@
-#import <XCTest/XCTest.h>
-#import "STWServiceCall.h"
+#import "STWTestCase.h"
 
-@interface STWServiceCallTests : XCTestCase
+@interface STWServiceCallTests : STWTestCase
 
 @end
 
 @implementation STWServiceCallTests
+
 
 - (void)testConstructor
 {

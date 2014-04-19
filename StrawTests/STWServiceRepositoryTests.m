@@ -1,15 +1,11 @@
-#import <XCTest/XCTest.h>
-#define HC_SHORTHAND
-#import <OCHamcrest/OCHamcrest.h>
-#define MOCKITO_SHORTHAND
-#import <OCMockito/OCMockito.h>
-#import "STWServiceRepository.h"
+#import "STWTestCase.h"
 
-@interface STWServiceRepositoryTests : XCTestCase
+@interface STWServiceRepositoryTests : STWTestCase
 
 @end
 
 @implementation STWServiceRepositoryTests
+
 
 - (void)testInit
 {
@@ -19,6 +15,7 @@
 
     XCTAssertEqualObjects([[NSMutableDictionary alloc] init], repository.services);
 }
+
 
 - (void)testGetService
 {
@@ -38,5 +35,6 @@
 
     XCTAssertNil([repository getService:@"def"]);
 }
+
 
 @end
