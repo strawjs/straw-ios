@@ -92,11 +92,11 @@
 
 
 /**
- Send Data back to Browser
+ Send the data back to Browser
  
  @param data data to send
  @param webView the webView to send to
  */
-- (void)sendData:(NSDictionary *)data toWebView:(UIWebView *)webView;
+- (void)sendData:(NSDictionary *)data;
 
 @end

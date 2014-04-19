@@ -2,19 +2,18 @@
 
 @implementation STWServiceCallOperation
 
-- (id)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withWebView:(UIWebView *)webView withBridge:(STWNativeBridge *)bridge
+- (id)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withBridge:(STWNativeBridge *)bridge
 {
     self = [super init];
 
-    if (self) {
-
-        // initialize properties
-        self.serviceCall = call;
-        self.service = service;
-        self.webView = webView;
-        self.bridge = bridge;
-
+    if (!self) {
+        return self;
     }
+
+    // initialize properties
+    self.serviceCall = call;
+    self.service = service;
+    self.bridge = bridge;
 
     return self;
 }
@@ -53,7 +52,7 @@
         @"keepAlive": @NO,
     };
 
-    [self.bridge sendData:data toWebView:self.webView];
+    [self.bridge sendData:data];
 }
 
 - (void)succeed

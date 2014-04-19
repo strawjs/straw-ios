@@ -122,7 +122,7 @@
 
 
     // create operation object
-    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:serviceCall withService:service withWebView:self.webView withBridge:self];
+    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:serviceCall withService:service withBridge:self];
 
 
     if ([service isBackgroundJob:serviceCall.method]) {
@@ -140,7 +140,7 @@
 }
 
 
-- (void)sendData:(NSDictionary *)object toWebView:(UIWebView *)webView
+- (void)sendData:(NSDictionary *)object
 {
     // create JSON bytes
     NSData *data = [NSJSONSerialization dataWithJSONObject:object options:0 error:nil];
@@ -152,7 +152,7 @@
     NSString *message = [NSString stringWithFormat:@"window.straw.receiveData(%@)", dataJSON];
 
     // post to the main thread
-    [self.mainQueue addOperation:[[STWServiceCallbackOperation alloc] initWithMessage:message withWebView:webView]];
+    [self.mainQueue addOperation:[[STWServiceCallbackOperation alloc] initWithMessage:message withWebView:self.webView]];
 }
 
 @end
