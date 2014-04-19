@@ -21,9 +21,9 @@
 - (void)main
 {
 
-    // the webView could be released in the main thread.
-    if (self.webView) {
-        STWLogWarn(@"webView is already released. Cannot perform callback operation: message='%@'", self.message);
+    // the webView could be released at this point
+    if (!self.webView) {
+        STWLogInfo(@"The target UIWebView has been already released. Cannot perform callback operation: message='%@'", self.message);
     }
 
 
