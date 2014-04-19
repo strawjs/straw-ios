@@ -65,10 +65,10 @@
 
 
 /**
- Check if the URL is straw custom scheme or not.
+ Check if the requested URL is straw custom scheme or not.
  
- @param url url to check
- @return if url is of straw custom scheme or not
+ @param request url request to check
+ @return if the url is of straw custom scheme or not
  */
 - (BOOL)isStrawURLRequest:(NSURLRequest *)request;
 

@@ -56,9 +56,7 @@
 
 - (BOOL)isStrawURLRequest:(NSURLRequest *)request
 {
-    NSURL *url = [request URL];
-
-    return [@"straw" isEqual:[url scheme]];
+    return [@"straw" isEqual:[[request URL] scheme]];
 }
 
 
@@ -66,22 +64,27 @@
 {
     id<STWService> service = [[serviceClass alloc] init];
 
+    // if service conforms to STWServiceWithWebView protocol
     if ([service conformsToProtocol:@protocol(STWServiceWithWebView)]) {
 
         id<STWServiceWithWebView> serviceWithWebView = (id<STWServiceWithWebView>)service;
 
+        // inject the webView to webView property
         serviceWithWebView.webView = self.webView;
 
     }
 
+    // if service conforms to STWServiceWithViewController protocol
     if ([service conformsToProtocol:@protocol(STWServiceWithViewController)]) {
 
         id<STWServiceWithViewController> serviceWithViewController = (id<STWServiceWithViewController>)service;
 
+        // inject the viewController to viewController property
         serviceWithViewController.viewController = self.viewController;
 
     }
 
+    // register to the repository
     [self.repository registerService:service];
 
 }
