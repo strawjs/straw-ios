@@ -6,15 +6,14 @@
 {
     self = [super init];
 
-    if (!self) {
-        return self;
+    if (self) {
+
+        // initialize bridge
+        self.bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:viewController];
+
+        // set delegate to self
+        webView.delegate = self;
     }
-
-    // initialize bridge
-    self.bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:viewController];
-
-    // set delegate to self
-    webView.delegate = self;
 
     return self;
 }

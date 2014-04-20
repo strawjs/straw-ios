@@ -6,14 +6,14 @@
 {
     self = [super init];
 
-    if (!self) {
-        return self;
-    }
+    if (self) {
 
-    // initialize properties
-    self.serviceCall = call;
-    self.service = service;
-    self.bridge = bridge;
+        // initialize properties
+        self.serviceCall = call;
+        self.service = service;
+        self.bridge = bridge;
+
+    }
 
     return self;
 }

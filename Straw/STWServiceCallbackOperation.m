@@ -12,6 +12,7 @@
         // initialize properties
         self.message = message;
         self.webView = webView;
+
     }
 
     return self;
