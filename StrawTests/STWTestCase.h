@@ -6,6 +6,7 @@
 #import <OCMockito/OCMockito.h>
 
 #import "STW.h"
+#import "DummyService.h"
 
 @interface STWTestCase : XCTestCase
 

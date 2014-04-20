@@ -16,7 +16,7 @@
 
 - (void)registerService:(id<STWService>)service
 {
-    self.services[[service getName]] = service;
+    self.services[[service name]] = service;
 }
 
 

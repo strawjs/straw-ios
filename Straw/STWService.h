@@ -10,7 +10,7 @@
 /**
  Returns the name of the Straw Service.
  */
-- (NSString *)getName;
+- (NSString *)name;
 
 
 /**

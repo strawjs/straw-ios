@@ -25,7 +25,7 @@
     id <STWService> service = mockProtocol(@protocol(STWService));
 
     // stub -getName:
-    [given([service getName]) willReturn:@"abc"];
+    [given([service name]) willReturn:@"abc"];
 
     // register to repository
     [repository registerService:service];
