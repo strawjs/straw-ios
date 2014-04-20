@@ -94,4 +94,37 @@
 }
 
 
+// following tests are just for assuring line coverage.
+
+
+- (void)testDidFinishLoad
+{
+    // create delegate instance
+    STWWebViewDelegate *delegate = [[STWWebViewDelegate alloc] init];
+
+    // invoke target method
+    [delegate webViewDidFinishLoad:nil];
+}
+
+
+- (void)testDidStartLoad
+{
+    // create delegate instance
+    STWWebViewDelegate *delegate = [[STWWebViewDelegate alloc] init];
+
+    // invoke target method
+    [delegate webViewDidStartLoad:nil];
+}
+
+
+- (void)testDidFailLoadWithError
+{
+    // create delegate instance
+    STWWebViewDelegate *delegate = [[STWWebViewDelegate alloc] init];
+
+    // invoke target method
+    [delegate webView:nil didFailLoadWithError:nil];
+}
+
+
 @end
