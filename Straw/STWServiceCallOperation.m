@@ -13,6 +13,9 @@
         self.service = service;
         self.bridge = bridge;
 
+        // keepAlive is false by default
+        self.keepAlive = NO;
+
     }
 
     return self;
@@ -44,12 +47,13 @@
 
 }
 
-- (void)sendBackToBrowser:(NSDictionary *)object
+- (void)sendBackToBrowser:(NSDictionary *)object withSuccess:(BOOL)isSuccess
 {
     NSDictionary *data = @{
         @"callId": self.serviceCall.callId,
         @"params": object,
-        @"keepAlive": @NO,
+        @"keepAlive": @(self.keepAlive),
+        @"isSuccess": @(isSuccess),
     };
 
     [self.bridge sendData:data];
@@ -57,27 +61,27 @@
 
 - (void)succeed
 {
-    [self sendBackToBrowser:@{}];
+    [self sendBackToBrowser:@{} withSuccess:YES];
 }
 
 - (void)succeedWithString:(NSString *)string
 {
-    [self sendBackToBrowser:@{@"value": string}];
+    [self sendBackToBrowser:@{@"value": string} withSuccess:YES];
 }
 
 - (void)succeedWithNumber:(NSNumber *)number
 {
-    [self sendBackToBrowser:@{@"": number}];
+    [self sendBackToBrowser:@{@"value": number} withSuccess:YES];
 }
 
 - (void)succeedWithObject:(NSDictionary *)object
 {
-    [self sendBackToBrowser:object];
+    [self sendBackToBrowser:object withSuccess:YES];
 }
 
 - (void)failWithCode:(NSNumber *)code withMessage:(NSString *)message
 {
-    [self sendBackToBrowser:@{@"code": code, @"message": message}];
+    [self sendBackToBrowser:@{@"code": code, @"message": message} withSuccess:NO];
 }
 
 @end

@@ -31,6 +31,14 @@
 
 
 /**
+ The flag to keep alive the browser's callback function.
+
+ The default value is NO.
+ */
+@property (nonatomic, assign) BOOL keepAlive;
+
+
+/**
  Initialize object with service call object, service object and bridge object
  */
 - (id)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withBridge:(STWNativeBridge *)bridge;
