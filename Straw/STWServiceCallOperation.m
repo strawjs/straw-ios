@@ -28,11 +28,20 @@
     SEL selector = [self.serviceCall selector];
 
 
-    // If the Service Method is not found, then log error and do nothing.
     if (![self.service respondsToSelector:selector]) {
+
+        // If the Service Method is not found, then do nothing and log at error level.
+
+        // The possible reasons of this situation are:
+        // - the service method name is wrong (the problem of js wrapper of the service)
+        // - the service version is not matching to js wrapper
+
+        // This situation should never happen in the production release.
+
         STWLogError(@"Selector for the service not found: service='%@' selector='%@'", self.serviceCall.service, [self.serviceCall selectorName]);
 
         return;
+
     }
 
 
