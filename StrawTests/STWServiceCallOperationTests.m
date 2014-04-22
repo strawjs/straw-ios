@@ -26,4 +26,110 @@
 }
 
 
+// STWServiceCallContext methods tests
+
+- (void)testSucceed
+{
+    // mock bridge
+    STWNativeBridge *bridge = mock([STWNativeBridge class]);
+
+    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{
+        @"service": @"dummyService",
+        @"method": @"dummyMethod",
+        @"callId": @"id_abc",
+        @"params": @{},
+    }];
+
+    // init
+    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:call withService:nil withBridge:bridge];
+
+    [operation succeed];
+
+    [verifyCount(bridge, times(1)) sendData:@{
+        @"callId": @"id_abc",
+        @"keepAlive": @NO,
+        @"params": @{},
+        @"isSuccess": @YES,
+    }];
+}
+
+
+- (void)testSucceedWithNumber
+{
+    // mock bridge
+    STWNativeBridge *bridge = mock([STWNativeBridge class]);
+
+    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{
+        @"service": @"dummyService",
+        @"method": @"dummyMethod",
+        @"callId": @"id_abc",
+        @"params": @{},
+    }];
+
+    // init
+    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:call withService:nil withBridge:bridge];
+
+    [operation succeedWithNumber:@123];
+
+    [verifyCount(bridge, times(1)) sendData:@{
+        @"callId": @"id_abc",
+        @"keepAlive": @NO,
+        @"params": @{@"value": @123},
+        @"isSuccess": @YES,
+    }];
+}
+
+
+- (void)testSucceedWithString
+{
+    // mock bridge
+    STWNativeBridge *bridge = mock([STWNativeBridge class]);
+
+    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{
+        @"service": @"dummyService",
+        @"method": @"dummyMethod",
+        @"callId": @"id_abc",
+        @"params": @{},
+    }];
+
+    // init
+    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:call withService:nil withBridge:bridge];
+
+    [operation succeedWithString:@"abc"];
+
+    [verifyCount(bridge, times(1)) sendData:@{
+        @"callId": @"id_abc",
+        @"keepAlive": @NO,
+        @"params": @{@"value": @"abc"},
+        @"isSuccess": @YES,
+    }];
+}
+
+
+- (void)testSucceedWithObject
+{
+    // mock bridge
+    STWNativeBridge *bridge = mock([STWNativeBridge class]);
+
+    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{
+        @"service": @"dummyService",
+        @"method": @"dummyMethod",
+        @"callId": @"id_abc",
+        @"params": @{},
+    }];
+
+    // init
+    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:call withService:nil withBridge:bridge];
+
+    [operation succeedWithObject:@{@"abc": @123, @"def": @"ghi"}];
+
+    [verifyCount(bridge, times(1)) sendData:@{
+        @"callId": @"id_abc",
+        @"keepAlive": @NO,
+        @"params": @{@"abc": @123, @"def": @"ghi"},
+        @"isSuccess": @YES,
+    }];
+}
+
+
 @end
