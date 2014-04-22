@@ -132,4 +132,31 @@
 }
 
 
+- (void)testFailWithCodeWithMessage
+{
+    // mock bridge
+    STWNativeBridge *bridge = mock([STWNativeBridge class]);
+
+    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{
+        @"service": @"dummyService",
+        @"method": @"dummyMethod",
+        @"callId": @"id_abc",
+        @"params": @{},
+    }];
+
+    // init
+    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:call withService:nil withBridge:bridge];
+
+    [operation failWithCode:@123 withMessage:@"failed"];
+
+    [verifyCount(bridge, times(1)) sendData:@{
+        @"callId": @"id_abc",
+        @"keepAlive": @NO,
+        @"params": @{@"code": @123, @"message": @"failed"},
+        @"isSuccess": @NO,
+    }];
+
+}
+
+
 @end
