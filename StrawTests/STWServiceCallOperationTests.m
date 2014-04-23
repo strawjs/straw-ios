@@ -26,6 +26,20 @@
 }
 
 
+- (void)testMain
+{
+    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{@"method": @"dummyMethod", @"params": @{@"abc": @123}}];
+
+    DummyService *service = [[DummyService alloc] init];
+
+    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:call withService:service withBridge:nil];
+
+    [operation main];
+
+    XCTAssertEqualObjects(@{@"abc": @123}, service.params);
+}
+
+
 // STWServiceCallContext methods tests
 
 - (void)testSucceed
