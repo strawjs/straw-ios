@@ -40,6 +40,24 @@
 }
 
 
+- (void)testMainWithError
+{
+    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{@"service": @"dummy", @"method": @"nonexistentMethod", @"params": @{@"abc": @123}}];
+
+    DummyService *service = [[DummyService alloc] init];
+
+    STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:call withService:service withBridge:nil];
+
+    STWLogger *logger = mock([STWLogger class]);
+
+    [STWLogger setSharedLogger:logger];
+
+    [operation main];
+
+    [verifyCount(logger, times(1)) error:@"Selector for the service not found: service='dummy' selector='nonexistentMethod:withContext:'"];
+}
+
+
 // STWServiceCallContext methods tests
 
 - (void)testSucceed
