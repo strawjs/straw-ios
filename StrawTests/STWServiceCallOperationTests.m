@@ -28,15 +28,21 @@
 
 - (void)testMain
 {
-    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{@"method": @"dummyMethod", @"params": @{@"abc": @123}}];
+    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{@"service": @"dummy", @"method": @"dummyMethod", @"params": @{@"abc": @123}}];
 
     DummyService *service = [[DummyService alloc] init];
 
     STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:call withService:service withBridge:nil];
 
+    STWLogger *logger = mock([STWLogger class]);
+
+    [STWLogger setSharedLogger:logger];
+
     [operation main];
 
     XCTAssertEqualObjects(@{@"abc": @123}, service.params);
+
+    [verifyCount(logger, times(1)) info:@"Straw Service Method call: service='dummy' method='dummyMethod' selector='dummyMethod:withContext:'"];
 }
 
 

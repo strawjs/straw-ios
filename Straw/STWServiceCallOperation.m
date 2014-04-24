@@ -44,6 +44,8 @@
 
     }
 
+    STWLogInfo(@"Straw Service Method call: service='%@' method='%@' selector='%@'", self.serviceCall.service, self.serviceCall.method, [self.serviceCall selectorName]);
+
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
