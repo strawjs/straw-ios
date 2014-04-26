@@ -7,6 +7,9 @@
 
 #import "STW.h"
 #import "DummyService.h"
+#import "DummyServiceWithWebView.h"
+#import "DummyServiceWithViewController.h"
+#import "DummyServiceWithWebViewAndViewController.h"
 
 @interface STWTestCase : XCTestCase
 

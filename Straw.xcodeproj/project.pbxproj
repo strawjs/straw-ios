@@ -14,6 +14,9 @@
 		1971089A1902CC1F00C31715 /* STWNativeBridgeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 197108991902CC1F00C31715 /* STWNativeBridgeTests.m */; };
 		1971089C1902CC6E00C31715 /* STWWebViewDelegateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971089B1902CC6E00C31715 /* STWWebViewDelegateTests.m */; };
 		1971089F1903AD1900C31715 /* DummyService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1971089E1903AD1900C31715 /* DummyService.m */; };
+		197108A2190BF22800C31715 /* DummyServiceWithWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 197108A1190BF22800C31715 /* DummyServiceWithWebView.m */; };
+		197108A5190BF28B00C31715 /* DummyServiceWithViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197108A4190BF28B00C31715 /* DummyServiceWithViewController.m */; };
+		197108A8190BF2D700C31715 /* DummyServiceWithWebViewAndViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197108A7190BF2D700C31715 /* DummyServiceWithWebViewAndViewController.m */; };
 		1992E49218EE712E00440DF9 /* STWServiceCallTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49118EE712E00440DF9 /* STWServiceCallTests.m */; };
 		1992E49818F64F0C00440DF9 /* STWNativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49718F64F0C00440DF9 /* STWNativeBridge.m */; };
 		1992E49B18F7775A00440DF9 /* STWLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1992E49A18F7775900440DF9 /* STWLogger.m */; };
@@ -65,6 +68,12 @@
 		1971089B1902CC6E00C31715 /* STWWebViewDelegateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWWebViewDelegateTests.m; sourceTree = "<group>"; };
 		1971089D1903AD1900C31715 /* DummyService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyService.h; sourceTree = "<group>"; };
 		1971089E1903AD1900C31715 /* DummyService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyService.m; sourceTree = "<group>"; };
+		197108A0190BF22800C31715 /* DummyServiceWithWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyServiceWithWebView.h; sourceTree = "<group>"; };
+		197108A1190BF22800C31715 /* DummyServiceWithWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyServiceWithWebView.m; sourceTree = "<group>"; };
+		197108A3190BF28B00C31715 /* DummyServiceWithViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyServiceWithViewController.h; sourceTree = "<group>"; };
+		197108A4190BF28B00C31715 /* DummyServiceWithViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyServiceWithViewController.m; sourceTree = "<group>"; };
+		197108A6190BF2D700C31715 /* DummyServiceWithWebViewAndViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DummyServiceWithWebViewAndViewController.h; sourceTree = "<group>"; };
+		197108A7190BF2D700C31715 /* DummyServiceWithWebViewAndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyServiceWithWebViewAndViewController.m; sourceTree = "<group>"; };
 		1992E49118EE712E00440DF9 /* STWServiceCallTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallTests.m; sourceTree = "<group>"; };
 		1992E49418F0598F00440DF9 /* STWServiceCallContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWServiceCallContext.h; sourceTree = "<group>"; };
 		1992E49518F64E0500440DF9 /* STW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STW.h; sourceTree = "<group>"; };
@@ -193,6 +202,12 @@
 				19F6C51018DDD61A006C2FD1 /* Supporting Files */,
 				1971089D1903AD1900C31715 /* DummyService.h */,
 				1971089E1903AD1900C31715 /* DummyService.m */,
+				197108A0190BF22800C31715 /* DummyServiceWithWebView.h */,
+				197108A1190BF22800C31715 /* DummyServiceWithWebView.m */,
+				197108A3190BF28B00C31715 /* DummyServiceWithViewController.h */,
+				197108A4190BF28B00C31715 /* DummyServiceWithViewController.m */,
+				197108A6190BF2D700C31715 /* DummyServiceWithWebViewAndViewController.h */,
+				197108A7190BF2D700C31715 /* DummyServiceWithWebViewAndViewController.m */,
 			);
 			path = StrawTests;
 			sourceTree = "<group>";
@@ -411,8 +426,11 @@
 				1992E4A418F985D500440DF9 /* STWTestCase.m in Sources */,
 				19F6D07218FAC8C9008C81B6 /* STWServiceCallFactoryTests.m in Sources */,
 				1971089F1903AD1900C31715 /* DummyService.m in Sources */,
+				197108A8190BF2D700C31715 /* DummyServiceWithWebViewAndViewController.m in Sources */,
 				1971089C1902CC6E00C31715 /* STWWebViewDelegateTests.m in Sources */,
 				1971089A1902CC1F00C31715 /* STWNativeBridgeTests.m in Sources */,
+				197108A2190BF22800C31715 /* DummyServiceWithWebView.m in Sources */,
+				197108A5190BF28B00C31715 /* DummyServiceWithViewController.m in Sources */,
 				1992E49218EE712E00440DF9 /* STWServiceCallTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

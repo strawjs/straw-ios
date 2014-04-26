@@ -77,4 +77,79 @@
 }
 
 
+- (void)testLoadService
+{
+    // mock webView
+    UIWebView *webView = mock([UIWebView class]);
+
+    // mock viewController
+    UIViewController *viewController = mock([UIViewController class]);
+
+
+    // initialize bridge
+    STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:viewController];
+
+
+    // load services
+    [bridge loadService:[DummyService class]];
+
+    XCTAssertNotNil([bridge.repository getService:@"dummy"], @"`dummy` service is set.");
+
+    XCTAssertTrue([[bridge.repository getService:@"dummy"] isKindOfClass:[DummyService class]], @"`dummy` service is an instance of DummyService.");
+
+    XCTAssertNil([bridge.repository getService:@"dumm"], @"The service named `dumm` is no set.");
+}
+
+
+- (void)testLoadServiceWithWebViewAndOrViewController
+{
+    // mock webView
+    UIWebView *webView = mock([UIWebView class]);
+
+    // mock viewController
+    UIViewController *viewController = mock([UIViewController class]);
+
+
+    // initialize bridge
+    STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:viewController];
+
+
+    // load services
+    [bridge loadService:[DummyServiceWithWebView class]];
+    [bridge loadService:[DummyServiceWithViewController class]];
+    [bridge loadService:[DummyServiceWithWebViewAndViewController class]];
+
+
+    // check the loading of DummyServiceWithWebView
+    DummyServiceWithWebView *serviceWithWebView = (DummyServiceWithWebView *)[bridge.repository getService:@"dummyWithWebView"];
+
+    XCTAssertNotNil(serviceWithWebView, @"`dummyWithWebView` service is loaded.");
+
+    XCTAssertTrue([serviceWithWebView isKindOfClass:[DummyServiceWithWebView class]], @"`dummyWithWebView` service is an instance of DummyServiceWithWebView");
+
+    XCTAssertEqualObjects(webView, serviceWithWebView.webView, @"webView property is set.");
+
+
+    // check the loading of DummyServiceWithViewController
+    DummyServiceWithViewController *serviceWithViewController = (DummyServiceWithViewController *)[bridge.repository getService:@"dummyWithViewController"];
+
+    XCTAssertNotNil(serviceWithViewController, @"`dummyWithViewController` service is loaded");
+
+    XCTAssertTrue([serviceWithViewController isKindOfClass:[DummyServiceWithViewController class]], @"`dummyWithViewController` service is an instance of DummyServiceWithViewController");
+
+    XCTAssertEqualObjects(viewController, serviceWithViewController.viewController, @"viewController property is set.");
+
+
+    // check the loading of DummyServiceWithWebViewAndViewController
+    DummyServiceWithWebViewAndViewController *serviceWithWebViewAndViewController = (DummyServiceWithWebViewAndViewController *)[bridge.repository getService:@"dummyWithWebViewAndViewController"];
+
+    XCTAssertNotNil(serviceWithWebViewAndViewController, @"`dummyWithWebViewAndViewController` service is set.");
+
+    XCTAssertTrue([serviceWithWebViewAndViewController isKindOfClass:[DummyServiceWithWebViewAndViewController class]], @"`dummyWithWebViewAndViewController` service is an instance of DummyServiceWithWebViewAndViewController");
+
+    XCTAssertEqualObjects(webView, serviceWithWebViewAndViewController.webView, @"webView property is set.");
+    XCTAssertEqualObjects(viewController, serviceWithWebViewAndViewController.viewController, @"viewController property is set.");
+}
+
+
 @end
