@@ -28,7 +28,7 @@
 
 - (void)testMain
 {
-    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{@"service": @"dummy", @"method": @"dummyMethod", @"params": @{@"abc": @123}}];
+    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{@"service": @"dummy", @"method": @"dummyMethod", @"params": @{@"abc": @123}, @"callId": @"123"}];
 
     DummyService *service = [[DummyService alloc] init];
 
@@ -48,7 +48,7 @@
 
 - (void)testMainWithError
 {
-    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{@"service": @"dummy", @"method": @"nonexistentMethod", @"params": @{@"abc": @123}}];
+    STWServiceCall *call = [STWServiceCallFactory createFromCallRequestObject:@{@"service": @"dummy", @"method": @"nonexistentMethod", @"params": @{@"abc": @123}, @"callId": @"123"}];
 
     DummyService *service = [[DummyService alloc] init];
 
