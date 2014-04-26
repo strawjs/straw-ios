@@ -64,4 +64,17 @@
 }
 
 
+- (void)testIsStrawuURLRequest
+{
+    STWNativeBridge *bridge = [[STWNativeBridge alloc] init];
+
+    XCTAssertTrue([bridge isStrawURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"straw://123"]]]);
+    XCTAssertFalse([bridge isStrawURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://a/b"]]]);
+    XCTAssertFalse([bridge isStrawURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"stra://123"]]]);
+    XCTAssertFalse([bridge isStrawURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"straww://123"]]]);
+    XCTAssertFalse([bridge isStrawURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"straw"]]]);
+    XCTAssertFalse([bridge isStrawURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"gap://123"]]]);
+}
+
+
 @end
