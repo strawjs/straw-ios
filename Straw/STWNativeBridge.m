@@ -37,15 +37,15 @@
     return self;
 }
 
-- (STWServiceCall *)createServiceCallFromUrl:(NSURL *)url
+- (STWServiceCall *)createServiceCallFromUrlRequest:(NSURLRequest *)request
 {
-    if (![@"straw" isEqual:[url scheme]]) {
+    if (![self isStrawURLRequest:request]) {
         return nil;
     }
 
-    NSString *callId = [url host];
+    NSString *callId = [[request URL] host];
 
-    NSString *getRequest = [NSString stringWithFormat:@"window.straw.getRequest(%@)", callId];
+    NSString *getRequest = [NSString stringWithFormat:@"window.straw.getRequest('%@')", callId];
 
     NSString *requestJSON = [self.webView stringByEvaluatingJavaScriptFromString:getRequest];
 
@@ -99,14 +99,12 @@
         return;
     }
 
-    NSURL *url = [request URL];
-
-
-    STWServiceCall *serviceCall = [self createServiceCallFromUrl:url];
+    // create service call from url request
+    STWServiceCall *serviceCall = [self createServiceCallFromUrlRequest:request];
 
     // If the service call object is nil, then the url is broken.
     if (!serviceCall) {
-        STWLogError(@"Straw url is broken: '%@'", [url absoluteString]);
+        STWLogError(@"Straw url is broken: '%@'", [[request URL] absoluteString]);
 
         return;
     }

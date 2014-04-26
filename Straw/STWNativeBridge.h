@@ -61,7 +61,7 @@
  @param url url to create from
  @return generated Service Call object
  */
-- (STWServiceCall *)createServiceCallFromUrl:(NSURL *)url;
+- (STWServiceCall *)createServiceCallFromUrlRequest:(NSURLRequest *)request;
 
 
 /**
