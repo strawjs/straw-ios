@@ -20,7 +20,7 @@
 
 
 /** id of the Service Method call */
-@property (nonatomic, retain) NSNumber *callId;
+@property (nonatomic, retain) NSString *callId;
 
 
 /**
