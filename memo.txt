@@ -174,7 +174,7 @@ Do people really want stateful services?
 ----
 
 TODO:
-- STWWebView, STWViewController (in Util group)
+- STWWebView, STWViewController (in Wrapper group)
 - tests - doing
 - .podspec
 
