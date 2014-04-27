@@ -104,7 +104,7 @@
 
     // If the service call object is nil, then the url is broken.
     if (!serviceCall) {
-        STWLogError(@"Straw url is broken: '%@'", [[request URL] absoluteString]);
+        STWLogError(@"Straw request object is broken: url='%@'", [[request URL] absoluteString]);
 
         return;
     }

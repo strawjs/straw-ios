@@ -152,4 +152,38 @@
 }
 
 
+- (void)testExecuteRequestWithNonStrawURLRequest
+{
+    STWNativeBridge *bridge = [[STWNativeBridge alloc] init];
+
+    // execution with non straw url request cause nothing.
+    [bridge executeRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost/"]]];
+}
+
+
+- (void)testExecuteRequestWithBrokenStrawURLRequest
+{
+    // mock up webView
+    UIWebView *webView = mock([UIWebView class]);
+
+    // stub stringByEvaluatingJavaScriptFromString
+    // it returns insufficient straw request object.
+    [given([webView stringByEvaluatingJavaScriptFromString:@"window.straw.getRequest('123')"]) willReturn:@"{\"service\":\"dummy\"}"];
+
+    // mock up logger
+    STWLogger *logger = mock([STWLogger class]);
+
+    [STWLogger setSharedLogger:logger];
+
+    // create bridge
+    STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:nil];
+
+    // execute
+    [bridge executeRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"straw://123"]]];
+
+    // verify logging
+    [verifyCount(logger, times(1)) error:@"Straw request object is broken: url='straw://123'"];
+}
+
+
 @end
