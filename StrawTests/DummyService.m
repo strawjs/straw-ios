@@ -5,6 +5,10 @@
 
 - (BOOL)isBackgroundJob:(NSString *)method
 {
+    if ([method isEqualToString:@"dummyMethodMainThread"]) {
+        return NO;
+    }
+
     return YES;
 }
 
@@ -16,6 +20,14 @@
 
 
 - (void)dummyMethod:(NSDictionary *)params withContext:(id<STWServiceCallContext>)context
+{
+    self.params = params;
+
+    return;
+}
+
+
+- (void)dummyMethodMainThread:(NSDictionary *)params withContext:(id<STWServiceCallContext>)context
 {
     self.params = params;
 

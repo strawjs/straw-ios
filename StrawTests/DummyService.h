@@ -7,5 +7,6 @@
 @property (nonatomic, retain) NSDictionary *params;
 
 - (void)dummyMethod:(NSDictionary *)params withContext:(id<STWServiceCallContext>)context;
+- (void)dummyMethodMainThread:(NSDictionary *)params withContext:(id<STWServiceCallContext>)context;
 
 @end
