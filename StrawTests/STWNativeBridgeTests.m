@@ -186,4 +186,81 @@
 }
 
 
+- (void)testExecuteRequestWithServiceNotFound
+{
+    // mock up webView
+    UIWebView *webView = mock([UIWebView class]);
+
+    // stub stringByEvaluatingJavaScriptFromString
+    // it returns insufficient straw request object.
+    [given([webView stringByEvaluatingJavaScriptFromString:@"window.straw.getRequest('123')"]) willReturn:@"{\"service\":\"dummy\",\"method\":\"dummyMethod\",\"callId\":\"123\"}"];
+
+    // mock up logger
+    STWLogger *logger = mock([STWLogger class]);
+
+    [STWLogger setSharedLogger:logger];
+
+    // create bridge
+    STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:nil];
+
+    // execute
+    [bridge executeRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"straw://123"]]];
+
+    // verify logging
+    [verifyCount(logger, times(1)) error:@"Straw service not found: service='dummy'"];
+}
+
+
+
+
+- (void)testExecuteRequestBackgroundJob
+{
+    // mock up webView
+    UIWebView *webView = mock([UIWebView class]);
+
+    // stub stringByEvaluatingJavaScriptFromString
+    // it returns insufficient straw request object.
+    [given([webView stringByEvaluatingJavaScriptFromString:@"window.straw.getRequest('123')"]) willReturn:@"{\"service\":\"dummy\",\"method\":\"dummyMethod\",\"params\":{\"abc\":\"123\",\"def\":456},\"callId\":\"123\"}"];
+
+    // create bridge
+    STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:nil];
+
+    // mock up operation
+    NSOperationQueue *operationQueue = mock([NSOperationQueue class]);
+
+    // set mock
+    bridge.operationQueue = operationQueue;
+
+    // load DummyService
+    [bridge loadService:[DummyService class]];
+
+    // execute
+    [bridge executeRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"straw://123"]]];
+
+    // create argument captor
+    MKTArgumentCaptor *argument = [[MKTArgumentCaptor alloc] init];
+
+    [verifyCount(operationQueue, times(1)) addOperation:[argument capture]];
+
+    STWServiceCallOperation *operation = [argument value];
+
+    XCTAssertNotNil(operation, @"The queued operation is not nil.");
+
+    XCTAssertNotNil(operation.serviceCall, @"The service call is set on the operation.");
+
+    XCTAssertEqualObjects(@"dummy", operation.serviceCall.service, @"`service` corresponds to Straw request object's field.");
+
+    XCTAssertEqualObjects(@"dummyMethod", operation.serviceCall.method, @"`method` corresponds to Straw request object's field.");
+
+    XCTAssertEqualObjects((@{@"abc": @"123", @"def": @456}), operation.serviceCall.params, @"`params` corresponds to Straw request object's field.");
+
+    XCTAssertEqualObjects(@"123", operation.serviceCall.callId, @"`callId` corresponds to Straw request object's field.");
+
+    XCTAssertNotNil(operation.service, @"The service is set on the operation.");
+
+    XCTAssertTrue([operation.service isKindOfClass:[DummyService class]], @"`service` is instance of loaded class");
+
+}
+
+
 @end
