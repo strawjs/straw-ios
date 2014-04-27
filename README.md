@@ -10,3 +10,17 @@
 
 - implementation
 - cocoapods integration
+- read whatsmyip-android and detect necessary services for implementing it
+  - http service
+  - kvdb service (corresponding to sharedPreferences service of straw-android)
+  - hud servcie (corresponding to toast service of straw-android)
+  - log servcie
+
+- infra
+  - straw service registry
+    - couchbase, heroku
+
+- refactor straw-android completely
+  - separate domain and application according to straw-ios
+    - remove StrawDrink and instead of that create StrawCallContext interface and StrawCallOperation class (which implements StrawCallContext)
+  - rename `plugin` to `service`
