@@ -34,7 +34,7 @@
 }
 
 
-- (void)testCreateServiceCallFromUrlRequest
+- (void)testCreateServiceCallFromURLRequest
 {
     // mock webView
     UIWebView *webView = mock([UIWebView class]);
@@ -61,6 +61,16 @@
     XCTAssertEqualObjects(@"dummyMethod", call.method, @"method property is set properly.");
 
     XCTAssertEqualObjects((@{@"abc": @"123", @"def": @456}), call.params, @"params properly is set properly.");
+}
+
+
+- (void)testCreateServiceCallFromInvalidURLRequest
+{
+    STWNativeBridge *bridge = [[STWNativeBridge alloc] init];
+
+    STWServiceCall *serviceCall = [bridge createServiceCallFromUrlRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost/"]]];
+
+    XCTAssertNil(serviceCall, @"service");
 }
 
 
