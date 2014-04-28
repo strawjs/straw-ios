@@ -194,19 +194,21 @@ Do people really want stateful services?
 
 TODO:
 - LogError on call factory failures.
-- .podspec
-- read whatsmyip-android and detect necessary services for implementing it
+- .podspec of straw-ios
+
+- infra
+  - straw service registry
+    - mongodb, heroku
+
+- services:
+  - log servcie
+    - log on each level
   - http service
   - kvdb service (corresponding to sharedPreferences service of straw-android)
     - based on https://github.com/colinyoung/kvdb
   - hud servcie (corresponding to toast service of straw-android)
     - based on MPProgressHUD
-  - log servcie
-    - log on each level
 
-- infra
-  - straw service registry
-    - mongodb, heroku
 
 - STWWebView, STWViewController (in Wrapper group)
 
