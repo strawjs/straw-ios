@@ -175,14 +175,32 @@ Do people really want stateful services?
 
 TODO:
 - STWWebView, STWViewController (in Wrapper group)
-- tests - doing
 - .podspec
+- LogError on call factory failures.
+- read whatsmyip-android and detect necessary services for implementing it
+  - http service
+  - kvdb service (corresponding to sharedPreferences service of straw-android)
+    - based on https://github.com/colinyoung/kvdb
+  - hud servcie (corresponding to toast service of straw-android)
+    - based on MPProgressHUD
+  - log servcie
+    - log on each level
+
+- infra
+  - straw service registry
+    - mongodb, heroku
+
+- refactor straw-android completely
+  - separate domain and application according to straw-ios
+    - remove StrawDrink and instead of that create StrawCallContext interface and StrawCallOperation class (which implements StrawCallContext)
+  - rename `plugin` to `service`
 
 DONE:
+- implementation - done
+- tests - done
 - define interfaces - almost done
 - build on xcode 5.1
 - STWServiceFactory
 - log - done
-
 
 [END]
