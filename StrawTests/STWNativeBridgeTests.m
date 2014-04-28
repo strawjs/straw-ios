@@ -275,7 +275,7 @@
     // create bridge
     STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:nil];
 
-    // mock up operation
+    // mock up operationQueue
     NSOperationQueue *operationQueue = mock([NSOperationQueue class]);
 
     // set mock
@@ -312,6 +312,41 @@
 
     XCTAssertTrue([operation.service isKindOfClass:[DummyService class]], @"`service` is instance of loaded class");
 
+}
+
+
+- (void)testSendData
+{
+    // mock up webView
+    UIWebView *webView = mock([UIWebView class]);
+
+    // create bridge
+    STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:nil];
+
+    // mock up operationQueue
+    NSOperationQueue *operationQueue = mock([NSOperationQueue class]);
+
+    // set mock
+    bridge.mainQueue = operationQueue;
+
+    // call sendData
+    [bridge sendData:@{@"abc": @123}];
+
+    // create argument captor
+    MKTArgumentCaptor *argument = [[MKTArgumentCaptor alloc] init];
+
+    // capture argument of addOperation
+    [verifyCount(operationQueue, times(1)) addOperation:[argument capture]];
+
+    // retrieve captured value
+    STWServiceCallbackOperation *callbackOperation = [argument value];
+
+
+    XCTAssertNotNil(callbackOperation, @"callbackOperation is queued.");
+
+    XCTAssertEqualObjects(@"window.straw.receiveData({\"abc\":123})", callbackOperation.message, @"message property is set.");
+
+    XCTAssertEqualObjects(webView, callbackOperation.webView, @"webView is set.");
 }
 
 
