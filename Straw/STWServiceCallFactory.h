@@ -1,5 +1,6 @@
 #import <Foundation/Foundation.h>
 #import "STWServiceCall.h"
+#import "STWLogger.h"
 
 /**
  STWServiceCallFactory is the factory class of STWServiceCall.
