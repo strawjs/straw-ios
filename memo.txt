@@ -1,54 +1,4 @@
 
-あなたといたら いつまでも
-心の波が 揺れ動く
-歴史に残る 歌詠みに
-なれる気にすら なれるほど
-#shichigo
-
-フェードアウトは もう無理と
-思えるくらい 前に出て
-会えなくなる日 近づいて
-どうしていいか 分からない
-#shichigo
-
-届かぬ思い そのままに
-歌でも詠んで 忘れよう
-春の陽の下 麗しい
-花を眺めた 昼下がり
-#shichigo
-
-あなたと過ごす 昼下がり
-おいしいランチ 食べながら
-何気ないこと 言いながら
-過ごした時は 輝いて
-# shichigo
-
-時計の針は それほどに
-動いてないと 思うけど
-心の波は どれほどに
-動いた事か 分からない
-#shichigo
-
-あなたと過ごす 午後の時
-時計でみれば 短いが
-他の誰かと 過ごしてた
-どんな時より 長かった
-#shichigo
-
-もはやあの人と 過ごしてた
-5年の時の 重みより
-今や君との 数回の
-食事の時の 思い出が
-#shichigo
-
-今の僕には 輝いて
-夏の陽のように 輝いて
-命の水の わき上がる
-泉のように 大事なの
-#shichigo
-
-
-
 
 plugin -> service
 
@@ -206,22 +156,23 @@ Do people really want stateful services?
 ----
 
 TODO:
-- LogError on call factory failures.
 - .podspec of straw-ios
 
 - infra
   - straw service registry
     - mongodb, heroku
 
-- services:
-  - log servcie
-    - log on each level
-  - http service
-  - kvdb service (corresponding to sharedPreferences service of straw-android)
-    - based on https://github.com/colinyoung/kvdb
-  - hud servcie (corresponding to toast service of straw-android)
-    - based on MPProgressHUD
+- http service
+  - straw-ios-http-service
 
+- hud servcie (corresponding to toast service of straw-android)
+  - based on MPProgressHUD
+
+- kvdb service (corresponding to sharedPreferences service of straw-android)
+  - based on https://github.com/colinyoung/kvdb
+
+- log servcie
+  - log on each level
 
 - STWWebView, STWViewController (in Wrapper group)
 
@@ -237,6 +188,7 @@ TODO:
 - next application!
 
 DONE:
+- LogError on call factory failures. - done
 - implementation - done
 - tests - done
 - define interfaces - almost done
