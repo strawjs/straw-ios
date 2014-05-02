@@ -27,7 +27,6 @@
 
 - (void)testCreateFromCallRequestObjectWithoutService
 {
-
     STWServiceCall *serviceCall = [STWServiceCallFactory createFromCallRequestObject:@{
         @"method": @"def",
         @"params": @{@"a": @123, @"b": @"456"},
@@ -35,6 +34,9 @@
     }];
 
     XCTAssertNil(serviceCall, @"Service call is nil because `service` parameter is absent.");
+
+    // verify logging
+    [verifyCount(self.logger, times(1)) error:@"`service` field of the Straw request object is empty and the request is canceled:"];
 
 }
 
@@ -49,6 +51,9 @@
 
     XCTAssertNil(serviceCall, @"Service call is nil because `method` parameter is absent.");
 
+    // verify logging
+    [verifyCount(self.logger, times(1)) error:@"`method` field of the Straw request object is empty and the request is canceled:"];
+
 }
 
 - (void)testCreateFromCallRequestObjectWithoutCallId
@@ -61,6 +66,9 @@
     }];
 
     XCTAssertNil(serviceCall, @"Service call is nil because `callId` parameter is absent.");
+
+    // verify logging
+    [verifyCount(self.logger, times(1)) error:@"`callId` field of the Straw request object is empty and the request is canceled:"];
 
 }
 
@@ -75,6 +83,9 @@
     }];
 
     XCTAssertEqualObjects((@{}), serviceCall.params, @"The default value of params is empty dict when `callId` parameter is absent.");
+
+    // verify logging
+    [verifyCount(self.logger, times(1)) info:@"`params` field of the Straw reqeust object is empty and default value (empty dict) is supplied:"];
 
 }
 

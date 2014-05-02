@@ -13,4 +13,9 @@
 
 @interface STWTestCase : XCTestCase
 
+/**
+ * The mock logger, used for verifying the Logging of the framework.
+ */
+@property (nonatomic, retain) STWLogger *logger;
+
 @end
