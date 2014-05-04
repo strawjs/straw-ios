@@ -6,130 +6,7 @@ plugin -> service
 straw-ios-http-service
 straw-ios-http-service.js
 
-/**
- * STWServiceCall is the model class of the Service Method call from Browser.
- *
- * @layer Domain
- */
-@interface STWServiceCall : NSObject
-
-@property (nonatomic, retain) NSNumber *callId;
-@property (nonatomic, retain) NSString *service;
-@property (nonatomic, retain) NSString *method;
-@property (nonatomic, retain) BOOL *success;
-
-@end
-
-
-
-/**
- * STWServiceCallFactory is the factory class of STWServiceCall objects.
- *
- * @layer Domain
- */
-@interface STWServiceCallFactory : NSObject
-+ (STWServiceCall *)createFromJSON:(JSONObject *)json;
-@end
-
-/**
- * STWService is the protocol conformed by Straw Service implementations.
- *
- * @layer Domain
- */
-@protocol STWService <NSObject>
-
-- actionCall:(STWCall *)call;
-
-@end
-
-/**
- * STWServiceCallContext is a context of a single Service Method call.
- * Service authers can succeed or fail Service Method Call using this class.
- *
- * @layer Application
- */
-@protocol STWServiceCallContext <NSObject>
-
-@property (nonatomic, assign, readonly) UIViewController *viewController
-@property (nonatomic, assign, readonly) UIWebView *webView;
-@property (nonatomic, retain, readonly) STWServiceCall *call;
-
-- (void)succeed;
-- (void)succeedWithString:(NSString *)value;
-- (void)succeedWithNumber:(NSNumber *)value;
-- (void)succeedWithJSON:(JSONObject *)value;
-
-- (void)failWithCode:(NSNumber *)code withMessage:(NSString *)message;
-
-@end
-
-/**
- * STWServiceRepository is the repository class of id <STWService>.
- *
- * @layer Domain
- */
-@interface STWServiceRepository : NSObject
-
-@property (nonatomic, retain, readonly)
-@end
-
-
-/**
- * ExampleService is a example of Service implementation
- *
- * @layer Service
- */
-@interface ExampleService <StrawService> : NSObject
-- (void)action:(JSONObject *)params withContext:(STWServiceContext *)context;
-@end
-
-@implementation ExampleService
-- (void)action:(JSONObject *)arg withContext:(STWServiceCallContext *)context {
-    if ([self blah]) {
-        [context succeed];
-
-    } else if ([self blahblah]) {
-        [context succeedWithObject:@{@"a": @123}];
-
-    } else {
-        [call failWithCode:@123 withMessage:@"example failed!"];
-    }
-}
-@end
-
-
-- (void)callService:(id <STWService>)service withContext(id <STWServiceCallContext>)context
-{
-    STWServiceCall *call = context.serviceCall;
-
-    // Service Method must have the form of
-    // `- (void)methodName:(NSDcitionary *)params withCall:(id <STWServiceCallContext>)`
-    NSString *methodName = [NSString stringWithFormat:@"%@:withContext:", call.method];
-
-    // create the selector for Service Method
-    SEL selector = NSSelectorFromString(methodName);
-
-    if ([service respondsToSelector:selector]) {
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-
-        // invoke Service Method
-        [service performSelector:selector withObject:call.params withObject:context];
-
-#pragma clang diagnostic pop
-
-    } else {
-        // TODO: log error
-    }
-}
-
-@interface STWNativeWebViewBridge : NSObject
-
-+ (NSString *)createNativeToBrowserMessage:(NSDictionary *)params;
-+ (NSString *)retrieveRequestObjectForCallId:(NSString *)callId;
-
-@end
+----
 
 A service can be either stateful or stateless.
 That's why the naming of `Straw Service Method`.
@@ -156,22 +33,33 @@ Do people really want stateful services?
 ----
 
 TODO:
-- .podspec of straw-ios
+- experiment on ios-exercise
+
+- Straw.podspec of straw-ios
 
 - infra
   - straw service registry
     - mongodb, heroku
 
+- straw-ios.js
+
 - http service
-  - straw-ios-http-service
+  - straw-ios-service-http-native
+  - straw-ios-service-http-js
 
 - hud servcie (corresponding to toast service of straw-android)
+  - straw-ios-service-hud-native
+  - straw-ios-service-hud-js
   - based on MPProgressHUD
 
 - kvdb service (corresponding to sharedPreferences service of straw-android)
+  - straw-ios-service-kvdb-native
+  - straw-ios-service-kvdb-js
   - based on https://github.com/colinyoung/kvdb
 
 - log servcie
+  - straw-ios-service-log-native
+  - straw-ios-service-log-js
   - log on each level
 
 - STWWebView, STWViewController (in Wrapper group)
