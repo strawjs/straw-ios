@@ -16,7 +16,19 @@
 
 
 /**
+ Init with webView.
+
+ @param webView the webView
+ @param viewController the viewController
+ @return the instance of the class
+ */
+- (id)initWithWebView:(UIWebView *)webView;
+
+
+/**
  Init with webView and viewController.
+
+ viewController is necessary if you want use the services which depends on the viewController property.
 
  @param webView the webView
  @param viewController the viewController

@@ -7,7 +7,7 @@
 @implementation STWWebViewDelegateTests
 
 
-- (void)testInitialization
+- (void)testInitWithWebViewWithViewController
 {
     UIViewController *viewController = mock([UIViewController class]);
 
@@ -19,6 +19,29 @@
     XCTAssertNotNil(delegate.bridge, @"the bridge initialized");
 
     [verifyCount(webView, times(1)) setDelegate:delegate];
+}
+
+
+- (void)testInitWithWebView
+{
+    UIWebView *webView = mock([UIWebView class]);
+
+    STWWebViewDelegate *delegate = [[STWWebViewDelegate alloc] initWithWebView:webView];
+
+    XCTAssertNotNil(delegate, @"delegate can constructor");
+    XCTAssertNotNil(delegate.bridge, @"the bridge initialized");
+
+    [verifyCount(webView, times(1)) setDelegate:delegate];
+}
+
+
+- (void)testInitWithNilWebView
+{
+    // doesn't throw runtime error
+    STWWebViewDelegate *delegate = [[STWWebViewDelegate alloc] initWithWebView:nil];
+
+    XCTAssertNotNil(delegate, @"delegate can constructor");
+    XCTAssertNotNil(delegate.bridge, @"the bridge initialized");
 }
 
 
