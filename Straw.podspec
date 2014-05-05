@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
 
   s.name = "Straw"
 
-  s.version = "0.3.1"
+  s.version = "0.3.2"
 
   s.summary = "Straw, the simpler native-webview bridge"
 
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
 
   s.source = {
       :git => "https://github.com/strawjs/straw-ios.git",
-      :tag => "v0.3.1"
+      :tag => "v0.3.2"
   }
 
   s.source_files = "Straw/*.{h,m}"
