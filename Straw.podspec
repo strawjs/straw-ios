@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
 
   s.source_files = "Straw/*.{h,m}"
 
-  s.public_header_files = "Straw/Straw.h"
+  s.public_header_files = "Straw/*.h"
 
   s.requires_arc = true
 
