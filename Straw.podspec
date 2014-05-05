@@ -30,9 +30,9 @@ Pod::Spec.new do |s|
       :tag => "v0.2.0"
   }
 
-  s.source_files = "Classes", "Straw/*.{h,m}"
+  s.source_files = "Straw/*.{h,m}"
 
-  s.public_header_files = "Straw/*.h"
+  s.public_header_files = "Straw/Straw.h"
 
   s.requires_arc = true
 

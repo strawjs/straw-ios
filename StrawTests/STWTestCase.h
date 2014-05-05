@@ -5,7 +5,7 @@
 #define MOCKITO_SHORTHAND
 #import <OCMockito/OCMockito.h>
 
-#import "STW.h"
+#import "Straw.h"
 #import "DummyService.h"
 #import "DummyServiceWithWebView.h"
 #import "DummyServiceWithViewController.h"

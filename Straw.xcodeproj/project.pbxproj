@@ -62,6 +62,7 @@
 		192FC54B18E9C899009F326C /* STWServiceCallOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWServiceCallOperation.h; sourceTree = "<group>"; };
 		192FC54C18E9C899009F326C /* STWServiceCallOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallOperation.m; sourceTree = "<group>"; };
 		192FC54F18ED8CB6009F326C /* STWServiceRepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceRepositoryTests.m; sourceTree = "<group>"; };
+		1930066D1917B1BC00E819D8 /* Straw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Straw.h; sourceTree = "<group>"; };
 		197108931902CADE00C31715 /* STWServiceCallbackOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallbackOperationTests.m; sourceTree = "<group>"; };
 		197108971902CB9800C31715 /* STWServiceCallOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallOperationTests.m; sourceTree = "<group>"; };
 		197108991902CC1F00C31715 /* STWNativeBridgeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWNativeBridgeTests.m; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		197108A7190BF2D700C31715 /* DummyServiceWithWebViewAndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DummyServiceWithWebViewAndViewController.m; sourceTree = "<group>"; };
 		1992E49118EE712E00440DF9 /* STWServiceCallTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWServiceCallTests.m; sourceTree = "<group>"; };
 		1992E49418F0598F00440DF9 /* STWServiceCallContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWServiceCallContext.h; sourceTree = "<group>"; };
-		1992E49518F64E0500440DF9 /* STW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STW.h; sourceTree = "<group>"; };
 		1992E49618F64F0C00440DF9 /* STWNativeBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWNativeBridge.h; sourceTree = "<group>"; };
 		1992E49718F64F0C00440DF9 /* STWNativeBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STWNativeBridge.m; sourceTree = "<group>"; };
 		1992E49918F7775900440DF9 /* STWLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STWLogger.h; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 		19F6C4FB18DDD61A006C2FD1 /* Straw */ = {
 			isa = PBXGroup;
 			children = (
-				1992E49518F64E0500440DF9 /* STW.h */,
+				1930066D1917B1BC00E819D8 /* Straw.h */,
 				19F6D07718FCB02B008C81B6 /* Util */,
 				19F6D07618FCB005008C81B6 /* Application */,
 				1992E49C18F8D52000440DF9 /* Infrastructure */,
