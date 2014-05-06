@@ -43,7 +43,7 @@
     XCTAssertNotNil(delegate, @"delegate can constructor");
     XCTAssertNotNil(delegate.bridge, @"the bridge initialized");
 
-    [verifyCount(self.logger, times(1)) warn:@"webView is nil; without webView any function of Straw Framework doesn't work."];
+    [verifyCount(self.logger, times(1)) warn:@"initialized with webView == nil; without webView any function of Straw Framework doesn't work."];
 }
 
 

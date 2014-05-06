@@ -17,7 +17,7 @@
     self = [super init];
 
     if (!webView) {
-        STWLogWarn(@"webView is nil; without webView any function of Straw Framework doesn't work.");
+        STWLogWarn(@"initialized with webView == nil; without webView any function of Straw Framework doesn't work.");
     }
 
     if (self) {
