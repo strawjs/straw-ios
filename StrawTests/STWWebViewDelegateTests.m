@@ -42,6 +42,8 @@
 
     XCTAssertNotNil(delegate, @"delegate can constructor");
     XCTAssertNotNil(delegate.bridge, @"the bridge initialized");
+
+    [verifyCount(self.logger, times(1)) warn:@"webView is nil; without webView any function of Straw Framework doesn't work."];
 }
 
 
@@ -56,8 +58,9 @@
     // stub isStrawURLRequest method
     [given([delegate.bridge isStrawURLRequest:anything()]) willReturnBool:YES];
 
-    // create mock request object
-    NSURLRequest *request = mock([NSURLRequest class]);
+    // create url request object
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"straw://123"]];
+
 
     // invoke target method
     BOOL shouldStartLoad = [delegate webView:nil shouldStartLoadWithRequest:request navigationType:UIWebViewNavigationTypeBackForward];
@@ -67,6 +70,10 @@
 
     // verify bridge interaction
     [verifyCount(delegate.bridge, times(1)) executeRequest:request];
+
+    // verify logging
+    [verifyCount(self.logger, times(1)) verbose:@"invoked -webView:shouldStartLoadWithRequest:navigationType: url=straw://123"];
+
 }
 
 
@@ -82,8 +89,8 @@
     // stub isStrawURLRequest method
     [given([delegate.bridge isStrawURLRequest:anything()]) willReturnBool:NO];
 
-    // create mock request object
-    NSURLRequest *request = mock([NSURLRequest class]);
+    // create url request object
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost/"]];
 
     // invoke target method
     BOOL shouldStartLoad = [delegate webView:nil shouldStartLoadWithRequest:request navigationType:UIWebViewNavigationTypeBackForward];
@@ -94,6 +101,8 @@
     // verify bridge interaction
     [verifyCount(delegate.bridge, never()) executeRequest:request];
 
+    // verify logging
+    [verifyCount(self.logger, times(1)) verbose:@"invoked -webView:shouldStartLoadWithRequest:navigationType: url=http://localhost/"];
 }
 
 

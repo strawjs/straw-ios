@@ -2,6 +2,11 @@
 
 @implementation STWWebViewDelegate
 
+
+-(id)init{
+    return [self initWithWebView:nil];
+}
+
 - (id)initWithWebView:(UIWebView *)webView
 {
     return [self initWithWebView:webView withViewController:nil];
@@ -10,6 +15,10 @@
 - (id)initWithWebView:(UIWebView *)webView withViewController:(UIViewController *)viewController
 {
     self = [super init];
+
+    if (!webView) {
+        STWLogWarn(@"webView is nil; without webView any function of Straw Framework doesn't work.");
+    }
 
     if (self) {
 
@@ -28,11 +37,14 @@
 
 /**
  *
- * THE BRIDGE FROM BROWSER TO NATIVE
+ * THE BROWSER-TO-NATIVE ENTRYPOINT
  *
  */
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
+    // log verbose at the entry point
+    STWLogVerbose(@"invoked -webView:shouldStartLoadWithRequest:navigationType: url=%@", [[request URL] absoluteString]);
+
     if (![self.bridge isStrawURLRequest:request]) {
 
         // If the url scheme is not the form of "straw://", then the request is not relevant to Straw.
