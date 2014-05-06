@@ -34,15 +34,11 @@
 
 - (void)testMainWithWebViewNil
 {
-    STWLogger *logger = mock([STWLogger class]);
-
-    [STWLogger setSharedLogger:logger];
-
     STWServiceCallbackOperation *operation = [[STWServiceCallbackOperation alloc] initWithMessage:@"abc" withWebView:nil];
 
     [operation main];
 
-    [verifyCount(logger, times(1)) info:@"The target UIWebView has been already released. Cannot perform callback operation: message='abc'"];
+    [verifyCount(self.logger, times(1)) info:@"The target UIWebView has been already released. Cannot perform callback operation: message='abc'"];
 }
 
 

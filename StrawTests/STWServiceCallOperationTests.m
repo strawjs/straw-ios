@@ -34,15 +34,11 @@
 
     STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:call withService:service withBridge:nil];
 
-    STWLogger *logger = mock([STWLogger class]);
-
-    [STWLogger setSharedLogger:logger];
-
     [operation main];
 
     XCTAssertEqualObjects(@{@"abc": @123}, service.params);
 
-    [verifyCount(logger, times(1)) info:@"Straw Service Method call: service='dummy' method='dummyMethod' selector='dummyMethod:withContext:'"];
+    [verifyCount(self.logger, times(1)) info:@"Straw Service Method call: service='dummy' method='dummyMethod' selector='dummyMethod:withContext:'"];
 }
 
 

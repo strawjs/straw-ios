@@ -180,11 +180,6 @@
     // it returns insufficient straw request object.
     [given([webView stringByEvaluatingJavaScriptFromString:@"window.straw.getRequest('123')"]) willReturn:@"{\"service\":\"dummy\"}"];
 
-    // mock up logger
-    STWLogger *logger = mock([STWLogger class]);
-
-    [STWLogger setSharedLogger:logger];
-
     // create bridge
     STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:nil];
 
@@ -192,7 +187,7 @@
     [bridge executeRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"straw://123"]]];
 
     // verify logging
-    [verifyCount(logger, times(1)) error:@"Straw request object is broken: url='straw://123'"];
+    [verifyCount(self.logger, times(1)) error:@"Straw request object is broken: url='straw://123'"];
 }
 
 
@@ -205,11 +200,6 @@
     // it returns insufficient straw request object.
     [given([webView stringByEvaluatingJavaScriptFromString:@"window.straw.getRequest('123')"]) willReturn:@"{\"service\":\"dummy\",\"method\":\"dummyMethod\",\"callId\":\"123\"}"];
 
-    // mock up logger
-    STWLogger *logger = mock([STWLogger class]);
-
-    [STWLogger setSharedLogger:logger];
-
     // create bridge
     STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:nil];
 
@@ -217,7 +207,7 @@
     [bridge executeRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"straw://123"]]];
 
     // verify logging
-    [verifyCount(logger, times(1)) error:@"Straw service not found: service='dummy'"];
+    [verifyCount(self.logger, times(1)) error:@"Straw service not found: service='dummy'"];
 }
 
 
