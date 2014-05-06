@@ -39,7 +39,15 @@
 
 - (STWServiceCall *)createServiceCallFromUrlRequest:(NSURLRequest *)request
 {
+    if (!self.webView) {
+        STWLogFatal(@"webView is nil and cannot process Straw call: url=%@", [[request URL] absoluteString]);
+
+        return nil;
+    }
+
     if (![self isStrawURLRequest:request]) {
+        STWLogDebug(@"request url is not straw url request: url=%@", [[request URL] absoluteString]);
+
         return nil;
     }
 
@@ -102,9 +110,9 @@
     // create service call from url request
     STWServiceCall *serviceCall = [self createServiceCallFromUrlRequest:request];
 
-    // If the service call object is nil, then the url is broken.
+    // If the service call object is not created, then return.
     if (!serviceCall) {
-        STWLogError(@"Straw request object is broken: url='%@'", [[request URL] absoluteString]);
+        // log nothing here because the reason why service call is not created should have been already logged before here.
 
         return;
     }

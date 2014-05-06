@@ -64,13 +64,30 @@
 }
 
 
-- (void)testCreateServiceCallFromInvalidURLRequest
+- (void)testCreateServiceCallFromNotStrawURLRequest
+{
+    STWNativeBridge *bridge = [[STWNativeBridge alloc] init];
+
+    // set mock webView
+    bridge.webView = mock([UIWebView class]);
+
+    STWServiceCall *serviceCall = [bridge createServiceCallFromUrlRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost/"]]];
+
+    XCTAssertNil(serviceCall, @"serviceCall is not created");
+
+    [verifyCount(self.logger, times(1)) debug:@"request url is not straw url request: url=http://localhost/"];
+}
+
+
+- (void)testCreateServiceCallWithoutWebView
 {
     STWNativeBridge *bridge = [[STWNativeBridge alloc] init];
 
     STWServiceCall *serviceCall = [bridge createServiceCallFromUrlRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost/"]]];
 
-    XCTAssertNil(serviceCall, @"service");
+    XCTAssertNil(serviceCall, @"serviceCall is not created");
+
+    [verifyCount(self.logger, times(1)) fatal:@"webView is nil and cannot process Straw call: url=http://localhost/"];
 }
 
 
@@ -171,7 +188,7 @@
 }
 
 
-- (void)testExecuteRequestWithBrokenStrawURLRequest
+- (void)testExecuteRequestWithInsufficientStrawRequestObject
 {
     // mock up webView
     UIWebView *webView = mock([UIWebView class]);
@@ -187,7 +204,7 @@
     [bridge executeRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"straw://123"]]];
 
     // verify logging
-    [verifyCount(self.logger, times(1)) error:@"Straw request object is broken: url='straw://123'"];
+    [verifyCount(self.logger, times(1)) error:@"`method` field of the Straw request object is empty and the request is canceled:"];
 }
 
 
