@@ -41,6 +41,7 @@
 {
     if (!self.webView) {
         STWLogFatal(@"webView is nil and cannot process Straw call: url=%@", [[request URL] absoluteString]);
+        STWLogFatal(@"STWWebViewDelegate class should be initialized with webView.");
 
         return nil;
     }

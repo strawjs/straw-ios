@@ -88,6 +88,7 @@
     XCTAssertNil(serviceCall, @"serviceCall is not created");
 
     [verifyCount(self.logger, times(1)) fatal:@"webView is nil and cannot process Straw call: url=http://localhost/"];
+    [verifyCount(self.logger, times(1)) fatal:@"STWWebViewDelegate class should be initialized with webView."];
 }
 
 
