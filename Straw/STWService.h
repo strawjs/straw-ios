@@ -14,7 +14,7 @@
 
 
 /**
- Allocate class.
+ Allocate instance
 
  @return instance of the class
  */
@@ -22,9 +22,9 @@
 
 
 /**
- Check if the given selector is a main thread job or not.
+ Check if the given selector is a background job or not.
 
- @param selector the selector to check
+ @param method the method to check
  @return true if the given selector is a main thread job.
  */
 - (BOOL)isBackgroundJob:(NSString *)method;

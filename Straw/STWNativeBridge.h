@@ -58,7 +58,7 @@
 /**
  Creates Service Call object from url and webView.
  
- @param url url to create from
+ @param request the url request
  @return generated Service Call object
  */
 - (STWServiceCall *)createServiceCallFromUrlRequest:(NSURLRequest *)request;
@@ -95,7 +95,6 @@
  Send the data back to Browser
  
  @param data data to send
- @param webView the webView to send to
  */
 - (void)sendData:(NSDictionary *)data;
 

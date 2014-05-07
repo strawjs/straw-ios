@@ -40,6 +40,11 @@
 
 /**
  Initialize object with service call object, service object and bridge object
+ 
+ @param call Service call object
+ @param service service object
+ @param bridge native bridge object
+ @return service call operation instance
  */
 - (id)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withBridge:(STWNativeBridge *)bridge;
 

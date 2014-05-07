@@ -2,7 +2,9 @@
 #import "STWNativeBridge.h"
 #import "STWLogger.h"
 
-
+/**
+ STWServiceCallbackOperation class performs callback operation from Native to Browser
+ */
 @interface STWServiceCallbackOperation : NSOperation
 
 

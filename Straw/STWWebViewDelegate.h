@@ -19,7 +19,6 @@
  Init with webView.
 
  @param webView the webView
- @param viewController the viewController
  @return the instance of the class
  */
 - (id)initWithWebView:(UIWebView *)webView;

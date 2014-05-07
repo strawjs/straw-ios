@@ -34,12 +34,9 @@
     return self;
 }
 
-
-/**
- *
- * THE BROWSER-TO-NATIVE ENTRYPOINT
- *
- */
+//
+// ⚡ THE BROWSER-TO-NATIVE ENTRYPOINT ⚡
+//
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     // log verbose at the entry point
