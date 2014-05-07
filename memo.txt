@@ -33,15 +33,18 @@ Do people really want stateful services?
 ----
 
 TODO:
-- experiment on ios-exercise
+- straw-ios.js
+  - ci using gulp
+  - bower
+  - npm
 
-- Straw.podspec of straw-ios
+- experiment on ios-exercise - doing
+
+- STWWebView, STWViewController (in Wrapper group)
 
 - infra
   - straw service registry
     - mongodb, heroku
-
-- straw-ios.js
 
 - http service
   - straw-ios-service-http-native
@@ -62,20 +65,21 @@ TODO:
   - straw-ios-service-log-js
   - log on each level
 
-- STWWebView, STWViewController (in Wrapper group)
-
 - whatsmyip-ios
   - implement existing feature
-  - add some achievements
+  - add achievements feature
+    - record n times (n=1,5,10,20,30,100,200,300,1000)
+    - different n Addresses (n=1,5,10,20,30,100,200,300,1000)
 
-- refactor straw-android completely
-  - separate domain and application according to straw-ios
-    - remove StrawDrink and instead of that create StrawCallContext interface and StrawCallOperation class (which implements StrawCallContext)
+- refactor straw-android
   - rename `plugin` to `service`
+  - separate domain and application according to straw-ios
+  - remove StrawDrink and instead of that create StrawCallContext interface and StrawCallOperation class (which implements StrawCallContext)
 
 - next application!
 
 DONE:
+- Straw.podspec of straw-ios - done
 - LogError on call factory failures. - done
 - implementation - done
 - tests - done
