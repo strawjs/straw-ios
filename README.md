@@ -6,7 +6,4 @@
 
 > Straw, the simpler native-webview bridge, for iOS (wip)
 
-## TODO
-
-- implementation - done
-- cocoapods integration
+## [API Documentation](http://strawjs.github.io/straw-ios/doc/html/index.html)
