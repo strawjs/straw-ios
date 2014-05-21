@@ -40,7 +40,7 @@
     UIWebView *webView = mock([UIWebView class]);
 
     // stub stringByEvaluatingJavaScriptFromString
-    [given([webView stringByEvaluatingJavaScriptFromString:@"window.straw.getRequest('123')"]) willReturn:@"{\"service\":\"dummy\",\"method\":\"dummyMethod\",\"callId\":\"123\",\"params\":{\"abc\":\"123\",\"def\":456}}"];
+    [given([webView stringByEvaluatingJavaScriptFromString:@"straw.getRequestParams('123')"]) willReturn:@"{\"service\":\"dummy\",\"method\":\"dummyMethod\",\"callId\":\"123\",\"params\":{\"abc\":\"123\",\"def\":456}}"];
 
     // mock viewController
     UIViewController *viewController = mock([UIViewController class]);
@@ -196,7 +196,7 @@
 
     // stub stringByEvaluatingJavaScriptFromString
     // it returns insufficient straw request object.
-    [given([webView stringByEvaluatingJavaScriptFromString:@"window.straw.getRequest('123')"]) willReturn:@"{\"service\":\"dummy\"}"];
+    [given([webView stringByEvaluatingJavaScriptFromString:@"straw.getRequestParams('123')"]) willReturn:@"{\"service\":\"dummy\"}"];
 
     // create bridge
     STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:nil];
@@ -216,7 +216,7 @@
 
     // stub stringByEvaluatingJavaScriptFromString
     // it returns insufficient straw request object.
-    [given([webView stringByEvaluatingJavaScriptFromString:@"window.straw.getRequest('123')"]) willReturn:@"{\"service\":\"dummy\",\"method\":\"dummyMethod\",\"callId\":\"123\"}"];
+    [given([webView stringByEvaluatingJavaScriptFromString:@"straw.getRequestParams('123')"]) willReturn:@"{\"service\":\"dummy\",\"method\":\"dummyMethod\",\"callId\":\"123\"}"];
 
     // create bridge
     STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:nil];
@@ -236,7 +236,7 @@
 
     // stub stringByEvaluatingJavaScriptFromString
     // it returns insufficient straw request object.
-    [given([webView stringByEvaluatingJavaScriptFromString:@"window.straw.getRequest('123')"]) willReturn:@"{\"service\":\"dummy\",\"method\":\"dummyMethod\",\"params\":{\"abc\":\"123\",\"def\":456},\"callId\":\"123\"}"];
+    [given([webView stringByEvaluatingJavaScriptFromString:@"straw.getRequestParams('123')"]) willReturn:@"{\"service\":\"dummy\",\"method\":\"dummyMethod\",\"params\":{\"abc\":\"123\",\"def\":456},\"callId\":\"123\"}"];
 
     // create bridge
     STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:nil];
@@ -288,7 +288,7 @@
 
     // stub stringByEvaluatingJavaScriptFromString
     // it returns insufficient straw request object.
-    [given([webView stringByEvaluatingJavaScriptFromString:@"window.straw.getRequest('123')"]) willReturn:@"{\"service\":\"dummy\",\"method\":\"dummyMethodMainThread\",\"params\":{\"abc\":\"123\",\"def\":456},\"callId\":\"123\"}"];
+    [given([webView stringByEvaluatingJavaScriptFromString:@"straw.getRequestParams('123')"]) willReturn:@"{\"service\":\"dummy\",\"method\":\"dummyMethodMainThread\",\"params\":{\"abc\":\"123\",\"def\":456},\"callId\":\"123\"}"];
 
     // create bridge
     STWNativeBridge *bridge = [[STWNativeBridge alloc] initWithWebView:webView withViewController:nil];

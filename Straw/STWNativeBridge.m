@@ -1,5 +1,11 @@
 #import "STWNativeBridge.h"
 
+#define kSTWNativeBridgeJSExprGetRequestParams @"straw.getRequestParams('%@')"
+
+#define kSTWNativeBridgeJSExprSucceed @"straw.succeed(%@,%@,%@);"
+
+#define kSTWNativeBridgeJSExprFail @"straw.fail(%@,%@,%@);"
+
 @implementation STWNativeBridge
 
 
@@ -54,7 +60,7 @@
 
     NSString *callId = [[request URL] host];
 
-    NSString *getRequest = [NSString stringWithFormat:@"window.straw.getRequest('%@')", callId];
+    NSString *getRequest = [NSString stringWithFormat:kSTWNativeBridgeJSExprGetRequestParams, callId];
 
     NSString *requestJSON = [self.webView stringByEvaluatingJavaScriptFromString:getRequest];
 
