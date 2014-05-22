@@ -79,12 +79,7 @@
 
     [operation succeed];
 
-    [verifyCount(bridge, times(1)) sendData:@{
-        @"callId": @"id_abc",
-        @"keepAlive": @NO,
-        @"params": @{},
-        @"isSuccess": @YES,
-    }];
+    [verifyCount(bridge, times(1)) sendData:@{} withCallId:@"id_abc" withSuccess:YES withKeepAlive:NO];
 }
 
 
@@ -105,12 +100,7 @@
 
     [operation succeedWithNumber:@123];
 
-    [verifyCount(bridge, times(1)) sendData:@{
-        @"callId": @"id_abc",
-        @"keepAlive": @NO,
-        @"params": @{@"value": @123},
-        @"isSuccess": @YES,
-    }];
+    [verifyCount(bridge, times(1)) sendData:@{@"value": @123} withCallId:@"id_abc" withSuccess:YES withKeepAlive:NO];
 }
 
 
@@ -131,12 +121,7 @@
 
     [operation succeedWithString:@"abc"];
 
-    [verifyCount(bridge, times(1)) sendData:@{
-        @"callId": @"id_abc",
-        @"keepAlive": @NO,
-        @"params": @{@"value": @"abc"},
-        @"isSuccess": @YES,
-    }];
+    [verifyCount(bridge, times(1)) sendData:@{@"value": @"abc"} withCallId:@"id_abc" withSuccess:YES withKeepAlive:NO];
 }
 
 
@@ -157,12 +142,8 @@
 
     [operation succeedWithObject:@{@"abc": @123, @"def": @"ghi"}];
 
-    [verifyCount(bridge, times(1)) sendData:@{
-        @"callId": @"id_abc",
-        @"keepAlive": @NO,
-        @"params": @{@"abc": @123, @"def": @"ghi"},
-        @"isSuccess": @YES,
-    }];
+    [verifyCount(bridge, times(1)) sendData:@{@"abc": @123, @"def": @"ghi"} withCallId:@"id_abc" withSuccess:YES withKeepAlive:NO];
+
 }
 
 
@@ -183,12 +164,7 @@
 
     [operation failWithCode:@123 withMessage:@"failed"];
 
-    [verifyCount(bridge, times(1)) sendData:@{
-        @"callId": @"id_abc",
-        @"keepAlive": @NO,
-        @"params": @{@"code": @123, @"message": @"failed"},
-        @"isSuccess": @NO,
-    }];
+    [verifyCount(bridge, times(1)) sendData:@{@"code": @123, @"message": @"failed"} withCallId:@"id_abc" withSuccess:NO withKeepAlive:NO];
 
 }
 

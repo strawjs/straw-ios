@@ -96,6 +96,6 @@
  
  @param data data to send
  */
-- (void)sendData:(NSDictionary *)data;
+- (void)sendData:(NSDictionary *)data withCallId:(NSString *)callId withSuccess:(BOOL)isSuccess withKeepAlive:(BOOL)keepAlive;
 
 @end

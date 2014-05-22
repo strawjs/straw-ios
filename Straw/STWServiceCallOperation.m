@@ -60,14 +60,7 @@
 
 - (void)sendBackToBrowser:(NSDictionary *)object withSuccess:(BOOL)isSuccess
 {
-    NSDictionary *data = @{
-        @"callId": self.serviceCall.callId,
-        @"params": object,
-        @"keepAlive": @(self.keepAlive),
-        @"isSuccess": @(isSuccess),
-    };
-
-    [self.bridge sendData:data];
+    [self.bridge sendData:object withCallId:self.serviceCall.callId withSuccess:isSuccess withKeepAlive:self.keepAlive];
 }
 
 - (void)succeed

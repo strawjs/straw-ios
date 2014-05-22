@@ -348,7 +348,7 @@
     bridge.mainQueue = operationQueue;
 
     // call sendData
-    [bridge sendData:@{@"abc": @123}];
+    [bridge sendData:@{@"abc": @123} withCallId:@"id_abc" withSuccess:YES withKeepAlive:NO];
 
     // create argument captor
     MKTArgumentCaptor *argument = [[MKTArgumentCaptor alloc] init];
@@ -362,7 +362,7 @@
 
     XCTAssertNotNil(callbackOperation, @"callbackOperation is queued.");
 
-    XCTAssertEqualObjects(@"window.straw.receiveData({\"abc\":123})", callbackOperation.message, @"message property is set.");
+    XCTAssertEqualObjects(@"straw.succeed('id_abc',{\"abc\":123},0)", callbackOperation.message, @"message property is set.");
 
     XCTAssertEqualObjects(webView, callbackOperation.webView, @"webView is set.");
 }

@@ -2,9 +2,9 @@
 
 #define kSTWNativeBridgeJSExprGetRequestParams @"straw.getRequestParams('%@')"
 
-#define kSTWNativeBridgeJSExprSucceed @"straw.succeed(%@,%@,%@);"
+#define kSTWNativeBridgeJSExprSucceed @"straw.succeed('%@',%@,%@)"
 
-#define kSTWNativeBridgeJSExprFail @"straw.fail(%@,%@,%@);"
+#define kSTWNativeBridgeJSExprFail @"straw.fail('%@',%@,%@)"
 
 @implementation STWNativeBridge
 
@@ -157,16 +157,23 @@
 }
 
 
-- (void)sendData:(NSDictionary *)object
+- (void)sendData:(NSDictionary *)params withCallId:(NSString *)callId withSuccess:(BOOL)isSuccess withKeepAlive:(BOOL)keepAlive
 {
     // create JSON bytes
-    NSData *data = [NSJSONSerialization dataWithJSONObject:object options:0 error:nil];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:params options:0 error:nil];
 
     // convert to NSString
     NSString *dataJSON = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 
-    // create JS message string
-    NSString *message = [NSString stringWithFormat:@"window.straw.receiveData(%@)", dataJSON];
+    NSString *message;
+
+    if (isSuccess) {
+        // create JS message string
+        message = [NSString stringWithFormat:kSTWNativeBridgeJSExprSucceed, callId, dataJSON, @(keepAlive)];
+    } else {
+        // create JS message string
+        message = [NSString stringWithFormat:kSTWNativeBridgeJSExprFail, callId, dataJSON, @(keepAlive)];
+    }
 
     // post to the main thread
     [self.mainQueue addOperation:[[STWServiceCallbackOperation alloc] initWithMessage:message withWebView:self.webView]];
