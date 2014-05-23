@@ -3,7 +3,7 @@
 // straw-ios.js interfaces
 // see https://github.com/strawjs/straw-ios.js for details
 
-#define kSTWNativeBridgeJSExprGetRequestParams @"straw.core.getRequestParams('%@')"
+#define kSTWNativeBridgeJSExprGetRequestParams @"JSON.stringify(straw.core.getRequestParams('%@'))"
 #define kSTWNativeBridgeJSExprSucceed @"straw.core.succeed('%@',%@,%@)"
 #define kSTWNativeBridgeJSExprFail @"straw.core.fail('%@',%@,%@)"
 
