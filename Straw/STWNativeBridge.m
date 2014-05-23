@@ -1,10 +1,11 @@
 #import "STWNativeBridge.h"
 
-#define kSTWNativeBridgeJSExprGetRequestParams @"straw.getRequestParams('%@')"
+// straw-ios.js interfaces
+// see https://github.com/strawjs/straw-ios.js for details
 
-#define kSTWNativeBridgeJSExprSucceed @"straw.succeed('%@',%@,%@)"
-
-#define kSTWNativeBridgeJSExprFail @"straw.fail('%@',%@,%@)"
+#define kSTWNativeBridgeJSExprGetRequestParams @"straw.core.getRequestParams('%@')"
+#define kSTWNativeBridgeJSExprSucceed @"straw.core.succeed('%@',%@,%@)"
+#define kSTWNativeBridgeJSExprFail @"straw.core.fail('%@',%@,%@)"
 
 @implementation STWNativeBridge
 
