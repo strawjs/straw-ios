@@ -2,7 +2,7 @@
 xcuserdata
 
 # gcov dir
-gcov
+.gcov
 
 # pods
 Pods

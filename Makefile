@@ -13,15 +13,15 @@ kill:
 	osascript -e 'tell app "iPhone Simulator" to quit'
 
 covr:
-	touch gcov ; rm -rf gcov ; mkdir gcov
-	cp `$(MAKE) echo-obj-dir`/* gcov/
+	touch .gcov ; rm -rf .gcov ; mkdir .gcov
+	cp `$(MAKE) echo-obj-dir`/* .gcov/
 	gcovr -r .
 
 coveralls:
-	touch gcov ; rm -rf gcov ; mkdir gcov
-	cp `$(MAKE) echo-obj-dir`/* gcov/
+	touch .gcov ; rm -rf .gcov ; mkdir .gcov
+	cp `$(MAKE) echo-obj-dir`/* .gcov/
 	coveralls -e Pods -e StrawTests -x '.m' -E '.*\.h'
-	rm -rf gcov
+	rm -rf .gcov
 
 echo-obj-dir:
 	@echo ` xctool -showBuildSettings | awk '/OBJECT_FILE_DIR_normal =/{x=$$3}/NATIVE_ARCH =/{y=$$3}END{print x"/"y}' `
