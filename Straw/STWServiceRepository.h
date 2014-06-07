@@ -15,7 +15,7 @@
 
  @param service the service to register
  */
-- (void)registerService:(id <STWService>)service;
+- (void)registerService:(id<STWService>)service;
 
 
 /**
@@ -24,6 +24,6 @@
  @param serviceName the service name
  @return the service of the specified name or nil if not exists
  */
-- (id <STWService>)getService:(NSString *)serviceName;
+- (id<STWService>)getService:(NSString *)serviceName;
 
 @end

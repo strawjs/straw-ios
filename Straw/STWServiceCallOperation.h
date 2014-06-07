@@ -46,6 +46,6 @@
  @param bridge native bridge object
  @return service call operation instance
  */
-- (id)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withBridge:(STWNativeBridge *)bridge;
+- (instancetype)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withBridge:(STWNativeBridge *)bridge;
 
 @end

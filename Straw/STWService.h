@@ -18,7 +18,7 @@
 
  @return instance of the class
  */
-+ (id)alloc;
++ (instancetype)alloc;
 
 
 /**

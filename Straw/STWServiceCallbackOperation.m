@@ -3,7 +3,7 @@
 @implementation STWServiceCallbackOperation
 
 
-- (id)initWithMessage:(NSString *)message withWebView:(UIWebView *)webView
+- (instancetype)initWithMessage:(NSString *)message withWebView:(UIWebView *)webView
 {
     self = [super init];
 

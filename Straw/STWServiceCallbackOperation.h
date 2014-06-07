@@ -23,7 +23,7 @@
  @param webView the webView to send message to
  @return the instance of the class
  */
-- (id)initWithMessage:(NSString *)message withWebView:(UIWebView *)webView;
+- (instancetype)initWithMessage:(NSString *)message withWebView:(UIWebView *)webView;
 
 
 @end

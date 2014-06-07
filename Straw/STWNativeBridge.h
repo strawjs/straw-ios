@@ -52,7 +52,7 @@
  @param viewController the viewController
  @return the instance of the class
  */
-- (id)initWithWebView:(UIWebView *)webView withViewController:(UIViewController *)viewController;
+- (instancetype)initWithWebView:(UIWebView *)webView withViewController:(UIViewController *)viewController;
 
 
 /**

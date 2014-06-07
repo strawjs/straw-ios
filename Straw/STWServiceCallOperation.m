@@ -2,7 +2,7 @@
 
 @implementation STWServiceCallOperation
 
-- (id)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withBridge:(STWNativeBridge *)bridge
+- (instancetype)initWithCall:(STWServiceCall *)call withService:(id<STWService>)service withBridge:(STWNativeBridge *)bridge
 {
     self = [super init];
 

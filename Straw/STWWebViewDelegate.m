@@ -3,16 +3,17 @@
 @implementation STWWebViewDelegate
 
 
--(id)init{
+-(instancetype)init
+{
     return [self initWithWebView:nil];
 }
 
-- (id)initWithWebView:(UIWebView *)webView
+- (instancetype)initWithWebView:(UIWebView *)webView
 {
     return [self initWithWebView:webView withViewController:nil];
 }
 
-- (id)initWithWebView:(UIWebView *)webView withViewController:(UIViewController *)viewController
+- (instancetype)initWithWebView:(UIWebView *)webView withViewController:(UIViewController *)viewController
 {
     self = [super init];
 

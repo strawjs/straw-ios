@@ -10,7 +10,7 @@
 @implementation STWNativeBridge
 
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
 
@@ -29,7 +29,7 @@
 }
 
 
-- (id)initWithWebView:(UIWebView *)webView withViewController:(UIViewController *)viewController
+- (instancetype)initWithWebView:(UIWebView *)webView withViewController:(UIViewController *)viewController
 {
     self = [self init];
 

@@ -2,7 +2,7 @@
 
 @implementation STWServiceRepository
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
 
