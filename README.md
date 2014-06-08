@@ -6,4 +6,4 @@
 
 > Straw, the simpler native-webview bridge, for iOS (wip)
 
-## [API Documentation](http://strawjs.github.io/straw-ios/doc/html/index.html)
+## [API Documentation](http://strawjs.github.io/straw-ios/doc/v0.4.0/html/index.html)

@@ -1,7 +1,9 @@
 ---
 version: 0.4.0
 files:
-  README.md: v%.%.%
+  README.md:
+  - Straw v%.%.%
+  - doc/v%.%.%
   Straw.podspec:
   - s.version = "%.%.%"
   - tag => "v%.%.%"
