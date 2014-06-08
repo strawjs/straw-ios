@@ -6,3 +6,6 @@ xcuserdata
 
 # pods
 Pods
+
+# API doc dir for dev version
+doc-dev

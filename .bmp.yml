@@ -5,3 +5,4 @@ files:
   Straw.podspec:
   - s.version = "%.%.%"
   - tag => "v%.%.%"
+  Makefile: doc/v%.%.%
