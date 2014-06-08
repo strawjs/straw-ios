@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
-		<title>STWLoggerDelegate Protocol Reference</title>
+		<title>STWService Protocol Reference</title>
 		<meta id="xcode-display" name="xcode-display" content="render"/>
 		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
 		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
@@ -16,7 +16,7 @@
 			</div>
 			
 			<div id="title" role="banner">
-				<h1 class="hideInXcode">STWLoggerDelegate Protocol Reference</h1>
+				<h1 class="hideInXcode">STWService Protocol Reference</h1>
 			</div>
 			<ul id="headerButtons" role="toolbar">
 				<li id="toc_button">
@@ -39,11 +39,18 @@
 	
 	
 	
+	<option value="class_methods">Class Methods</option>
+	
+	<option value="//api/name/alloc">&nbsp;&nbsp;&nbsp;&nbsp;+ alloc</option>
+	
+	
 	
 	
 	<option value="instance_methods">Instance Methods</option>
 	
-	<option value="//api/name/log:">&nbsp;&nbsp;&nbsp;&nbsp;- log:</option>
+	<option value="//api/name/isBackgroundJob:">&nbsp;&nbsp;&nbsp;&nbsp;- isBackgroundJob:</option>
+	
+	<option value="//api/name/name">&nbsp;&nbsp;&nbsp;&nbsp;- name</option>
 	
 	
 	
@@ -69,11 +76,19 @@
 
 
 
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#class_methods">Class Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/alloc">alloc</a></span></li>
+	
+</ul></li>
+
 
 
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
 	
-	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/log:">log:</a></span></li>
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isBackgroundJob:">isBackgroundJob:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/name">name</a></span></li>
 	
 </ul></li>
 
@@ -82,7 +97,7 @@
 		</nav>
 		<article>
 			<div id="contents" class="isShowingTOC" role="main">
-				<a title="STWLoggerDelegate Protocol Reference" name="top"></a>
+				<a title="STWService Protocol Reference" name="top"></a>
 				<div class="main-navigation navigation-top">
 					<ul>
 	<li><a href="../index.html">Index</a></li>
@@ -91,7 +106,7 @@
 				</div>
 				<div id="header">
 					<div class="section-header">
-						<h1 class="title title-header">STWLoggerDelegate Protocol Reference</h1>
+						<h1 class="title title-header">STWService Protocol Reference</h1>
 					</div>		
 				</div>
 				<div id="container">	
@@ -102,7 +117,7 @@
 	<td class="specification-value">NSObject</td>
 </tr><tr>
 	<td class="specification-title">Declared in</td>
-	<td class="specification-value">STWLogger.h</td>
+	<td class="specification-value">STWService.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -112,9 +127,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>STWLoggerDelegate is the low level logging interface.</p>
-
-<p>This protocol exists for testability increasement.</p>
+						<p>STWService is the protocol which is conformed by Straw Service classes.</p>
 					</div>
 					
 					
@@ -132,7 +145,19 @@
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/log:">&ndash;&nbsp;log:</a></code>
+		<code><a href="#//api/name/name">&ndash;&nbsp;name</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/alloc">+&nbsp;alloc</a></code>
+	</span>
+	
+	<span class="task-item-suffix">required method</span>
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isBackgroundJob:">&ndash;&nbsp;isBackgroundJob:</a></code>
 	</span>
 	
 	<span class="task-item-suffix">required method</span>
@@ -147,39 +172,32 @@
 					
 					
 					
-					
-					
 					<div class="section section-methods">
-						<a title="Instance Methods" name="instance_methods"></a>
-						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						<a title="Class Methods" name="class_methods"></a>
+						<h2 class="subtitle subtitle-methods">Class Methods</h2>
 						
 						<div class="section-method">
-	<a name="//api/name/log:" title="log:"></a>
-	<h3 class="subsubtitle method-title">log:</h3>
+	<a name="//api/name/alloc" title="alloc"></a>
+	<h3 class="subsubtitle method-title">alloc</h3>
 	
 	
 	
 	<div class="method-subsection brief-description">
-		<p>Just log a message.</p>
+		<p>Allocate instance</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)log:(NSString *)<em>message</em></code></div>
+	<div class="method-subsection method-declaration"><code>+ (instancetype)alloc</code></div>
 
     
 	
-	<div class="method-subsection arguments-section parameters">
-		<h4 class="method-subtitle parameter-title">Parameters</h4>
-		
-		<dl class="argument-def parameter-def">
-			<dt><em>message</em></dt>
-			<dd><p>the message to log</p></dd>
-		</dl>
-		
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>instance of the class</p>
 	</div>
-	
-	
 	
 	
 	
@@ -187,7 +205,7 @@
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Just log a message.</p>
+		<p>Allocate instance</p>
 	</div>
 	
 	
@@ -198,7 +216,112 @@
 	
 	<div class="method-subsection declared-in-section">
 		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">STWLogger.h</code><br />
+		<code class="declared-in-ref">STWService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/isBackgroundJob:" title="isBackgroundJob:"></a>
+	<h3 class="subsubtitle method-title">isBackgroundJob:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Check if the given selector is a background job or not.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isBackgroundJob:(NSString *)<em>method</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p>the method to check</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>true if the given selector is a main thread job.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Check if the given selector is a background job or not.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">STWService.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/name" title="name"></a>
+	<h3 class="subsubtitle method-title">name</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns the name of the Straw Service.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSString *)name</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns the name of the Straw Service.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">STWService.h</code><br />
 	</div>				
 	
 	
@@ -219,7 +342,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2014 kt3k.org. All rights reserved. (Last updated: 2014-05-07)</span><br />
+						<p><span class="copyright">&copy; 2014 kt3k.org. All rights reserved. (Last updated: 2014-06-08)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2 (build 961)</a>.</span></p>
 						
