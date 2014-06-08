@@ -83,9 +83,9 @@
     [self sendBackToBrowser:object withSuccess:YES];
 }
 
-- (void)failWithCode:(NSNumber *)code withMessage:(NSString *)message
+- (void)failWithCode:(NSInteger)code withMessage:(NSString *)message
 {
-    [self sendBackToBrowser:@{@"code": code, @"message": message} withSuccess:NO];
+    [self sendBackToBrowser:@{@"code": @(code), @"message": message} withSuccess:NO];
 }
 
 @end

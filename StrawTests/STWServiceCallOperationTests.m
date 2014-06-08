@@ -162,7 +162,7 @@
     // init
     STWServiceCallOperation *operation = [[STWServiceCallOperation alloc] initWithCall:call withService:nil withBridge:bridge];
 
-    [operation failWithCode:@123 withMessage:@"failed"];
+    [operation failWithCode:123 withMessage:@"failed"];
 
     [verifyCount(bridge, times(1)) sendData:@{@"code": @123, @"message": @"failed"} withCallId:@"id_abc" withSuccess:NO withKeepAlive:NO];
 

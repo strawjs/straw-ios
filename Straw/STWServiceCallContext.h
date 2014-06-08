@@ -42,6 +42,6 @@
  @param code error code
  @param message error message
  */
-- (void)failWithCode:(NSNumber *)code withMessage:(NSString *)message;
+- (void)failWithCode:(NSInteger)code withMessage:(NSString *)message;
 
 @end
