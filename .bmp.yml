@@ -1,10 +1,10 @@
 ---
-version: 0.4.0
+version: 0.5.0
 files:
   README.md:
-  - Straw v%.%.%
+  - straw-ios v%.%.%
   - doc/v%.%.%
   Straw.podspec:
-  - 's.version = "%.%.%"'
+  - s.version = "%.%.%"
   - ':tag => "v%.%.%"'
   Makefile: doc/v%.%.%
