@@ -6,5 +6,6 @@
 #import "STWNativeBridge.h"
 #import "STWServiceCallFactory.h"
 #import "STWLogger.h"
+#import "STWViewController.h"
 
 #endif
