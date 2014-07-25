@@ -3,6 +3,8 @@
 
 @interface STWAppDelegate : UIResponder <UIApplicationDelegate>
 
+@property (strong, nonatomic) UIWindow *window;
+
 /**
  Returns/Defines Straw services you want to use in this app delegate.
 
