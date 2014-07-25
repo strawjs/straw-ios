@@ -7,5 +7,6 @@
 #import "STWServiceCallFactory.h"
 #import "STWLogger.h"
 #import "STWViewController.h"
+#import "STWAppDelegate.h"
 
 #endif
