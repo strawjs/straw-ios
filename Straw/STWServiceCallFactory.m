@@ -30,8 +30,8 @@
 
     if (params == nil) {
         // if the params is nil, then it default to empty dict.
-        STWLogInfo(@"`params` field of the Straw reqeust object is empty and default value (empty dict) is supplied:");
-        STWLogInfo(@"request=%@", object);
+        STWLogVerbose(@"`params` field of the Straw reqeust object is empty and default value (empty dict) is supplied:");
+        STWLogVerbose(@"request=%@", object);
 
         params = @{};
     }

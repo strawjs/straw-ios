@@ -85,7 +85,7 @@
     XCTAssertEqualObjects((@{}), serviceCall.params, @"The default value of params is empty dict when `callId` parameter is absent.");
 
     // verify logging
-    [verifyCount(self.logger, times(1)) info:@"`params` field of the Straw reqeust object is empty and default value (empty dict) is supplied:"];
+    [verifyCount(self.logger, times(1)) verbose:@"`params` field of the Straw reqeust object is empty and default value (empty dict) is supplied:"];
 
 }
 
