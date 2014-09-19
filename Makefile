@@ -30,4 +30,4 @@ doc:
 	appledoc --project-name 'Straw' --project-company 'kt3k.org' --company-id 'org.kt3k' --output doc-dev --create-html --no-create-docset Straw
 
 doc-release:
-	appledoc --project-name 'Straw' --project-company 'kt3k.org' --company-id 'org.kt3k' --output doc/v0.5.2 --create-html --no-create-docset Straw
+	appledoc --project-name 'Straw' --project-company 'kt3k.org' --company-id 'org.kt3k' --output doc/v0.5.3 --create-html --no-create-docset Straw

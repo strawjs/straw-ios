@@ -1,6 +1,6 @@
 # [![Straw](http://strawjs.github.io/logo.png)](http://strawjs.github.io/)
 
-# straw-ios v0.5.2
+# straw-ios v0.5.3
 
 [![Build Status](https://img.shields.io/travis/strawjs/straw-ios.svg?style=flat)](https://travis-ci.org/strawjs/straw-ios)
 [![Coverage Status](https://img.shields.io/coveralls/strawjs/straw-ios.svg?style=flat)](https://coveralls.io/r/strawjs/straw-ios)
@@ -8,4 +8,4 @@
 
 > Straw, a native-js bridge, iOS core component
 
-## [API Documentation](http://strawjs.github.io/straw-ios/doc/v0.5.2/html/index.html)
+## [API Documentation](http://strawjs.github.io/straw-ios/doc/v0.5.3/html/index.html)
