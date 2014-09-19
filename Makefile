@@ -1,4 +1,4 @@
-.PHONY: test clean doc cov kill
+.PHONY: test clean doc cov kill release
 
 test:
 	xctool test
@@ -31,3 +31,7 @@ doc:
 
 doc-release:
 	appledoc --project-name 'Straw' --project-company 'kt3k.org' --company-id 'org.kt3k' --output doc/v0.5.3 --create-html --no-create-docset Straw
+
+release:
+	pod link Straw.podspec
+	pod trunk push Straw.podspec
