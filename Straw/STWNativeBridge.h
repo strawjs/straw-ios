@@ -95,6 +95,9 @@
  Send the data back to Browser
  
  @param data data to send
+ @param callId callId of Service Method call
+ @param isSuccess Service Method call succeeded or not
+ @param keepAlive It should keep the JS callback alive or not
  */
 - (void)sendData:(NSDictionary *)data withCallId:(NSString *)callId withSuccess:(BOOL)isSuccess withKeepAlive:(BOOL)keepAlive;
 
