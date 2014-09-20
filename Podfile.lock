@@ -1,13 +1,16 @@
 PODS:
-  - OCHamcrest (3.0.1)
-  - OCMockito (1.2.0):
-    - OCHamcrest (~> 3.0)
+  - OCHamcrest (4.0.1)
+  - OCMockito (1.3.0):
+    - OCHamcrest (~> 4.0)
+    - TPWeakProxy (~> 1.0)
+  - TPWeakProxy (1.0.1)
 
 DEPENDENCIES:
   - OCMockito (~> 1.0)
 
 SPEC CHECKSUMS:
-  OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
-  OCMockito: 050fca9528760faa8b5fafc82faad9d54f0864c0
+  OCHamcrest: b464725bbb48d0f1cd9c6f4ec3cb35fe0c4f2b94
+  OCMockito: eca2670b3ce4a457d316b046a36d6f2b980a4da7
+  TPWeakProxy: da4177b6ae5eff685642c1cd9698f71ef7060ea5
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.33.1
